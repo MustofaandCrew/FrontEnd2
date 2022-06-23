@@ -98,7 +98,7 @@
   nav .search-box span::after {
     height: 100%;
     width: 0%;
-    content: '';
+    content: "";
     background: #FF7158;
     position: absolute;
     top: 0;
@@ -236,7 +236,6 @@
       font-size: 15px;
       padding: 12px 0;
       display: block;
-      font-family: 'Poppins';
     }
     nav ol.vertical-screen li a:hover {
       color: #FF7158;
@@ -245,8 +244,12 @@
     nav ol.vertical-screen li h6 {
       font-size: 15px;
       padding: 12px 0 2px;
+      padding-bottom: 0;
       display: block;
-      font-family: 'Poppins';
+    }
+    nav ol.vertical-screen li button {
+      margin-left: 0;
+      padding-left: 0;
     }
     .accordion-body a p {
      text-align: left;

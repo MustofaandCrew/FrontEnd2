@@ -1,0 +1,106 @@
+/* Card */
+.imgCarousel {
+    height: 35.25rem;
+    width: 120rem;
+  }
+  
+  .cardStyle {
+    width: 12rem;
+    margin: 0rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cardImgStyle {
+    width: 18rem;
+    margin: 0rem;
+    margin-bottom: 2rem;
+  }
+  
+  .thumbnail-text {
+    text-align: left;
+  }
+  
+  .price-text {
+    text-align: left;
+    color: orange;
+  }
+  
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px){
+    /* ini untuk tampilan handphone */
+    .imgCarousel {
+      height: 10rem;
+      width: 120rem;
+    }
+  
+    .cardStyle {
+      width: 7rem;
+      margin: 0rem;
+      margin-bottom: 2rem;
+    }
+  
+    .cardImgStyle {
+      width: 7rem;
+      margin: 0rem;
+      margin-bottom: 2rem;
+    }
+  
+    .thumbnail-text {
+      text-align: left;
+      font-size: 80%;
+    }
+    
+    .price-text {
+      text-align: left;
+      color: orange;
+    }
+    
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px){
+    /* ini untuk tampilan tablet */
+    .imgCarousel {
+      height: 10rem;
+      width: 120rem;
+    }
+    
+    .cardStyle {
+      width: 8rem;
+      margin: 0rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px){
+    .imgCarousel {
+      height: 20rem;
+      width: 120rem;
+    }
+  
+    .cardStyle {
+      width: 12rem;
+      margin: 0rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  /* Large devices (Laptops/desktop, 992px and up) */
+  @media only screen and (min-width: 992px){
+    /* ini untuk tampilan laptop */
+    .imgCarousel {
+      height: 32.25rem;
+      width: 120rem;
+    }
+    .cardStyle {
+      width: 12rem;
+      margin: 0rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  /* Extra Large devices (Large laptops and destops, 120px and up) */
+  @media only screen and (min-width: 1200px){}
+  
