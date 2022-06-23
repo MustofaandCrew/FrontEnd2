@@ -38,17 +38,17 @@ export default function Navbar() {
                     <li><a href="/login">Sign In</a></li>
                 </ol>
                 <ol className="vertical-screen">
-                    <li className="nav-span"><a href="/"><span className="fa fa-home"> Home</span></a></li>
+                    <li className="nav-span"><a href="/">Home</a></li>
 
                     <li className="nav-span">
                         <button type="button" className="btn-dropdown" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <h6><span className="fa fa-list"> Categories</span></h6>
+                            <p>Categories</p>
                         </button>
                     </li>
 
-                    <li className="nav-span"><a href="/"><span className="fa fa-shopping-basket"> Shopping Cart</span></a></li>
-                    <li className="nav-span"><a href="/"><span className="fa fa-bell"> Notification</span></a></li>
-                    <li className="nav-signin"><a href="/login"><span>Sign In</span></a></li>
+                    <li className="nav-span"><a href="/">Shopping Cart</a></li>
+                    <li className="nav-span"><a href="/">Notification</a></li>
+                    <li className="nav-signin"><a href="/login"><span><i class='bx bx-log-in'></i> Sign In</span></a></li>
                 </ol>
                 <label for="check" className="bar">
                     <span className="fa fa-bars" id="bars"></span>

@@ -48,6 +48,17 @@
     padding: 5px 10px;
     cursor: pointer;
   }
+
+  nav ol li p {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
   
   nav ol li a:hover {
     border-radius: 8px;
@@ -224,7 +235,7 @@
       text-align: center;
     }
     nav ol.vertical-screen li.nav-signin a span {
-      padding: 10px 40px;
+      padding: 10px 20px;
       border-radius: 10px;
       background:#FF7158;
     }
@@ -232,19 +243,19 @@
       color: #fff;
       transition: 0.5s;
     }
+    nav ol.vertical-screen li a:hover {
+      color: #FF7158;
+      transition: 0.5s;
+    }
     nav ol.vertical-screen li a {
       font-size: 15px;
       padding: 12px 0;
       display: block;
     }
-    nav ol.vertical-screen li a:hover {
-      color: #FF7158;
-      transition: 0.5s;
-    }
-    nav ol.vertical-screen li h6 {
+    nav ol.vertical-screen li p {
       font-size: 15px;
-      padding: 12px 0 2px;
-      padding-bottom: 0;
+      padding: 12px 0 10px 0;
+      margin-bottom: 0;
       display: block;
     }
     nav ol.vertical-screen li button {
