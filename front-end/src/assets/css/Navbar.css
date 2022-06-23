@@ -1,0 +1,304 @@
+/* NavBar */
+.container-nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  nav {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    justify-content: space-between; 
+    text-align: center;
+    align-items: center;
+    padding: 15px 30px;
+    margin-bottom: 2%;
+  }
+  
+  nav .icon {
+    font-size: 35px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  
+  nav .icon a{
+    text-decoration: none;
+    color: #000;
+  }
+  
+  nav ol {
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+  }
+  
+  nav ol li {
+    margin: 0 2px;
+  }
+  
+  nav ol li a {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  nav ol li a:hover {
+    border-radius: 8px;
+    background: #FF7158;
+    color: #fff;
+    padding-bottom: 7px;
+    transition: 0.5s;
+  }
+  
+  nav ol.vertical-screen {
+    display: none;
+    list-style: none;
+    margin: auto 0;
+  }
+  
+  nav .search-box {
+    display: flex;
+    margin: auto 0;
+    height: 35px;
+    line-height: 35px;
+  }
+  
+  nav .search-box input {
+    border: none;
+    outline: none;
+    background: #EFEFEF;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 15px;
+    width: 350px;
+  }
+  
+  nav .search-box span {
+    color: black;
+    font-size: 20px;
+    background: #EFEFEF;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  nav .search-box span:hover {
+    color: #fff;
+  }
+  
+  nav .search-box span::after {
+    height: 100%;
+    width: 0%;
+    content: '';
+    background: #FF7158;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  
+  nav .search-box span:hover::after {
+    width: 100%;
+  }
+  
+  nav .bar {
+    position: relative;
+    margin: auto;
+    display: none;
+  }
+  
+  nav .bar span {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+  }
+  
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: none;
+  }
+  
+  .btn-dropdown {
+    border: none;
+    background: #fff;
+  }
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px){
+    /* ini untuk tampilan handphone */
+    .home-title {
+      text-align: center;
+    }
+  
+    nav {
+      display: flex;
+      width: 100%;
+      background: #fff;
+      position: relative;
+      justify-content: space-between; 
+      text-align: left;
+      align-items: center;
+      padding: 15px 30px;
+      margin-bottom: 2%;
+    }
+  
+    nav .search-box {
+      padding-left: 4%;
+      padding-right: 4%;
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    nav .search-box input {
+      width: 20px;
+      background: #EFEFEF;
+    }
+  
+    nav .icon {
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    
+    nav .icon a{
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  
+  
+  @media screen and (max-width: 1250px) {
+    nav {
+      background: #fff;
+      display: block;
+      padding: 0;
+    }
+    nav .icon {
+      display: inline-block;
+      padding: 15px 30px;
+    }
+    nav .search-box {
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    nav .search-box input {
+      width: 90%;
+      background: #EFEFEF;
+    }
+    nav ol {
+      display: none;
+    }
+    nav ol.vertical-screen {
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      height: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+    nav ol.vertical-screen li {
+      text-align: left;
+      transition: 0.3s 0.1s all;
+      opacity: 0;
+      margin: 0 0;
+    }
+    nav ol.vertical-screen li.nav-span{
+      padding-left: 25px;
+    }
+    nav ol.vertical-screen li.nav-signin{
+      margin-top: 15px;
+      text-align: center;
+    }
+    nav ol.vertical-screen li.nav-signin a span {
+      padding: 10px 40px;
+      border-radius: 10px;
+      background:#FF7158;
+    }
+    nav ol.vertical-screen li.nav-sigin a:hover {
+      color: #fff;
+      transition: 0.5s;
+    }
+    nav ol.vertical-screen li a {
+      font-size: 15px;
+      padding: 12px 0;
+      display: block;
+      font-family: 'Poppins';
+    }
+    nav ol.vertical-screen li a:hover {
+      color: #FF7158;
+      transition: 0.5s;
+    }
+    nav ol.vertical-screen li h6 {
+      font-size: 15px;
+      padding: 12px 0 2px;
+      display: block;
+      font-family: 'Poppins';
+    }
+    .accordion-body a p {
+     text-align: left;
+     font-size: 10px;
+    }
+    nav ol.vertical-screen li:nth-child(1) {
+      transform: translateX(-150px);
+    }
+    nav ol.vertical-screen li:nth-child(2) {
+      transform: translateX(-200px);
+    }
+    nav ol.vertical-screen li:nth-child(3) {
+      transform: translateX(-250px);
+    }
+    nav ol.vertical-screen li:nth-child(4) {
+      transform: translateX(-300px);
+    }
+    nav ol.vertical-screen li:nth-child(5) {
+      transform: translateX(-350px);
+    }
+    nav .bar {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 60px;
+      bottom: 105px;
+      cursor: pointer;
+    }
+    nav .bar span {
+      position: absolute;
+      color: #000000;
+      font-size: 30px;
+    }
+    nav .bar #times {
+      display: none;
+    }
+    #check:checked ~ nav .bar #times {
+      display: block;
+    }
+    #check:checked ~ nav .bar #bars {
+      display: none;
+    }
+    #check:checked ~ nav ol {
+      visibility: visible;
+      height: 280px;
+    }
+    #check:checked ~ nav ol li:nth-child(1),
+    #check:checked ~ nav ol li:nth-child(2),
+    #check:checked ~ nav ol li:nth-child(3),
+    #check:checked ~ nav ol li:nth-child(4),
+    #check:checked ~ nav ol li:nth-child(5) {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
