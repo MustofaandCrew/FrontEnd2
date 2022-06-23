@@ -1,0 +1,86 @@
+/* Wishlist */
+h2.catalog-title{
+    font-size: 50px;
+    font-weight: 900;
+  }
+  
+  .catalog-nav-link a.catalog-link{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .catalog-nav-link a.catalog-link:hover{
+    color: #FF7158;
+    transition: 0.2s;
+  }
+  
+  .catalog-nav-link:hover{
+    color: #FF7158;
+    transition: 0.2s;
+  }
+  
+  .catalog-nav{
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.1);
+    padding: 20px 20px;
+  }
+  
+  .catalog-vertical{
+    display: none;
+  }
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px){
+    /* ini untuk tampilan handphone */
+    h2.catalog-title{
+      font-size: 25px;
+      font-weight: 900;
+    }
+  
+    h5.catalog-nav-title{
+      font-size: 13px;
+      font-weight: 500;
+    }
+  
+    .catalog-nav-link{
+      font-size: 10px;
+    }
+  
+    .catalog-nav{
+      padding: 10px 10px;
+    }
+  
+    .catalog-vertical{
+      display: block;
+    }
+  
+    .catalog-horizontal{
+      display: none;
+    }
+    
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px){
+    /* ini untuk tampilan tablet */
+    
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px){
+    .catalog-nav{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  
+  /* Large devices (Laptops/desktop, 992px and up) */
+  @media only screen and (min-width: 992px){
+    /* ini untuk tampilan laptop */
+    
+  }
+  
+  /* Extra Large devices (Large laptops and destops, 120px and up) */
+  @media only screen and (min-width: 1200px){}
+  
