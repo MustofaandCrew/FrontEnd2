@@ -43,7 +43,7 @@ export default function ProductDetails() {
                         <button type="button" className="px-5 py-2 btn btn-success">Bid</button>
                     </div>
                     <div className="mt-4 text-center">
-                        <button type="button" className="px-4 py-2 btn btn-warning"><i class='bx bx-add-to-queue'></i> Wishlist</button>
+                        <button type="button" className="px-4 py-2 btn btn-outline-danger"><i class='bx bx-add-to-queue'></i> Wishlist</button>
                     </div>
                 </div>
             </div>
