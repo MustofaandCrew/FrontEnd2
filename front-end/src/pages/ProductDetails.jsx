@@ -1,8 +1,7 @@
 import React from "react";
 
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
-
-
+import "../assets/css/ProductDetails.css"
 
 // dummy images
 import comments from "../assets/images/comments-pp.png"
@@ -19,36 +18,36 @@ export default function ProductDetails() {
                 {/* Product Thumbnails */}
                 <div className="row my-2">
                     <div className="col">
-                        <img style={{ width: "100%" }} src={dummy} alt="" />
+                        <img className="thumbnail" src={dummy} alt="" />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-3">
-                        <img style={{ width: "100%" }} src={dummy2} alt="" />
+                        <img className="thumbnail" src={dummy2} alt="" />
                     </div>
                     <div className="col-3">
-                        <img style={{ width: "100%" }} src={dummy3} alt="" />
+                        <img className="thumbnail" src={dummy3} alt="" />
                     </div>
                     <div className="col-3">
-                        <img style={{ width: "100%" }} src={dummy2} alt="" />
+                        <img className="thumbnail" src={dummy2} alt="" />
                     </div>
                     <div className="col-3">
-                        <img style={{ width: "100%" }} src={dummy3} alt="" />
+                        <img className="thumbnail" src={dummy3} alt="" />
                     </div>
                 </div>
 
                 {/* Product Title */}
                 <div className="row mt-5">
                     <div className="col">
-                        <h1>Sofa Ternyaman</h1>
-                        <h5>$1,409</h5>
+                        <h1 className="product-title">Sofa Ternyaman</h1>
+                        <h5 className="product-price">$1,409</h5>
                     </div>
                     <div className="col my-3">
-                        <div className="text-center">
-                            <button type="button" className="px-5 py-2 btn btn-success">Bid</button>
+                        <div className="text-end">
+                            <button type="button" className="bid btn btn-success">Bid</button>
                         </div>
-                        <div className="mt-4 text-center">
-                            <button type="button" className="px-4 py-2 btn btn-outline-danger"><i class='bx bx-add-to-queue'></i> Wishlist</button>
+                        <div className="mt-4 text-end">
+                            <button type="button" className="wishlist btn btn-outline-danger"><i class='bx bx-add-to-queue'></i> Wishlist</button>
                         </div>
                     </div>
                 </div>
@@ -75,7 +74,7 @@ export default function ProductDetails() {
                 <div className="row pt-2">
                     <div className="col-md-8">
                         <div className="d-flex">
-                            <img style={{ height: "4rem", width: "4rem" }} className="img-fluid rounded-circle my-2" src={comments} alt="" />
+                            <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
                             <div className="d-block ms-3 pt-2">
                                 <h5 className="pt-3">Hazza Risky</h5>
                                 <p className="col-sm-7">I thought it was not good for living room. I really happy
@@ -87,7 +86,7 @@ export default function ProductDetails() {
                 <div className="row pt-2">
                     <div className="col-md-8">
                         <div className="d-flex">
-                            <img style={{ height: "4rem", width: "4rem" }} className="img-fluid rounded-circle my-2" src={comments} alt="" />
+                            <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
                             <div className="d-block ms-3 pt-2">
                                 <h5 className="pt-3">Hazza Risky</h5>
                                 <p className="col-sm-7">I thought it was not good for living room. I really happy
@@ -99,7 +98,7 @@ export default function ProductDetails() {
                 <div className="row pt-2">
                     <div className="col-md-8">
                         <div className="d-flex">
-                            <img style={{ height: "4rem", width: "4rem" }} className="img-fluid rounded-circle my-2" src={comments} alt="" />
+                            <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
                             <div className="d-block ms-3 pt-2">
                                 <h5 className="pt-3">Hazza Risky</h5>
                                 <p className="col-sm-7">I thought it was not good for living room. I really happy
@@ -111,7 +110,7 @@ export default function ProductDetails() {
                 <div className="row pt-2">
                     <div className="col-md-8">
                         <div className="d-flex">
-                            <img style={{ height: "4rem", width: "4rem" }} className="img-fluid rounded-circle my-2" src={comments} alt="" />
+                            <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
                             <div className="d-block ms-3 pt-2">
                                 <h5 className="pt-3">Hazza Risky</h5>
                                 <p className="col-sm-7">I thought it was not good for living room. I really happy

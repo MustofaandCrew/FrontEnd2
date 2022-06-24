@@ -1,0 +1,61 @@
+.product-title {
+    font-weight: 700;
+}
+
+.product-price {
+    color:#FF7158;
+}
+
+img.thumbnail {
+    width: 100%;
+}
+
+img.profile {
+    width: 4rem;
+    height: 4rem;
+}
+
+button.bid {
+    font-size: 20px;
+    padding: 1rem 9rem;
+}
+
+button.wishlist {
+    font-size: 20px;
+    padding: 1rem 6.9rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px){
+    /* ini untuk tampilan handphone */
+    button.bid {
+        font-size: 10px;
+        padding: 0.5rem 4rem;
+    }
+    
+    button.wishlist {
+        font-size: 10px;
+        padding: 0.5rem 3rem;
+    }
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px){
+    /* ini untuk tampilan tablet */
+    
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px){
+    
+  }
+  
+  /* Large devices (Laptops/desktop, 992px and up) */
+  @media only screen and (min-width: 992px){
+    /* ini untuk tampilan laptop */
+    
+  }
+  
+  /* Extra Large devices (Large laptops and destops, 120px and up) */
+  @media only screen and (min-width: 1200px){}
+  
