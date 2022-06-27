@@ -12,14 +12,14 @@ import NewProducts3 from "../assets/images/NewProducts3.jpg";
 export default function Catalog() {
     return (
         <LayoutNavbarFooter>
-            <div class="container">
+            <div className="container">
 
                 {/* for desktop or tablet layout */}
-                <div class="row catalog-horizontal">
-                    <div class="col-9">
+                <div className="row catalog-horizontal">
+                    <div className="col-9">
                         <h2 className="catalog-title">Catalog</h2>
                     </div>
-                    <div class="col-4 pt-2">
+                    <div className="col-4 pt-2">
                         <br />
                         <div className="catalog-nav">
                             <h5 className="catalog-nav-title">Categories</h5>
@@ -36,7 +36,7 @@ export default function Catalog() {
                             <hr />
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div className="col-8">
                         <div className="row row-cols-2 row-cols-md-4 g-4 mt-2 mb-5">
                             <Card image={NewProducts} />
                             <Card image={NewProducts2} />

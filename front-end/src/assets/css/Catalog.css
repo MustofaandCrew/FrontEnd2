@@ -33,21 +33,21 @@ h2.catalog-title{
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px){
     /* ini untuk tampilan handphone */
-    h2.catalog-title{
+    h2.catalog-title {
       font-size: 25px;
       font-weight: 900;
     }
   
-    h5.catalog-nav-title{
+    h5.catalog-nav-title {
       font-size: 13px;
       font-weight: 500;
     }
   
-    .catalog-nav-link{
+    .catalog-nav-link {
       font-size: 10px;
     }
   
-    .catalog-nav{
+    .catalog-nav {
       padding: 10px 10px;
     }
   
