@@ -10,8 +10,8 @@ import Watch from "../assets/images/NewProducts3.jpg";
 export default function Shoppingcart() {
     return (
         <LayoutNavbarFooter>
-            <div className="mb-5">
-                <table class="table table-borderless">
+            <div className="container container-fluid mb-5">
+                <table className="table table-borderless">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
