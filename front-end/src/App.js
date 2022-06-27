@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Wishlist from "./pages/Wishlist";
 // import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
+// import Sidebar from "./components/Sidebuyer";
 
 function App() {
   return (
