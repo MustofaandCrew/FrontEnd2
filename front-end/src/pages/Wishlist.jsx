@@ -68,7 +68,7 @@ export default function Wishlist() {
                         <hr />
                     </div>
 
-                    <div className="row row-cols-2 row-cols-md-4 g-4 mt-2">
+                    <div className="row-vertical row row-cols-2 row-cols-md-4 g-2 mt-2">
                     <Card image={NewProducts} />
                             <Card image={NewProducts2} />
                             <Card image={NewProducts3} />
