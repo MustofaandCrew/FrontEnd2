@@ -71,6 +71,17 @@
       margin: 0rem;
       margin-bottom: 2rem;
     }
+
+    .thumbnail-text {
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .price-text {
+      text-align: left;
+      color: orange;
+      font-size: 12px;
+    }
   }
   
   /* Medium devices (landscape tablets, 768px and up) */
@@ -84,6 +95,17 @@
       width: 12rem;
       margin: 0rem;
       margin-bottom: 2rem;
+    }
+
+    .thumbnail-text {
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .price-text {
+      text-align: left;
+      color: orange;
+      font-size: 12px;
     }
   }
   
