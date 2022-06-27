@@ -2,7 +2,7 @@ import React from "react";
 
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 import "../assets/css/ProductDetails.css"
-// import ModalBid from "../components/ModalBid";
+import ModalBid from "../components/ModalBid";
 
 // dummy images
 import comments from "../assets/images/comments-pp.png"
@@ -14,8 +14,9 @@ import dummy3 from "../assets/images/productdetails3.png"
 export default function ProductDetails() {
     return (
         <LayoutNavbarFooter>
-            
-            {/* <ModalBid /> */}
+
+            <ModalBid />
+
 
             <div className="container container-fluid">
 
