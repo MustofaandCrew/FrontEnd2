@@ -53,6 +53,12 @@ h2.catalog-title{
   
     .catalog-vertical{
       display: block;
+      margin: 0 0.4rem;
+    }
+
+    .row-vertical {
+      margin-left: 0;
+      margin-right: 0;
     }
   
     .catalog-horizontal{
