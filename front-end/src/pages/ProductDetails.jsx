@@ -2,6 +2,7 @@ import React from "react";
 
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 import "../assets/css/ProductDetails.css"
+// import ModalBid from "../components/ModalBid";
 
 // dummy images
 import comments from "../assets/images/comments-pp.png"
@@ -13,6 +14,9 @@ import dummy3 from "../assets/images/productdetails3.png"
 export default function ProductDetails() {
     return (
         <LayoutNavbarFooter>
+            
+            {/* <ModalBid /> */}
+
             <div className="container container-fluid">
 
                 {/* Product Thumbnails */}
@@ -44,7 +48,9 @@ export default function ProductDetails() {
                     </div>
                     <div className="col my-3">
                         <div className="text-end">
-                            <button type="button" className="bid btn btn-success">Bid</button>
+                            <button type="button" className="bid btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Bid
+                            </button>
                         </div>
                         <div className="mt-4 text-end">
                             <button type="button" className="wishlist btn btn-outline-danger"><i class='bx bx-add-to-queue'></i> Wishlist</button>
