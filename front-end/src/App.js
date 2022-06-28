@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
-// import Sidebar from "./components/Sidebuyer";
+import Register from "../src/components/Register";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+      </Routes>
       </BrowserRouter>
     </div>
   );
