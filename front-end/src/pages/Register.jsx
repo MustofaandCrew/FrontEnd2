@@ -5,7 +5,7 @@ import Pic from "../assets/images/pic.png";
 export default function Register() {
     return (
 
-        <div className="container my-5 px-5">
+        <div className="container pt-5 my-5 px-5">
             <div className="row">
                 <div className="col-6 ">
                     <img src={Pic} alt="cewek" className="img-fluid" />

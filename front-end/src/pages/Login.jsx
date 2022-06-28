@@ -1,14 +1,9 @@
 import React from "react";
-
-
 import Pic from "../assets/images/pic.png";
-import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
-
 
 export default function Login() {
     return (
-        <LayoutNavbarFooter>
-            <div className="container my-5 px-5">
+            <div className="container pt-5 my-5 px-5">
                 <div className="row">
                     <div className="col-6 ">
                         <img src={Pic} alt="woman" className="img-fluid" />
@@ -33,6 +28,5 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-        </LayoutNavbarFooter>
     )
 }
