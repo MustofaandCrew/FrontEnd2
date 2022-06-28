@@ -1,17 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../src/pages/Login";
-// import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
-// import Sidebar from "./components/Sidebuyer";
+import Home from "../src/pages/Home";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Routes>
-      <Route path="/login" element={<Login />} /> 
-      </Routes>
+       <Routes>
+        <Route exact path="/" element={<Home/>} />
+        <Route path="/login" element={<Login />} /> 
+       </Routes>
       </BrowserRouter>
     </div>
   );
