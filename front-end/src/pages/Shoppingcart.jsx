@@ -14,11 +14,11 @@ export default function Shoppingcart() {
                 <table className="table table-borderless">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">No.</th>
                             <th scope="col">Image</th>
                             <th scope="col">Name & Seller</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Menu</th>
+                            <th scope="col">Status</th>
                         </tr>
                     </thead>
                     <tbody>
