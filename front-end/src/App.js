@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import Register from "../src/components/Register";
 import Wishlist from "../src/pages/Wishlist";
 import Shoppingcart from "../src/pages/Shoppingcart";
 import Details from "../src/pages/ProductDetails";
@@ -19,6 +19,7 @@ function App() {
         <Route path="/productdetails" element={<Details />} />
         <Route path="/shoppingcart" element={<Shoppingcart />} />
         <Route path="/wishlist" element={<Wishlist/>} />
+        <Route path="/register" element={<Register />} />
        </Routes>
       </BrowserRouter>
     </div>
