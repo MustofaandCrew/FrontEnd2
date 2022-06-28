@@ -79,6 +79,13 @@ button.wishlist {
         border-radius: 12px;
     }
 
+    .product-focus {
+        border-radius: 16px;
+        background: #EEEEEE;
+        padding: 1rem 2rem;
+        margin: 1rem 1rem;
+    }
+
     .product-details h5 {
         font-size: 15px;
     }
