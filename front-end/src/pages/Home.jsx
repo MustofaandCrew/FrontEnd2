@@ -98,19 +98,6 @@ export default function Home() {
                     <Card image={NewProducts3} />
                     <Card image={NewProducts} />
                     <Card image={NewProducts2} />
-                    <Card image={NewProducts3} />
-                    <Card image={NewProducts} />
-                    <Card image={NewProducts2} />
-                    <Card image={NewProducts3} />
-                    <Card image={NewProducts} />
-                    <Card image={NewProducts2} />
-                    <Card image={NewProducts3} />
-                    <Card image={NewProducts} />
-                    <Card image={NewProducts2} />
-                    <Card image={NewProducts3} />
-                    <Card image={NewProducts} />
-                    <Card image={NewProducts2} />
-
                 </div>
             </div>
         </LayoutNavbarFooter>
