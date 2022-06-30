@@ -7,20 +7,22 @@ import Details from "../src/pages/ProductDetails";
 import Catalog from "../src/pages/Catalog";
 import Login from "../src/pages/Login";
 import Home from "../src/pages/Home";
+import Buyer from "../src/pages/Buyer";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-       <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route path="/login" element={<Login />} /> 
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/productdetails" element={<Details />} />
-        <Route path="/shoppingcart" element={<Shoppingcart />} />
-        <Route path="/wishlist" element={<Wishlist/>} />
-        <Route path="/register" element={<Register />} />
-       </Routes>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/productdetails" element={<Details />} />
+          <Route path="/shoppingcart" element={<Shoppingcart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/buyer" element={<Buyer />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
