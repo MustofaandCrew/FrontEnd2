@@ -9,11 +9,11 @@ export default function Login() {
     return (
         <LayoutNavbarFooter>
             <div className="container my-5 px-5">
-                <div className="row">
-                    <div className="col-6 ">
+                <div className="d-flex justify-content-around flex-wrap">
+                    <div className="p-2 ">
                         <img src={Pic} alt="woman" className="img-fluid" />
                     </div>
-                    <div className="col-6">
+                    <div className="p-2 mt-4">
                         <h3>
                             Belanja kebutuhan utama,<br />
                             menjadi lebih mudah
