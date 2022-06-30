@@ -7,7 +7,7 @@ import Details from "../src/pages/ProductDetails";
 import Catalog from "../src/pages/Catalog";
 import Login from "../src/pages/Login";
 import Home from "../src/pages/Home";
-import Buyer from "../src/pages/Buyer";
+import TransaksiBuyer from "./pages/TransaksiBuyer";
 
 function App() {
   return (
@@ -21,7 +21,9 @@ function App() {
           <Route path="/shoppingcart" element={<Shoppingcart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/buyer" element={<Buyer />} />
+
+          {/* Buyer */}
+          <Route path="/buyer" element={<TransaksiBuyer />} />
         </Routes>
       </BrowserRouter>
     </div>
