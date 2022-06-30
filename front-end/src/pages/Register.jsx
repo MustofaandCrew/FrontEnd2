@@ -10,7 +10,7 @@ export default function Register() {
                 <div className="p-2">
                     <img src={Pic} alt="cewek" className="img-fluid" />
                 </div>
-                <div className="p-2">
+                <div className="p-2 mt-4">
                     <h3>
                         Belanja kebutuhan utama,<br />
                         menjadi lebih mudah
