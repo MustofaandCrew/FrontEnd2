@@ -7,7 +7,6 @@ import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 
 export default function Login() {
     return (
-        <LayoutNavbarFooter>
             <div className="container my-5 px-5">
                 <div className="d-flex justify-content-around flex-wrap">
                     <div className="p-2 ">
@@ -33,6 +32,5 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-        </LayoutNavbarFooter>
     )
 }
