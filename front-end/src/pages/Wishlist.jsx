@@ -23,14 +23,33 @@ export default function Wishlist() {
                         <br />
                         <div className="catalog-nav">
                             <h5 className="catalog-nav-title">Categories</h5>
-                            <br />
+                            <hr />
                             <div className="catalog-nav-link d-flex justify-content-between">
                                 <a href="/" className="catalog-link">All Categories</a>
                                 <i className="bx bx-chevron-right"></i>
                             </div>
-                            <hr />
                             <div className="catalog-nav-link d-flex justify-content-between">
-                                <a href="/" className="catalog-link">Wishlist</a>
+                                <li><a href="/" className="catalog-link">Gadgets</a></li>
+                                <i className="bx bx-chevron-right"></i>
+                            </div>
+                            <div className="catalog-nav-link d-flex justify-content-between">
+                                <li><a href="/" className="catalog-link">Furniture</a></li>
+                                <i className="bx bx-chevron-right"></i>
+                            </div>
+                            <div className="catalog-nav-link d-flex justify-content-between">
+                                <li><a href="/" className="catalog-link">Make Up</a></li>
+                                <i className="bx bx-chevron-right"></i>
+                            </div>
+                            <div className="catalog-nav-link d-flex justify-content-between">
+                                <li><a href="/" className="catalog-link">Sneakers</a></li>
+                                <i className="bx bx-chevron-right"></i>
+                            </div>
+                            <div className="catalog-nav-link d-flex justify-content-between">
+                                <li><a href="/" className="catalog-link">Tools</a></li>
+                                <i className="bx bx-chevron-right"></i>
+                            </div>
+                            <div className="catalog-nav-link d-flex justify-content-between">
+                                <li><a href="/" className="catalog-link">Baby</a></li>
                                 <i className="bx bx-chevron-right"></i>
                             </div>
                             <hr />
@@ -55,26 +74,45 @@ export default function Wishlist() {
                     </div>
                     <div className="catalog-nav">
                         <h5 className="catalog-nav-title">Categories</h5>
-                        <br />
-                        <div className="catalog-nav-link d-flex justify-content-between">
-                            <a href="/" className="catalog-link">All Categories</a>
-                            <i className="bx bx-chevron-right"></i>
-                        </div>
                         <hr />
                         <div className="catalog-nav-link d-flex justify-content-between">
-                            <a href="/" className="catalog-link">Wishlist</a>
-                            <i className="bx bx-chevron-right"></i>
+                            <a href="/" className="catalog-link">All Categories</a>
+                            <i className="bx bx-chevron-down"></i>
+                        </div>
+                        <div className="catalog-nav-link d-flex justify-content-between">
+                            <li><a href="/" className="catalog-link">Gadgets</a></li>
+                            <i className="bx bx-chevron-down"></i>
+                        </div>
+                        <div className="catalog-nav-link d-flex justify-content-between">
+                            <li><a href="/" className="catalog-link">Furniture</a></li>
+                            <i className="bx bx-chevron-down"></i>
+                        </div>
+                        <div className="catalog-nav-link d-flex justify-content-between">
+                            <li><a href="/" className="catalog-link">Make Up</a></li>
+                            <i className="bx bx-chevron-down"></i>
+                        </div>
+                        <div className="catalog-nav-link d-flex justify-content-between">
+                            <li><a href="/" className="catalog-link">Sneakers</a></li>
+                            <i className="bx bx-chevron-down"></i>
+                        </div>
+                        <div className="catalog-nav-link d-flex justify-content-between">
+                            <li><a href="/" className="catalog-link">Tools</a></li>
+                            <i className="bx bx-chevron-down"></i>
+                        </div>
+                        <div className="catalog-nav-link d-flex justify-content-between">
+                            <li><a href="/" className="catalog-link">Baby</a></li>
+                            <i className="bx bx-chevron-down"></i>
                         </div>
                         <hr />
                     </div>
 
                     <div className="row-vertical row row-cols-2 row-cols-md-4 g-2 mt-2">
-                    <Card image={NewProducts} />
-                            <Card image={NewProducts2} />
-                            <Card image={NewProducts3} />
-                            <Card image={NewProducts} />
-                            <Card image={NewProducts2} />
-                            <Card image={NewProducts3} />
+                        <Card image={NewProducts} />
+                        <Card image={NewProducts2} />
+                        <Card image={NewProducts3} />
+                        <Card image={NewProducts} />
+                        <Card image={NewProducts2} />
+                        <Card image={NewProducts3} />
                     </div>
                 </div>
 

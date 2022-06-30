@@ -121,8 +121,30 @@
       margin: 0rem;
       margin-bottom: 2rem;
     }
+
+    .thumbnail-text {
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .price-text {
+      text-align: left;
+      color: orange;
+      font-size: 15px;
+    }
   }
   
   /* Extra Large devices (Large laptops and destops, 120px and up) */
-  @media only screen and (min-width: 1200px){}
+  @media only screen and (min-width: 1200px){
+    .thumbnail-text {
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .price-text {
+      text-align: left;
+      color: orange;
+      font-size: 15px;
+    }
+  }
   
