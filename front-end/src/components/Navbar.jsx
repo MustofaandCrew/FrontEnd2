@@ -1,5 +1,7 @@
 import React from "react";
 import Modal from "./ModalNavbar";
+import Notif from "../components/Notification";
+import logo from "../assets/images/logo.svg";
 import "../assets/css/Navbar.css";
 
 export default function Navbar() {
@@ -8,7 +10,7 @@ export default function Navbar() {
             <Modal />
             <input type="checkbox" id="check" />
             <nav>
-                <div className="icon"><a href="/">SecondHand</a></div>
+                <div className="icon"><img className="logo" src={logo} alt="Logo" /><a className="logoname" href="/">SecondHand</a></div>
                 <ol>
                     <li><a href="/">Home</a></li>
                     <div className="dropdown">
@@ -32,11 +34,23 @@ export default function Navbar() {
                     <span className="fa fa-search"></span>
                 </div>
                 <ol>
-                    <li><a href="/"><span className="fa fa-shopping-basket"></span></a></li>
-                    <li><a href="/"><span className="fa fa-bell"></span></a></li>
+                    <li><a href="/shoppingcart"><span className="fa fa-shopping-basket"></span></a></li>
+                    <li>
+                        <div className="dropdown">
+                            <a href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span className="fa fa-bell"></span>
+                            </a>
+
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <Notif />
+                            </ul>
+                        </div>
+                    </li>
                     <li><h4>|</h4></li>
                     <li><a href="/login">Sign In</a></li>
                 </ol>
+
+                {/* Vertical Laoyout */}
                 <ol className="vertical-screen">
                     <li className="nav-span"><a href="/">Home</a></li>
 
@@ -46,9 +60,9 @@ export default function Navbar() {
                         </button>
                     </li>
 
-                    <li className="nav-span"><a href="/">Shopping Cart</a></li>
-                    <li className="nav-span"><a href="/">Notification</a></li>
-                    <li className="nav-signin"><a href="/login"><span><i class='bx bx-log-in'></i> Sign In</span></a></li>
+                    <li className="nav-span"><a href="/shoppingcart">Shopping Cart</a></li>
+                    <li className="nav-span"><a href="/shoppingcart">Notification</a></li>
+                    <li className="nav-signin"><a href="/login"><span><i className="bx bx-log-in"></i> Sign In</span></a></li>
                 </ol>
                 <label for="check" className="bar">
                     <span className="fa fa-bars" id="bars"></span>

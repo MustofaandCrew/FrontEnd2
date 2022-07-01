@@ -1,10 +1,16 @@
 /* NavBar */
-.container-nav {
+  .container-nav {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
+  img.logo {
+    width: 15%;
+    margin-right:20px;
+    margin-bottom: 15px;
+  }
+
   nav {
     display: flex;
     width: 100%;
@@ -150,6 +156,12 @@
     .home-title {
       text-align: center;
     }
+
+    img.logo {
+      width: 15%;
+      margin-right:10px;
+      margin-bottom: 15px;
+    }
   
     nav {
       display: flex;
@@ -230,6 +242,21 @@
     nav ol.vertical-screen li.nav-span{
       padding-left: 25px;
     }
+    nav ol.vertical-screen li.nav-span a{
+      background: none;
+      color: black;
+    }
+    nav ol.vertical-screen li.nav-span div.dropup a:hover{
+      background: none;
+    }
+    nav ol.vertical-screen li.nav-span div.dropup a{
+      background: none;
+      color: black;
+    }
+    nav ol.vertical-screen li.nav-span div.dropup a:hover{
+      background: none;
+      color: black;
+    }
     nav ol.vertical-screen li.nav-signin{
       margin-top: 15px;
       text-align: center;
@@ -244,7 +271,6 @@
       transition: 0.5s;
     }
     nav ol.vertical-screen li a:hover {
-      color: #FF7158;
       transition: 0.5s;
     }
     nav ol.vertical-screen li a {
@@ -261,6 +287,11 @@
     nav ol.vertical-screen li button {
       margin-left: 0;
       padding-left: 0;
+    }
+    button.btn-dropdown{
+      background: none;
+      border: none;
+      outline: none;
     }
     .accordion-body a p {
      text-align: left;
@@ -305,7 +336,7 @@
     }
     #check:checked ~ nav ol {
       visibility: visible;
-      height: 280px;
+      height: 260px;
     }
     #check:checked ~ nav ol li:nth-child(1),
     #check:checked ~ nav ol li:nth-child(2),

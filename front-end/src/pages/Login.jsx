@@ -1,9 +1,5 @@
 import React from "react";
-
-
 import Pic from "../assets/images/pic.png";
-import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
-
 
 export default function Login() {
     return (
