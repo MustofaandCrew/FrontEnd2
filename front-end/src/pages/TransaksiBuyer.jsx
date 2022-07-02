@@ -6,7 +6,7 @@ export default function TransaksiBuyer() {
     return (
         <div className="main">
             <SidebarBuyer />
-            <h2 className="text-transaction">Buy Product</h2>
+            <h2>Buy Product</h2>
             <div class="container">
             <div class="row">
                 <div class="col-sm-2">col-sm-8</div>

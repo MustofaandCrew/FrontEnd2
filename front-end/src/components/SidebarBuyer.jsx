@@ -1,72 +1,70 @@
-import React, { Component } from 'react'
-import Images  from '../assets/images/logo.png'
+import React from 'react';
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarFooter,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+} from 'cdbreact';
+import { NavLink } from 'react-router-dom';
 import '../assets/css/SidebarBuyer.css'
-import foto from "../assets/images/logo.png";
 
-export default function Sidebar() {
-    return (
-            <nav className="navbar bg-light fixed-top">
-            <div className="desktop container-fluid">
-                
-                <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="offcanvas offcanvas-start sidebar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div className="offcanvas-header ">
-                    <h5 className="offcanvas-title logo" id="offcanvasNavbarLabel"><img src={Images}/></h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div className="offcanvas-body">
-                    <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li className="nav-item link">
-                        <a className="nav-link active" aria-current="page" href="/buyer">Dashboard</a>
-                    </li>
-                    <li className="nav-item link">
-                        <a className="nav-link" href="/accountBuyer">My Account</a>
-                    </li>
-                    </ul>
-                </div>
-                </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4 text-left">My Account <br /> Update your current profile</div>
-                        <div className="col-md-4 ms-auto text-right"><img src={foto} className="foto-profil"/> Hi, Angga</div>
-                    </div>
-                </div>
-            </div>
+const SidebarBuyer1 = () => {
+  return (
+    <div
+      className='main'
+    >
+      <CDBSidebar className='sidebar'>
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+          <a
+            href="/"
+            className="text-decoration-none"
+          >
+            Sidebar
+          </a>
+        </CDBSidebarHeader>
 
-            <div className="mobile container-fluid">
-                
-                <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="offcanvas offcanvas-start sidebar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div className="offcanvas-header ">
-                    <h5 className="offcanvas-title logo" id="offcanvasNavbarLabel"><img src={Images}/></h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div className="offcanvas-body">
-                    <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li className="nav-item link">
-                        <a className="nav-link active" aria-current="page" href="/buyer">Dashboard</a>
-                    </li>
-                    <li className="nav-item link">
-                        <a className="nav-link" href="/accountBuyer">My Account</a>
-                    </li>
-                    <li>
-                        <a className="nav-link" href="/logout">Logout</a>
-                    </li>
-                    <li>
-                        <div className="col-md-4 text-left">My Account <br /> Update your current profile</div>
-                    </li>
-                    <li>
-                        <div className="col-md-4 ms-auto text-right"><img src={foto} className="foto-profil"/> Hi, Angga</div>
-                    </li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-            </nav>
-    )
-    
-}
+        <CDBSidebarContent className="sidebar-content">
+          <CDBSidebarMenu>
+            <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/tablebuyer" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/profile" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">
+                Analytics
+              </CDBSidebarMenuItem>
+            </NavLink>
+
+            <NavLink
+              exact
+              to="/hero404"
+              target="_blank"
+              activeClassName="activeClicked"
+            >
+              <CDBSidebarMenuItem icon="exclamation-circle">
+                404 page
+              </CDBSidebarMenuItem>
+            </NavLink>
+          </CDBSidebarMenu>
+        </CDBSidebarContent>
+
+        <CDBSidebarFooter className="footer">
+          <div
+            className='footer-text'
+          >
+            Sidebar Footer
+          </div>
+        </CDBSidebarFooter>
+      </CDBSidebar>
+    </div>
+  );
+};
+
+export default SidebarBuyer1;

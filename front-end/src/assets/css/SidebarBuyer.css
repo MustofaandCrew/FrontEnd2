@@ -1,4 +1,4 @@
-
+/* 
 .logo {
     margin: 0 auto;
     align-items: center;
@@ -39,4 +39,30 @@
     .mobile {
         display: block;
     }
+} */
+
+
+.main {
+    display: flex;
+    height: 100vh;
+    overflow: scroll initial;
+}
+.sidebar {
+    color: #fff;
+    background-color: #333 !important;
+}
+.pro-menu {
+    color: #fff;
+    background-color: #333 !important;
+    padding: 0;
+    text-align: start;
+}
+.text-decoration-none{
+    color: inherit;
+}
+.footer{
+    text-align: center;
+}
+.footer-text{
+    padding: '20px 5px',;
 }

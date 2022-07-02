@@ -8,6 +8,7 @@ import Catalog from "../src/pages/Catalog";
 import Login from "../src/pages/Login";
 import Home from "../src/pages/Home";
 import TransaksiBuyer from "./pages/TransaksiBuyer";
+import TableBuyer from "./pages/TableBuyer";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           {/* Buyer */}
-          <Route path="/buyer" element={<TransaksiBuyer />} />
+          <Route path="/transaksibuyer" element={<TransaksiBuyer />} />
+          <Route path="/tablebuyer" element={<TableBuyer />} />
         </Routes>
       </BrowserRouter>
     </div>
