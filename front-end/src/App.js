@@ -9,6 +9,7 @@ import Login from "../src/pages/Login";
 import Home from "../src/pages/Home";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
+import TransactionsSeller from "./pages/TransactionsSeller";
 
 const override = {
   display: "flex",
@@ -44,6 +45,9 @@ function App() {
         <Route path="/shoppingcart" element={<Shoppingcart />} />
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/register" element={<Register />} />
+
+        {/* Buyer */}
+        <Route path="/transactionsseller" element={<TransactionsSeller/>} />
        </Routes>
       </BrowserRouter>
         )}
