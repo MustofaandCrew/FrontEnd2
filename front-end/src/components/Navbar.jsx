@@ -2,6 +2,11 @@ import React from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
 import logo from "../assets/images/logo.svg";
+import LogoSeller from "../assets/images/logo-seller.svg";
+
+// dummy images
+import pp from "../assets/images/comments-pp.png";
+
 import "../assets/css/Navbar.css";
 
 export default function Navbar() {
@@ -47,7 +52,9 @@ export default function Navbar() {
                         </div>
                     </li>
                     <li><h4>|</h4></li>
-                    <li><a href="/login">Sign In</a></li>
+                    {/* <li><a href="/login">Sign In</a></li> */}
+                    <li><a className="btn-seller" href="/"><img src={LogoSeller} alt="seller" /> Seller</a></li>
+                    <li><a className="profile-info" href="/"><img className="img-fluid rounded-circle" src={pp} alt="profile" />Hi, Yono</a></li>
                 </ol>
 
                 {/* Vertical Laoyout */}
@@ -62,7 +69,8 @@ export default function Navbar() {
 
                     <li className="nav-span"><a href="/shoppingcart">Shopping Cart</a></li>
                     <li className="nav-span"><a href="/shoppingcart">Notification</a></li>
-                    <li className="nav-signin"><a href="/login"><span><i className="bx bx-log-in"></i> Sign In</span></a></li>
+                    {/* <li className="nav-signin"><a href="/login"><span><i className="bx bx-log-in"></i> Sign In</span></a></li> */}
+                    <li className="nav-signin"><a href="/"><span><img className="img-fluid rounded-circle" src={pp} alt="profile" /> Hi, Yono</span></a></li>
                 </ol>
                 <label for="check" className="bar">
                     <span className="fa fa-bars" id="bars"></span>

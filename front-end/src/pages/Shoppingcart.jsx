@@ -8,7 +8,7 @@ import Doll from "../assets/images/NewProducts.jpg";
 import Watch from "../assets/images/NewProducts3.jpg";
 
 
-export default function Shoppingcart() {
+export default function ShoppingCart() {
     return (
         <LayoutNavbarFooter>
             <div className="container container-fluid mb-5">
