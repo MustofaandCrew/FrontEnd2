@@ -3,15 +3,9 @@ import Pic from "../assets/images/pic.png";
 
 export default function Login() {
     return (
-<<<<<<< HEAD
-            <div className="container pt-5 my-5 px-5">
-                <div className="row">
-                    <div className="col-6 ">
-=======
             <div className="container my-5 px-5">
                 <div className="d-flex justify-content-around flex-wrap">
                     <div className="p-2 ">
->>>>>>> 3b08ecd (feat: perbaikan layout login)
                         <img src={Pic} alt="woman" className="img-fluid" />
                     </div>
                     <div className="col-6">
