@@ -10,13 +10,13 @@ import {
 import { NavLink } from 'react-router-dom';
 import '../assets/css/SidebarBuyer.css'
 
-const SidebarBuyer1 = () => {
+const SidebarBuyer = () => {
   return (
     <div
       className='main'
     >
       <CDBSidebar className='sidebar'>
-        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+        <CDBSidebarHeader>
           <a
             href="/"
             className="text-decoration-none"
@@ -30,16 +30,8 @@ const SidebarBuyer1 = () => {
             <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/tablebuyer" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">
-                Analytics
-              </CDBSidebarMenuItem>
+            <NavLink exact to="/accountbuyer" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">My Account</CDBSidebarMenuItem>
             </NavLink>
 
             <NavLink
@@ -67,4 +59,4 @@ const SidebarBuyer1 = () => {
   );
 };
 
-export default SidebarBuyer1;
+export default SidebarBuyer;
