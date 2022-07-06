@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
-import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/logo.png";
 import LogoSeller from "../assets/images/logo-seller.svg";
 
 // dummy images

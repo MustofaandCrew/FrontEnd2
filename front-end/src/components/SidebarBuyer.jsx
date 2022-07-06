@@ -20,10 +20,10 @@ const SidebarBuyer = () => {
       <CDBSidebar className='sidebar'>
         <CDBSidebarHeader>
           <a
-            href="/"
+            href="/transaksibuyer"
             className="text-decoration-none"
           >
-            <img src={Logo} alt="logo" />
+            <img src={Logo} alt="logo"/>
           </a>
         </CDBSidebarHeader>
 

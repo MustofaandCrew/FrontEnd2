@@ -269,9 +269,6 @@
     nav ol.vertical-screen li.nav-span{
       padding-left: 25px;
     }
-<<<<<<< HEAD
-    nav ol.vertical-screen li.nav-signin{
-=======
     nav ol.vertical-screen li.nav-span a{
       background: none;
       color: black;
@@ -288,7 +285,6 @@
       color: black;
     }
     nav ol.vertical-screen li.nav-signin {
->>>>>>> a19fb5130d726f8dbd6132a0f8e02d215b6eeb20
       margin-top: 15px;
       text-align: center;
     }
