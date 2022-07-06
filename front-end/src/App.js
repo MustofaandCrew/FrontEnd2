@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Login, Catalog, Details, 
-        ShoppingCart, Wishlist, Register} from "./pages";
+        ShoppingCart, Wishlist, Register, NotificationVertical} from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
 
@@ -38,6 +38,7 @@ function App() {
         <Route path="/shoppingcart" element={<ShoppingCart />} />
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/register" element={<Register />} />
+        <Route path="/notification" element={<NotificationVertical />} />
        </Routes>
       </BrowserRouter>
           )}
