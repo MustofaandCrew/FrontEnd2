@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
-import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/logo.png";
 import LogoSeller from "../assets/images/logo-seller.svg";
 
 // dummy images
@@ -15,7 +15,7 @@ export default function Navbar() {
             <Modal />
             <input type="checkbox" id="check" />
             <nav>
-                <div className="icon"><img className="logo" src={logo} alt="Logo" /><a className="logoname" href="/">SecondHand</a></div>
+                <div className="icon"><a href="/">SecondHand</a></div>
                 <ol>
                     <li><a href="/">Home</a></li>
                     <div className="dropdown">
@@ -39,25 +39,13 @@ export default function Navbar() {
                     <span className="fa fa-search"></span>
                 </div>
                 <ol>
-                    <li><a href="/shoppingcart"><span className="fa fa-shopping-basket"></span></a></li>
-                    <li>
-                        <div className="dropdown">
-                            <a href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span className="fa fa-bell"></span>
-                            </a>
-
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <Notif />
-                            </ul>
-                        </div>
-                    </li>
+                    <li><a href="/"><span className="fa fa-shopping-basket"></span></a></li>
+                    <li><a href="/"><span className="fa fa-bell"></span></a></li>
                     <li><h4>|</h4></li>
                     {/* <li><a href="/login">Sign In</a></li> */}
                     <li><a className="btn-seller" href="/"><img src={LogoSeller} alt="seller" /> Seller</a></li>
                     <li><a className="profile-info" href="/"><img className="img-fluid rounded-circle" src={pp} alt="profile" />Hi, Angga</a></li>
                 </ol>
-
-                {/* Vertical Laoyout */}
                 <ol className="vertical-screen">
                     <li className="nav-span"><a href="/">Home</a></li>
 

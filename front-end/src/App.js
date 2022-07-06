@@ -1,10 +1,19 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Catalog, Details, 
-        ShoppingCart, Wishlist, Register, NotificationVertical} from "./pages";
+import {
+  Home,
+  Login,
+  Catalog,
+  Details,
+  ShoppingCart,
+  Wishlist,
+  Register,
+  NotificationVertical,
+  TransaksiBuyer,
+  AccountBuyer,
+} from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
-
 
 const override = {
   display: "flex",
@@ -12,41 +21,43 @@ const override = {
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  height: "100vh"
+  height: "100vh",
 };
 
 function App() {
   const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000)
-    }, [])
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
     <div className="App">
-          {loading ? (
-
-              <PropagateLoader cssOverride={override} size={50} color={"#FF7158"} loading={loading} />
-          ) : (
-      <BrowserRouter>
-       <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route path="/login" element={<Login />} /> 
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/productdetails" element={<Details />} />
-        <Route path="/shoppingcart" element={<ShoppingCart />} />
-        <Route path="/wishlist" element={<Wishlist/>} />
-        <Route path="/register" element={<Register />} />
-
-        {/* Buyer */}
-
-        {/* Seller */}
-        <Route path="/notification" element={<NotificationVertical />} />
-       </Routes>
-      </BrowserRouter>
-          )}
+      {loading ? (
+        <PropagateLoader
+          cssOverride={override}
+          size={50}
+          color={"#FF7158"}
+          loading={loading}
+        />
+      ) : (
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/productdetails" element={<Details />} />
+            <Route path="/shoppingcart" element={<ShoppingCart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/notification" element={<NotificationVertical />} />
+            <Route path="/transaksibuyer" element={<TransaksiBuyer />} />
+            <Route path="/accountbuyer" element={<AccountBuyer />} />
+          </Routes>
+        </BrowserRouter>
+      )}
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Login() {
                     <div className="p-2 ">
                         <img src={Pic} alt="woman" className="img-fluid" />
                     </div>
-                    <div className="p-2 mt-4">
+                    <div className="col-6">
                         <h3>
                             Belanja kebutuhan utama,<br />
                             menjadi lebih mudah

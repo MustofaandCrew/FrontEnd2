@@ -6,11 +6,11 @@ export default function Register() {
     return (
 
         <div className="container pt-5 my-5 px-5">
-            <div className="d-flex justify-content-around flex-wrap">
-                <div className="p-2">
+            <div className="row">
+                <div className="col-6 ">
                     <img src={Pic} alt="cewek" className="img-fluid" />
                 </div>
-                <div className="p-2 mt-4">
+                <div className="col-6">
                     <h3>
                         Belanja kebutuhan utama,<br />
                         menjadi lebih mudah

@@ -1,12 +1,7 @@
 /* Catalog */
-  h2.catalog-title{
+h2.catalog-title{
     font-size: 50px;
     font-weight: 900;
-  }
-
-  .catalog-nav-link li {
-    color: transparent;
-    margin: 3px 0;
   }
   
   .catalog-nav-link a.catalog-link{
@@ -44,26 +39,16 @@
     }
   
     h5.catalog-nav-title {
-      font-size: 20px;
+      font-size: 13px;
       font-weight: 500;
-    }
-
-    h2.catalog-title {
-      font-size: 40px;
-    }
-
-    .catalog-nav-link li {
-      color: transparent;
-      margin: 3px 0;
     }
   
     .catalog-nav-link {
-      font-size: 15px;
-      padding-top: 5px;
+      font-size: 10px;
     }
   
     .catalog-nav {
-      padding: 5px 10px;
+      padding: 10px 10px;
     }
   
     .catalog-vertical{
