@@ -73,6 +73,45 @@
     padding-bottom: 7px;
     transition: 0.5s;
   }
+
+  nav ol li a.btn-seller {
+    border-radius: 8px;
+    background: #FF7158;
+    color: #fff;
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  nav ol li a.btn-seller:hover {
+    background: #ffab9c;
+    color: #000;
+  }
+
+  nav ol li a.btn-seller img {
+    width: 2rem;
+    margin-bottom: 5px;
+  }
+
+  nav ol li a.profile-info {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  nav ol li a.profile-info:hover {
+    border-radius: 8px;
+    background: rgb(222, 222, 222);
+    color: black;
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  nav ol li a.profile-info img {
+    width: 2rem;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
   
   nav ol.vertical-screen {
     display: none;
@@ -209,7 +248,7 @@
     }
     nav .icon {
       display: inline-block;
-      padding: 15px 30px;
+      padding: 15px 22px;
     }
     nav .search-box {
       width: 100%;
@@ -257,7 +296,7 @@
       background: none;
       color: black;
     }
-    nav ol.vertical-screen li.nav-signin{
+    nav ol.vertical-screen li.nav-signin {
       margin-top: 15px;
       text-align: center;
     }
@@ -265,6 +304,15 @@
       padding: 10px 20px;
       border-radius: 10px;
       background:#FF7158;
+    }
+    nav ol.vertical-screen li.nav-signin a span.profile {
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: rgb(222, 222, 222);
+    }
+    nav ol.vertical-screen li.nav-signin a span img {
+      width: 2rem;
+      padding-bottom: 4px;
     }
     nav ol.vertical-screen li.nav-sigin a:hover {
       color: #fff;
