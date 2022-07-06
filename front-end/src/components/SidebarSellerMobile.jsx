@@ -21,6 +21,9 @@ export default function SideSellerMobile() {
                                 <a className="nav-link active" aria-current="page" href="/transaksibuyer">Dashboard</a>
                             </li>
                             <li className="nav-item item-mobile text">
+                                <a className="nav-link active" href="/accountbuyer">My Product</a>
+                            </li>
+                            <li className="nav-item item-mobile text">
                                 <a className="nav-link active" href="/accountbuyer">My Account</a>
                             </li>
                         </ul>

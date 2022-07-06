@@ -32,6 +32,9 @@ const SidebarSeller = () => {
                         <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
                             <CDBSidebarMenuItem icon="columns" className='text'>Dashboard</CDBSidebarMenuItem>
                         </NavLink>
+                        <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
+                            <CDBSidebarMenuItem icon="columns" className='text'>My Product</CDBSidebarMenuItem>
+                        </NavLink>
                         <NavLink exact to="/accountbuyer" activeClassName="activeClicked">
                             <CDBSidebarMenuItem icon="table" className='text'>My Account</CDBSidebarMenuItem>
                         </NavLink>

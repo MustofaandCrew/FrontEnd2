@@ -9,7 +9,7 @@ import Login from "../src/pages/Login";
 import Home from "../src/pages/Home";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
-import TransactionsSeller from "./pages/TransactionsSeller";
+
 
 const override = {
   display: "flex",
@@ -47,7 +47,8 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* Buyer */}
-        <Route path="/transactionsseller" element={<TransactionsSeller/>} />
+
+        {/* Seller */}
        </Routes>
       </BrowserRouter>
         )}
