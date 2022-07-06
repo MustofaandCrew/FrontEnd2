@@ -10,6 +10,7 @@ import {
   Register,
   NotificationVertical,
   TransaksiBuyer,
+  AccountBuyer,
 } from "./pages";
 
 // import PropagateLoader from "react-spinners/PropagateLoader";
@@ -45,6 +46,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/notification" element={<NotificationVertical />} />
           <Route path="/transaksibuyer" element={<TransaksiBuyer />} />
+          <Route path="/accountbuyer" element={<AccountBuyer />} />
         </Routes>
       </BrowserRouter>
       {/* )} */}

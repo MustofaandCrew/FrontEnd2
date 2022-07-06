@@ -3,14 +3,17 @@
     background-color: #F5F5F5;
     padding: 50px 20px 50px 40px;
 }
+.judul-buy {
+    width: max-content;
+    margin: -35px 0 30px 0;
+}
 .judul {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 30px;
     line-height: 27px;
-    color: #0C0D36;
-    padding-bottom: 20px;
+    color: #000;
+    margin-bottom: -10px;
+}
+.line {
+    border: 1px solid #000;
 }
 .table-transaksi {
     background-color: #fff;
@@ -43,11 +46,27 @@
 .sidebar-mobile {
     display: none;
 }
+.list-mobile {
+    display: none;
+}
 @media screen and (max-width: 768px) {
     .sidebar-dekstop {
         display: none;
     }
+    .navbar-dekstop {
+        display: none;
+    }
     .sidebar-mobile {
+        display: block;
+    }
+    .judul-buy {
+        width: max-content;
+        margin: 30px 0 30px 0;
+    }
+    .list-dekstop {
+        display: none;
+    }
+    .list-mobile {
         display: block;
     }
 }

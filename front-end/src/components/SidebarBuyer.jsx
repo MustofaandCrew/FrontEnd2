@@ -20,7 +20,7 @@ const SidebarBuyer = () => {
       <CDBSidebar className='sidebar'>
         <CDBSidebarHeader>
           <a
-            href="/transaksibuyer"
+            href="/"
             className="text-decoration-none"
           >
             <img src={Logo} alt="logo"/>
@@ -34,17 +34,6 @@ const SidebarBuyer = () => {
             </NavLink>
             <NavLink exact to="/accountbuyer" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table" className='text'>My Account</CDBSidebarMenuItem>
-            </NavLink>
-
-            <NavLink
-              exact
-              to="/hero404"
-              target="_blank"
-              activeClassName="activeClicked"
-            >
-              <CDBSidebarMenuItem icon="exclamation-circle" className='text'>
-                404 page
-              </CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>

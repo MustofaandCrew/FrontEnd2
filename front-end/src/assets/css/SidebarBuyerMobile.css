@@ -3,3 +3,12 @@
     border-radius: 20px;
     margin-right: 10px;
 }
+.logo-sidebar-mobile {
+    height: 60px;
+    width: 50px;
+    margin-right: 20px;
+}
+.item-mobile {
+    margin-top: 20px;
+    margin-left: 20px;
+}

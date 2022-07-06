@@ -1,5 +1,6 @@
 import React from "react";
 import imageProfil from "../assets/images/user_pc.png";
+import Logo from '../assets/images/logo.png';
 import "../assets/css/SidebarBuyerMobile.css";
 
 export default function SideBuyerMobile() {
@@ -11,35 +12,18 @@ export default function SideBuyerMobile() {
             </button>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src={imageProfil} alt="profil" />Hi, Angga</h5>
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a href="/" ><img src={Logo} className="logo-sidebar-mobile"/></a>SecondHand</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <li class="nav-item item-mobile">
+                    <a class="nav-link active" aria-current="page" href="/transaksibuyer">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                <li class="nav-item item-mobile">
+                    <a class="nav-link active" href="/accountbuyer">My Account</a>
                 </li>
                 </ul>
-                <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
             </div>
             <a class="navbar-brand" href="#"><img src={imageProfil} alt="profil" className="foto-profil"/>Hi, Angga</a>
