@@ -10,47 +10,30 @@ import {
 import { NavLink } from 'react-router-dom';
 import '../assets/css/SidebarSeller.css'
 
+import Logo from '../assets/images/logo.png';
+
 const SidebarSeller = () => {
     return (
         <div
             className='main'
         >
             <CDBSidebar className='sidebar'>
-                <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+                <CDBSidebarHeader>
                     <a
                         href="/"
                         className="text-decoration-none"
                     >
-                        Sidebar
+                        <img src={Logo} alt="logo" />
                     </a>
                 </CDBSidebarHeader>
 
                 <CDBSidebarContent className="sidebar-content">
                     <CDBSidebarMenu>
                         <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
-                            <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
+                            <CDBSidebarMenuItem icon="columns" className='text'>Dashboard</CDBSidebarMenuItem>
                         </NavLink>
-                        <NavLink exact to="/tablebuyer" activeClassName="activeClicked">
-                            <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
-                        </NavLink>
-                        <NavLink exact to="/profile" activeClassName="activeClicked">
-                            <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
-                        </NavLink>
-                        <NavLink exact to="/analytics" activeClassName="activeClicked">
-                            <CDBSidebarMenuItem icon="chart-line">
-                                Analytics
-                            </CDBSidebarMenuItem>
-                        </NavLink>
-
-                        <NavLink
-                            exact
-                            to="/hero404"
-                            target="_blank"
-                            activeClassName="activeClicked"
-                        >
-                            <CDBSidebarMenuItem icon="exclamation-circle">
-                                404 page
-                            </CDBSidebarMenuItem>
+                        <NavLink exact to="/accountbuyer" activeClassName="activeClicked">
+                            <CDBSidebarMenuItem icon="table" className='text'>My Account</CDBSidebarMenuItem>
                         </NavLink>
                     </CDBSidebarMenu>
                 </CDBSidebarContent>
