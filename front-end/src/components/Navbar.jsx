@@ -54,7 +54,7 @@ export default function Navbar() {
                     <li><h4>|</h4></li>
                     {/* <li><a href="/login">Sign In</a></li> */}
                     <li><a className="btn-seller" href="/"><img src={LogoSeller} alt="seller" /> Seller</a></li>
-                    <li><a className="profile-info" href="/"><img className="img-fluid rounded-circle" src={pp} alt="profile" />Hi, Yono</a></li>
+                    <li><a className="profile-info" href="/"><img className="img-fluid rounded-circle" src={pp} alt="profile" />Hi, Angga</a></li>
                 </ol>
 
                 {/* Vertical Laoyout */}
@@ -68,9 +68,12 @@ export default function Navbar() {
                     </li>
 
                     <li className="nav-span"><a href="/shoppingcart">Shopping Cart</a></li>
-                    <li className="nav-span"><a href="/shoppingcart">Notification</a></li>
+                    <li className="nav-span"><a href="/">Notification</a></li>
                     {/* <li className="nav-signin"><a href="/login"><span><i className="bx bx-log-in"></i> Sign In</span></a></li> */}
-                    <li className="nav-signin"><a href="/"><span><img className="img-fluid rounded-circle" src={pp} alt="profile" /> Hi, Yono</span></a></li>
+                    <li className="d-flex justify-content-center gap-2 nav-signin">
+                        <a href="/"><span><img className="img-fluid" src={LogoSeller} alt="seller" /></span></a>
+                        <a href="/"><span className="profile"><img className="img-fluid rounded-circle" src={pp} alt="profile" /></span></a>
+                    </li>
                 </ol>
                 <label for="check" className="bar">
                     <span className="fa fa-bars" id="bars"></span>

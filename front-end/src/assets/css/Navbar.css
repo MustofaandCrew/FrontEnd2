@@ -296,7 +296,7 @@
       background: none;
       color: black;
     }
-    nav ol.vertical-screen li.nav-signin{
+    nav ol.vertical-screen li.nav-signin {
       margin-top: 15px;
       text-align: center;
     }
@@ -304,6 +304,11 @@
       padding: 10px 20px;
       border-radius: 10px;
       background:#FF7158;
+    }
+    nav ol.vertical-screen li.nav-signin a span.profile {
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: rgb(222, 222, 222);
     }
     nav ol.vertical-screen li.nav-signin a span img {
       width: 2rem;
