@@ -10,6 +10,8 @@ import {
 import { NavLink } from 'react-router-dom';
 import '../assets/css/SidebarBuyer.css'
 
+import Logo from '../assets/images/logo.png';
+
 const SidebarBuyer = () => {
   return (
     <div
@@ -21,7 +23,7 @@ const SidebarBuyer = () => {
             href="/"
             className="text-decoration-none"
           >
-            Sidebar
+            <img src={Logo} alt="logo" />
           </a>
         </CDBSidebarHeader>
 
