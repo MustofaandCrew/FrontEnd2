@@ -1,20 +1,37 @@
 import React from "react";
 import SidebarBuyer from "../components/SidebarBuyer";
+import SidebarBuyerMobile from "../components/SidebarBuyerMobile";
 import '../assets/css/AccountBuyer.css'
-import ImageProfil from "../assets/images/nyanCat.jpg";
+import imageProfil from "../assets/images/user_pc.png";
 
 export default function AccountBuyer() {
     return (
         <div className="main">
-            <SidebarBuyer />
+            <div className="sidebar-dekstop">
+                <SidebarBuyer />
+            </div>
+            <div className="sidebar-mobile">
+                <SidebarBuyerMobile />
+            </div>
             <div className="page-account-buyer">
+            <div className="row mb-5 navbar-dekstop">
+                <div className="col-md-6">
+                    <h3>Transactions</h3>
+                    <p>Big result start from the small one</p>
+                </div>
+                <div className="col-md-6">
+                    <div className="d-flex align-items-center justify-content-end">
+                        <a class="navbar-brand" href="#"><img src={imageProfil} alt="profil" className="foto-profil"/>Hi, Angga</a>
+                    </div>
+                </div>
+            </div>
                 <div className="form-account">
                     <form className="row g-3">
                         <div className="col-md-6 row-image">
                             <div class="container">
                                 <div class="row align-items-start">
                                     <div class="col-5">
-                                        <img src={ImageProfil} alt="Avatar" className="image-profil" />
+                                        <img src={imageProfil} alt="Avatar" className="image-profil" />
                                     </div>
                                     <div class="col">
                                         Edit Profile Photo <i class="fas fa-edit"></i>
