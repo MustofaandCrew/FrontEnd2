@@ -28,10 +28,10 @@ const SidebarBuyer = () => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="columns" className='text'>Dashboard</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/accountbuyer" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">My Account</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="table" className='text'>My Account</CDBSidebarMenuItem>
             </NavLink>
 
             <NavLink
@@ -40,7 +40,7 @@ const SidebarBuyer = () => {
               target="_blank"
               activeClassName="activeClicked"
             >
-              <CDBSidebarMenuItem icon="exclamation-circle">
+              <CDBSidebarMenuItem icon="exclamation-circle" className='text'>
                 404 page
               </CDBSidebarMenuItem>
             </NavLink>

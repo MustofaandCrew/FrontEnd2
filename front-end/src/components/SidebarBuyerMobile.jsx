@@ -1,4 +1,6 @@
 import React from "react";
+import imageProfil from "../assets/images/user_pc.png";
+import "../assets/css/SidebarBuyerMobile.css";
 
 export default function SideBuyerMobile() {
     return (
@@ -7,9 +9,9 @@ export default function SideBuyerMobile() {
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src={imageProfil} alt="profil" />Hi, Angga</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
@@ -40,7 +42,7 @@ export default function SideBuyerMobile() {
                 </form>
             </div>
             </div>
-            <a class="navbar-brand" href="#">Offcanvas navbar</a>
+            <a class="navbar-brand" href="#"><img src={imageProfil} alt="profil" className="foto-profil"/>Hi, Angga</a>
         </div>
         </nav>
     )
