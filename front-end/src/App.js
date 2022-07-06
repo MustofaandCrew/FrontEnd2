@@ -5,6 +5,7 @@ import { Home, Login, Catalog, Details,
 
 import PropagateLoader from "react-spinners/PropagateLoader";
 
+
 const override = {
   display: "flex",
   margin: "0 auto",
@@ -38,6 +39,10 @@ function App() {
         <Route path="/shoppingcart" element={<ShoppingCart />} />
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/register" element={<Register />} />
+
+        {/* Buyer */}
+
+        {/* Seller */}
         <Route path="/notification" element={<NotificationVertical />} />
        </Routes>
       </BrowserRouter>
