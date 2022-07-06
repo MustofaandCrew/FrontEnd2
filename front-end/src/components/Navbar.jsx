@@ -68,7 +68,7 @@ export default function Navbar() {
                     </li>
 
                     <li className="nav-span"><a href="/shoppingcart">Shopping Cart</a></li>
-                    <li className="nav-span"><a href="/">Notification</a></li>
+                    <li className="nav-span"><a href="/notification">Notification</a></li>
                     {/* <li className="nav-signin"><a href="/login"><span><i className="bx bx-log-in"></i> Sign In</span></a></li> */}
                     <li className="d-flex justify-content-center gap-2 nav-signin">
                         <a href="/"><span><img className="img-fluid" src={LogoSeller} alt="seller" /></span></a>
