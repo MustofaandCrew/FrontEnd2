@@ -15,7 +15,7 @@ export default function Navbar() {
             <Modal />
             <input type="checkbox" id="check" />
             <nav>
-                <div className="icon"><a href="/">SecondHand</a></div>
+                <div className="icon"><a href="/"><img src={logo} alt="logo" /> SecondHand</a></div>
                 <ol>
                     <li><a href="/">Home</a></li>
                     <div className="dropdown">
@@ -39,8 +39,15 @@ export default function Navbar() {
                     <span className="fa fa-search"></span>
                 </div>
                 <ol>
-                    <li><a href="/"><span className="fa fa-shopping-basket"></span></a></li>
-                    <li><a href="/"><span className="fa fa-bell"></span></a></li>
+                    <li><a href="/shoppingcart"><span className="fa fa-shopping-basket"></span></a></li>
+                    <li>
+                        <a href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span className="fa fa-bell"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <Notif />
+                        </ul>
+                    </li>
                     <li><h4>|</h4></li>
                     {/* <li><a href="/login">Sign In</a></li> */}
                     <li><a className="btn-seller" href="/"><img src={LogoSeller} alt="seller" /> Seller</a></li>
