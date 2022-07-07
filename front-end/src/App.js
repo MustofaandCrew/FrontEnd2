@@ -14,6 +14,7 @@ import {
 } from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
+import DashboardBuyer from "./pages/DashboardBuyer";
 import DashboardSeller from "./pages/DashboardSeller";
 
 const override = {
@@ -54,6 +55,7 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/register" element={<Register />} />
             <Route path="/notification" element={<NotificationVertical />} />
+            <Route path="/transaksibuyer" element={<TransaksiBuyer />} />
             <Route path="/accountbuyer" element={<AccountBuyer />} />
             <Route path="/myproduct" element={<MyProduct />} />
           </Routes>
