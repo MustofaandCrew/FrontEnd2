@@ -24,3 +24,30 @@
     /* memindahkan object kekanan */
     float: right;
 }
+.sidebar-mobile {
+    display: none;
+}
+.list-mobile {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .sidebar-dekstop {
+        display: none;
+    }
+    .navbar-dekstop {
+        display: none;
+    }
+    .sidebar-mobile {
+        display: block;
+    }
+    .judul-buy {
+        width: max-content;
+        margin: 30px 0 30px 0;
+    }
+    .list-dekstop {
+        display: none;
+    }
+    .list-mobile {
+        display: block;
+    }
+}

@@ -16,8 +16,8 @@ export default function AccountBuyer() {
             <div className="page-account-buyer">
                 <div className="row mb-5 navbar-dekstop">
                     <div className="col-md-6">
-                        <h3>Transactions</h3>
-                        <p>Big result start from the small one</p>
+                        <h3>My Account</h3>
+                        <p>Update your current profile</p>
                     </div>
                     <div className="col-md-6">
                         <div className="d-flex align-items-center justify-content-end">
