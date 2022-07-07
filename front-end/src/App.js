@@ -9,6 +9,7 @@ import {
   Wishlist,
   Register,
   NotificationVertical,
+  MyProduct,
  
 } from "./pages";
 
@@ -52,6 +53,8 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/register" element={<Register />} />
             <Route path="/notification" element={<NotificationVertical />} />
+
+            <Route path="/myproduct" element={<MyProduct />} />
             
           </Routes>
         </BrowserRouter>
