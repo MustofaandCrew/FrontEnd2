@@ -14,6 +14,7 @@ import {
 } from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
+import AccountBuyer from "./pages/AccountBuyer";
 import AccountSeller from "./pages/AccountSeller";
 import DashboardBuyer from "./pages/DashboardBuyer";
 import DashboardSeller from "./pages/DashboardSeller";
@@ -56,6 +57,7 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/register" element={<Register />} />
             <Route path="/notification" element={<NotificationVertical />} />
+            <Route path="/accountbuyer" element={<AccountBuyer />} />
             <Route path="/accountseller" element={<AccountSeller />} />
             <Route path="/accountbuyer" element={<AccountBuyer />} />
             <Route path="/myproduct" element={<MyProduct />} />
