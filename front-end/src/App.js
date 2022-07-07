@@ -1,23 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  Home,
-  Login,
-  Catalog,
-  Details,
-  ShoppingCart,
-  Wishlist,
-  Register,
-  NotificationVertical,
-  AccountBuyer,
-  MyProduct,
-} from "./pages";
+import { Home, Login, Catalog, Details, ShoppingCart, Wishlist, Register, NotificationVertical, AccountBuyer, MyProduct } from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
-import AccountBuyer from "./pages/AccountBuyer";
 import AccountSeller from "./pages/AccountSeller";
-import DashboardBuyer from "./pages/DashboardBuyer";
-import DashboardSeller from "./pages/DashboardSeller";
 
 const override = {
   display: "flex",
@@ -40,12 +26,7 @@ function App() {
   return (
     <div className="App">
       {loading ? (
-        <PropagateLoader
-          cssOverride={override}
-          size={50}
-          color={"#FF7158"}
-          loading={loading}
-        />
+        <PropagateLoader cssOverride={override} size={50} color={"#FF7158"} loading={loading} />
       ) : (
         <BrowserRouter>
           <Routes>
