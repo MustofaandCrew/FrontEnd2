@@ -1,3 +1,4 @@
+
 export { default as Home } from "./Home";
 export { default as Login } from "./Login";
 export { default as Catalog } from "./Catalog";
@@ -8,3 +9,5 @@ export { default as Register } from "./Register";
 export { default as NotificationVertical } from "./NotificationVertical";
 export { default as AccountBuyer} from "./AccountBuyer";
 export { default as DashboardBuyer } from "./DashboardBuyer";
+export { default as DashboardSeller } from "./DashboardSeller";
+export { default as MyProduct } from "./MyProduct";

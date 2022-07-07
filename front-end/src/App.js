@@ -10,10 +10,12 @@ import {
   Register,
   NotificationVertical,
   AccountBuyer,
+  MyProduct,
 } from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
 import DashboardBuyer from "./pages/DashboardBuyer";
+import DashboardSeller from "./pages/DashboardSeller";
 
 const override = {
   display: "flex",
@@ -55,6 +57,7 @@ function App() {
             <Route path="/notification" element={<NotificationVertical />} />
             <Route path="/transaksibuyer" element={<TransaksiBuyer />} />
             <Route path="/accountbuyer" element={<AccountBuyer />} />
+            <Route path="/myproduct" element={<MyProduct />} />
           </Routes>
         </BrowserRouter>
       )}
