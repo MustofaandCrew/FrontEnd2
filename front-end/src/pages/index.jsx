@@ -6,3 +6,4 @@ export { default as ShoppingCart } from "./ShoppingCart";
 export { default as Wishlist } from "./Wishlist";
 export { default as Register } from "./Register";
 export { default as NotificationVertical } from "./NotificationVertical";
+export { default as AccountBuyer } from "./AccountBuyer";
