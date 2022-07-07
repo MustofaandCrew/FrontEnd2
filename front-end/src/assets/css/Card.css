@@ -5,9 +5,11 @@
   }
   
   .cardStyle {
-    width: 12rem;
-    margin: 0rem;
+    width: 100%;
     margin-bottom: 2rem;
+  }
+  .cardStyle img {
+    width: 100%;
   }
   
   .cardImgStyle {
@@ -22,7 +24,7 @@
   
   .price-text {
     text-align: left;
-    color: orange;
+    color: #F47458;
   }
   
   
@@ -35,7 +37,7 @@
     }
   
     .cardStyle {
-      width: 7rem;
+      width: 90%;
       margin: 0rem;
       margin-bottom: 2rem;
     }
@@ -53,7 +55,7 @@
     
     .price-text {
       text-align: left;
-      color: orange;
+      color: #F47458;
     }
     
   }
@@ -79,7 +81,7 @@
 
     .price-text {
       text-align: left;
-      color: orange;
+      color: #F47458;
       font-size: 12px;
     }
   }
@@ -104,7 +106,7 @@
 
     .price-text {
       text-align: left;
-      color: orange;
+      color: #F47458;
       font-size: 12px;
     }
   }
@@ -131,6 +133,13 @@
     .imgCarousel {
       height: 32.25rem;
       width: 120rem;
+    }
+    .cardStyle {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .cardStyle img {
+      width: 100%;
     }
   }
   
