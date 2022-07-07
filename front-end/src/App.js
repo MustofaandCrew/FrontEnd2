@@ -9,6 +9,7 @@ import {
   Wishlist,
   Register,
   NotificationVertical,
+  AccountBuyer,
 } from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
@@ -52,10 +53,8 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/register" element={<Register />} />
             <Route path="/notification" element={<NotificationVertical />} />
-
-
-            
-            <Route path="/dashboardseller" element={<DashboardSeller />} />
+            <Route path="/transaksibuyer" element={<TransaksiBuyer />} />
+            <Route path="/accountbuyer" element={<AccountBuyer />} />
           </Routes>
         </BrowserRouter>
       )}
