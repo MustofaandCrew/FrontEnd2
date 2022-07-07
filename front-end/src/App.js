@@ -9,11 +9,10 @@ import {
   Wishlist,
   Register,
   NotificationVertical,
-  TransaksiBuyer,
-  AccountBuyer,
 } from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
+import DashboardBuyer from "./pages/DashboardBuyer";
 
 const override = {
   display: "flex",
@@ -53,8 +52,8 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/register" element={<Register />} />
             <Route path="/notification" element={<NotificationVertical />} />
-            <Route path="/transaksibuyer" element={<TransaksiBuyer />} />
-            <Route path="/accountbuyer" element={<AccountBuyer />} />
+
+            <Route path="/dashboardbuyer" element={<DashboardBuyer />} />
           </Routes>
         </BrowserRouter>
       )}
