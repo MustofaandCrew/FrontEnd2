@@ -83,6 +83,11 @@ export default function Home() {
                             <img src={CatBaby} className="card-img-top" alt="..." />
                         </div>
                     </button>
+                    <button className="buttonCategories">
+                        <div className="cardStyle">
+                            <img src={CatGadgets} className="card-img-top" alt="..." />
+                        </div>
+                    </button>
                 </div>
 
                 {/* New Products */}
