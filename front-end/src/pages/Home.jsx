@@ -23,7 +23,7 @@ import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 export default function Home() {
     return (
         <LayoutNavbarFooter>
-            <div className="container container-fluid">
+            <div className="container">
 
                 {/* Carousel */}
                 <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">

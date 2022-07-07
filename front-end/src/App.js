@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Catalog, Details, ShoppingCart, Wishlist, Register, NotificationVertical, AccountBuyer, MyProduct } from "./pages";
+import { Home, Login, Catalog, Details, ShoppingCart, Wishlist, Register, NotificationVertical, AccountBuyer, AccountSeller, DashboardBuyer, DashboardSeller, MyProduct } from "./pages";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
-import AccountSeller from "./pages/AccountSeller";
 
 const override = {
   display: "flex",
@@ -40,7 +39,8 @@ function App() {
             <Route path="/notification" element={<NotificationVertical />} />
             <Route path="/accountbuyer" element={<AccountBuyer />} />
             <Route path="/accountseller" element={<AccountSeller />} />
-            <Route path="/accountbuyer" element={<AccountBuyer />} />
+            <Route path="/dashboardbuyer" element={<DashboardBuyer />} />
+            <Route path="/dashboardseller" element={<DashboardSeller />} />
             <Route path="/myproduct" element={<MyProduct />} />
           </Routes>
         </BrowserRouter>
