@@ -1,5 +1,9 @@
-/* Catalog */
-h2.catalog-title{
+  /* Catalog */
+  .container {
+    padding: 0 0.7rem;
+  }
+
+  h2.catalog-title{
     font-size: 50px;
     font-weight: 900;
   }
@@ -9,11 +13,7 @@ h2.catalog-title{
     color: black;
   }
   
-  .catalog-nav-link a.catalog-link:hover{
-    color: #FF7158;
-    transition: 0.2s;
-  }
-  
+  .catalog-nav-link a.catalog-link:hover,
   .catalog-nav-link:hover{
     color: #FF7158;
     transition: 0.2s;
@@ -25,7 +25,7 @@ h2.catalog-title{
     box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.1);
     padding: 20px 20px;
   }
-  
+
   .catalog-vertical{
     display: none;
   }
@@ -57,8 +57,8 @@ h2.catalog-title{
     }
 
     .row-vertical {
-      margin-left: 0;
-      margin-right: 0;
+      padding-left: 5px;
+      padding-right: 0;
     }
   
     .catalog-horizontal{
