@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../assets/css/Login.css";
 import Pic from "../assets/images/pic.png";
 
@@ -28,7 +29,7 @@ export default function Register() {
                 </div>
                 <div className="d-flex flex-column gap-3">
                   <button type="submit" className="flex-fill btn-login">
-                    Sign In to My Account
+                    Sign Up
                   </button>
                 </div>
               </form>

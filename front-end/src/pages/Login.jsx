@@ -1,6 +1,7 @@
 import React from "react";
 import Pic from "../assets/images/pic.png";
 import "../assets/css/Login.css";
+import { NavLink } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -26,9 +27,9 @@ export default function Login() {
                   <button type="submit" className="flex-fill btn-login">
                     Sign In to My Account
                   </button>
-                  <button type="submit" className="flex-fill btn-register">
+                  <NavLink to="/register" className="flex-fill text-center btn-register">
                     Sign Up
-                  </button>
+                  </NavLink>
                 </div>
               </form>
             </div>
