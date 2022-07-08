@@ -2,7 +2,7 @@ import React from 'react'
 
 import "../assets/css/Wishlist.css"
 import Card from "../components/Card";
-import LayoutNavbarFooter from '../components/LayoutNavbarFooter';
+import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 
 // Dummy Images
 import NewProducts from "../assets/images/NewProducts.jpg";
@@ -24,14 +24,16 @@ export default function Wishlist() {
                         <div className="catalog-nav">
                             <h5 className="catalog-nav-title">Categories</h5>
                             <br />
-                            <div className="catalog-nav-link d-flex justify-content-between">
-                                <a href="/" className="catalog-link">All Categories</a>
-                                <i className="bx bx-chevron-right"></i>
+                            <div className="catalog-nav-link">
+                                <a href="/" className="catalog-link d-flex justify-content-between">
+                                    All Categories<i className="bx bx-chevron-right"></i>
+                                </a>
                             </div>
                             <hr />
-                            <div className="catalog-nav-link d-flex justify-content-between">
-                                <a href="/" className="catalog-link">Wishlist</a>
-                                <i className="bx bx-chevron-right"></i>
+                            <div className="catalog-nav-link">
+                                <a href="/" className="catalog-link d-flex justify-content-between">
+                                    Catalog<i className="bx bx-chevron-right"></i>
+                                </a>
                             </div>
                             <hr />
                         </div>
@@ -50,31 +52,33 @@ export default function Wishlist() {
 
                 {/* for Phone Layout */}
                 <div className="catalog-vertical row row-cols-1 row-cols-md-4 g-1 mt-4">
-                    <div class="col-9 mb-4">
+                    <div className="col mb-4">
                         <h2 className="catalog-title">Wishlist</h2>
                     </div>
                     <div className="catalog-nav">
                         <h5 className="catalog-nav-title">Categories</h5>
                         <br />
-                        <div className="catalog-nav-link d-flex justify-content-between">
-                            <a href="/" className="catalog-link">All Categories</a>
-                            <i className="bx bx-chevron-right"></i>
+                        <div className="catalog-nav-link">
+                            <a href="/" className="catalog-link d-flex justify-content-between">
+                                All Categories<i className="bx bx-chevron-right"></i>
+                            </a>
                         </div>
                         <hr />
-                        <div className="catalog-nav-link d-flex justify-content-between">
-                            <a href="/" className="catalog-link">Wishlist</a>
-                            <i className="bx bx-chevron-right"></i>
+                        <div className="catalog-nav-link">
+                            <a href="/" className="catalog-link d-flex justify-content-between">
+                                Catalog<i className="bx bx-chevron-right"></i>
+                            </a>
                         </div>
                         <hr />
                     </div>
 
                     <div className="row-vertical row row-cols-2 row-cols-md-4 g-2 mt-2">
-                    <Card image={NewProducts} />
-                            <Card image={NewProducts2} />
-                            <Card image={NewProducts3} />
-                            <Card image={NewProducts} />
-                            <Card image={NewProducts2} />
-                            <Card image={NewProducts3} />
+                        <Card image={NewProducts} />
+                        <Card image={NewProducts2} />
+                        <Card image={NewProducts3} />
+                        <Card image={NewProducts} />
+                        <Card image={NewProducts2} />
+                        <Card image={NewProducts3} />
                     </div>
                 </div>
 

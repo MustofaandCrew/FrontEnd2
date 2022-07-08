@@ -49,9 +49,9 @@ export default function Navbar() {
                         </ul>
                     </li>
                     <li><h4>|</h4></li>
-                    {/* <li><a href="/login">Sign In</a></li> */}
-                    <li><a className="btn-seller" href="/"><img src={LogoSeller} alt="seller" /> Seller</a></li>
-                    <li><a className="profile-info" href="/"><img className="img-fluid rounded-circle" src={pp} alt="profile" />Hi, Angga</a></li>
+                    <li><a href="/login">Sign In</a></li>
+                    {/* <li><a className="btn-seller" href="/"><img src={LogoSeller} alt="seller" /> Seller</a></li>
+                    <li><a className="profile-info" href="/"><img className="img-fluid rounded-circle" src={pp} alt="profile" />Hi, Angga</a></li> */}
                 </ol>
                 <ol className="vertical-screen">
                     <li className="nav-span"><a href="/">Home</a></li>

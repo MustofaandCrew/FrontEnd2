@@ -1,8 +1,8 @@
 import React from 'react'
 
-import "../assets/css/Catalog.css"
+import "../assets/css/Catalog.css";
 import Card from "../components/Card";
-import LayoutNavbarFooter from '../components/LayoutNavbarFooter';
+import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 
 // Dummy Images
 import NewProducts from "../assets/images/NewProducts.jpg";
@@ -24,14 +24,36 @@ export default function Catalog() {
                         <div className="catalog-nav">
                             <h5 className="catalog-nav-title">Categories</h5>
                             <br />
-                            <div className="catalog-nav-link d-flex justify-content-between">
-                                <a href="/" className="catalog-link">All Categories</a>
-                                <i className="bx bx-chevron-right"></i>
+                            <div className="catalog-nav-link">
+                                <a href="/" className="catalog-link d-flex justify-content-between">
+                                    All Categories<i className="bx bx-chevron-right"></i>
+                                </a>
+                                <ul>
+                                    <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                        Gadgets<i className="bx bx-chevron-right"></i>
+                                    </a>
+                                    <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                        Furniture<i className="bx bx-chevron-right"></i>
+                                    </a>
+                                    <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                        Make Up<i className="bx bx-chevron-right"></i>
+                                    </a>
+                                    <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                        Sneakers<i className="bx bx-chevron-right"></i>
+                                    </a>
+                                    <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                        Tools<i className="bx bx-chevron-right"></i>
+                                    </a>
+                                    <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                        Baby<i className="bx bx-chevron-right"></i>
+                                    </a>
+                                </ul>
                             </div>
                             <hr />
-                            <div className="catalog-nav-link d-flex justify-content-between">
-                                <a href="/" className="catalog-link">Wishlist</a>
-                                <i className="bx bx-chevron-right"></i>
+                            <div className="catalog-nav-link">
+                                <a href="/" className="catalog-link d-flex justify-content-between">
+                                    Wishlist<i className="bx bx-chevron-right"></i>
+                                </a>
                             </div>
                             <hr />
                         </div>
@@ -72,17 +94,42 @@ export default function Catalog() {
 
                 {/* for Phone Layout */}
                 <div className="catalog-vertical row row-cols-1 row-cols-md-4 g-1 mt-4">
+                    <div className="col mb-4">
+                        <h2 className="catalog-title">Catalog</h2>
+                    </div>
                     <div className="catalog-nav">
                         <h5 className="catalog-nav-title">Categories</h5>
                         <br />
-                        <div className="catalog-nav-link d-flex justify-content-between">
-                            <a href="/" className="catalog-link">All Categories</a>
-                            <i className="bx bx-chevron-right"></i>
+                        <div className="catalog-nav-link">
+                            <a href="/" className="catalog-link d-flex justify-content-between">
+                                All Categories<i className="bx bx-chevron-right"></i>
+                            </a>
+                            <ul>
+                                <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                    Gadgets<i className="bx bx-chevron-right"></i>
+                                </a>
+                                <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                    Furniture<i className="bx bx-chevron-right"></i>
+                                </a>
+                                <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                    Make Up<i className="bx bx-chevron-right"></i>
+                                </a>
+                                <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                    Sneakers<i className="bx bx-chevron-right"></i>
+                                </a>
+                                <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                    Tools<i className="bx bx-chevron-right"></i>
+                                </a>
+                                <a href="/" className="my-2 catalog-link d-flex justify-content-between">
+                                    Baby<i className="bx bx-chevron-right"></i>
+                                </a>
+                            </ul>
                         </div>
                         <hr />
-                        <div className="catalog-nav-link d-flex justify-content-between">
-                            <a href="/" className="catalog-link">Wishlist</a>
-                            <i className="bx bx-chevron-right"></i>
+                        <div className="catalog-nav-link">
+                            <a href="/" className="catalog-link d-flex justify-content-between">
+                                Wishlist<i className="bx bx-chevron-right"></i>
+                            </a>
                         </div>
                         <hr />
                     </div>

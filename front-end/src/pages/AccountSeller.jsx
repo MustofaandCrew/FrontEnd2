@@ -21,7 +21,7 @@ export default function AccountSeller() {
                     </div>
                     <div className="col-md-6">
                         <div className="d-flex align-items-center justify-content-end">
-                            <a class="navbar-brand" href="#"><img src={imageProfil} alt="profil" className="foto-profil" />Hi, Angga</a>
+                            <a class="navbar-brand" href="/"><img src={imageProfil} alt="profil" className="foto-profil" />Hi, Angga</a>
                         </div>
                     </div>
                 </div>

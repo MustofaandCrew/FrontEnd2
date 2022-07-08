@@ -12,7 +12,6 @@ import Card from "../components/Card";
 
 import "../assets/css/Home.css";
 import "../assets/css/Card.css";
-import "../assets/css/Navbar.css";
 
 // Dummy Product Images
 import NewProducts from "../assets/images/NewProducts.jpg";
@@ -81,6 +80,16 @@ export default function Home() {
                     <button className="buttonCategories">
                         <div className="cardStyle">
                             <img src={CatBaby} className="card-img-top" alt="..." />
+                        </div>
+                    </button>
+                    <button className="buttonCategories">
+                        <div className="cardStyle">
+                            <img src={CatTools} className="card-img-top" alt="..." />
+                        </div>
+                    </button>
+                    <button className="buttonCategories">
+                        <div className="cardStyle">
+                            <img src={CatTools} className="card-img-top" alt="..." />
                         </div>
                     </button>
                 </div>

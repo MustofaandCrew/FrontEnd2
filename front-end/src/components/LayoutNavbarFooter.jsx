@@ -7,7 +7,7 @@ export default function LayoutNavbarFooter({ children }) {
     return (
         <div>
             <Navbar />
-            <div className="my-2">
+            <div className="">
                 {children}
             </div>
             <Footer />
