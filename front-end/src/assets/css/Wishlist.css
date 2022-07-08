@@ -1,5 +1,9 @@
-/* Wishlist */
-h2.catalog-title{
+  /* Wishlist */
+  .container {
+    padding: 0 0.7rem;
+  }
+
+  h2.catalog-title{
     font-size: 50px;
     font-weight: 900;
   }
@@ -9,11 +13,7 @@ h2.catalog-title{
     color: black;
   }
   
-  .catalog-nav-link a.catalog-link:hover{
-    color: #FF7158;
-    transition: 0.2s;
-  }
-  
+  .catalog-nav-link a.catalog-link:hover,
   .catalog-nav-link:hover{
     color: #FF7158;
     transition: 0.2s;
@@ -25,7 +25,7 @@ h2.catalog-title{
     box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.1);
     padding: 20px 20px;
   }
-  
+
   .catalog-vertical{
     display: none;
   }
@@ -33,21 +33,21 @@ h2.catalog-title{
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px){
     /* ini untuk tampilan handphone */
-    h2.catalog-title{
+    h2.catalog-title {
       font-size: 25px;
       font-weight: 900;
     }
   
-    h5.catalog-nav-title{
+    h5.catalog-nav-title {
       font-size: 13px;
       font-weight: 500;
     }
   
-    .catalog-nav-link{
+    .catalog-nav-link {
       font-size: 10px;
     }
   
-    .catalog-nav{
+    .catalog-nav {
       padding: 10px 10px;
     }
   
@@ -57,9 +57,10 @@ h2.catalog-title{
     }
 
     .row-vertical {
-      margin-left: 0;
-      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
+  
     .catalog-horizontal{
       display: none;
     }
@@ -88,4 +89,3 @@ h2.catalog-title{
   
   /* Extra Large devices (Large laptops and destops, 120px and up) */
   @media only screen and (min-width: 1200px){}
-  
