@@ -23,7 +23,7 @@ export default function DashboardSeller() {
           </div>
           <div className="col-md-6">
             <div className="d-flex align-items-center justify-content-end">
-              <a class="navbar-brand" href="#">
+              <a className="navbar-brand" href="#">
                 <img src={imageProfil} alt="profil" className="foto-profil" />
                 Hi, Angga
               </a>
@@ -59,23 +59,23 @@ export default function DashboardSeller() {
           </div>
         </div>
         <div className="list-mobile">
-          <div class="card mb-3 rounded-4 mb-3">
-            <img src={Image} class="card-img-top rounded-5 p-3" />
-            <div class="card-body">
-              <h5 class="card-title">Shirup Marzzan</h5>
-              <p class="card-text">Angga Risky</p>
-              <p class="card-text">
-                <small class="text-muted">12 Januari, 2020</small>
+          <div className="card mb-3 rounded-4 mb-3">
+            <img src={Image} className="card-img-top rounded-5 p-3" />
+            <div className="card-body">
+              <h5 className="card-title">Shirup Marzzan</h5>
+              <p className="card-text">Angga Risky</p>
+              <p className="card-text">
+                <small className="text-muted">12 Januari, 2020</small>
               </p>
             </div>
           </div>
-          <div class="card mb-3 rounded-4 mb-3">
-            <img src={Image} class="card-img-top rounded-5 p-3" />
-            <div class="card-body">
-              <h5 class="card-title">Shirup Marzzan</h5>
-              <p class="card-text">Angga Risky</p>
-              <p class="card-text">
-                <small class="text-muted">12 Januari, 2020</small>
+          <div className="card mb-3 rounded-4 mb-3">
+            <img src={Image} className="card-img-top rounded-5 p-3" />
+            <div className="card-body">
+              <h5 className="card-title">Shirup Marzzan</h5>
+              <p className="card-text">Angga Risky</p>
+              <p className="card-text">
+                <small className="text-muted">12 Januari, 2020</small>
               </p>
             </div>
           </div>

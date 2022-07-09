@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
 import logo from "../assets/images/logo.png";
 import LogoSeller from "../assets/images/logo-seller.svg";
-
+import { NavLink } from "react-router-dom";
 // dummy images
 import pp from "../assets/images/comments-pp.png";
 
 import "../assets/css/Navbar.css";
 
 export default function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token") ? true : false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+  };
+
   return (
     <div className="container-nav">
       <Modal />
@@ -80,15 +87,45 @@ export default function Navbar() {
             <a href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               <span className="fa fa-bell"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <Notif />
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              {isLoggedIn && <Notif />}
             </ul>
           </li>
           <li>
             <h4>|</h4>
           </li>
-          {/* <li><a href="/login">Sign In</a></li> */}
-          <li>
+          {isLoggedIn ? (
+            <>
+              <li>
+                <a className="btn-seller" href="/dashboardseller">
+                  <img src={LogoSeller} alt="seller" /> Seller
+                </a>
+              </li>
+              <li>
+                <a className="profile-info dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img className="img-fluid rounded-circle" src={pp} alt="profile" />
+                  Hi, Angga
+                  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li>
+                      <NavLink className="dropdown-item" to="/dashboardbuyer">
+                        Dashboard
+                      </NavLink>
+                    </li>
+                    <li>
+                      <p className="dropdown-item" onClick={handleLogout}>
+                        Logout
+                      </p>
+                    </li>
+                  </ul>
+                </a>
+              </li>
+            </>
+          ) : (
+            <li>
+              <a href="/login">Sign In</a>
+            </li>
+          )}
+          {/* <li>
             <a className="btn-seller" href="/">
               <img src={LogoSeller} alt="seller" /> Seller
             </a>
@@ -98,7 +135,7 @@ export default function Navbar() {
               <img className="img-fluid rounded-circle" src={pp} alt="profile" />
               Hi, Angga
             </a>
-          </li>
+          </li> */}
         </ol>
         <ol className="vertical-screen">
           <li className="nav-span">

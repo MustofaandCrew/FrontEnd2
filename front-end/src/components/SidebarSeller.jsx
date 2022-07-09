@@ -17,22 +17,22 @@ const SidebarSeller = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/dashboardseller" activeClassName="activeClicked">
+            <NavLink exact to="/dashboardseller" activeclassName="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 Dashboard
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/myproduct" activeClassName="activeClicked">
+            <NavLink exact to="/myproduct" activeclassName="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 My Product
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/accountseller" activeClassName="activeClicked">
+            <NavLink exact to="/accountseller" activeclassName="activeClicked">
               <CDBSidebarMenuItem icon="table" className="text">
                 My Account
               </CDBSidebarMenuItem>
             </NavLink>
-            <a exact to="/accountbuyer" activeClassName="activeClicked">
+            <a exact to="/accountbuyer" activeclassName="activeClicked">
               <CDBSidebarMenuItem className="mx-5">qwertyuiopasdfghjklzxcvbnm</CDBSidebarMenuItem>
             </a>
           </CDBSidebarMenu>

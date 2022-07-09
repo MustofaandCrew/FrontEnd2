@@ -83,11 +83,11 @@ export default function ProductDetails() {
             <div className="mt-4 text-end">
               {wishlist ? (
                 <button type="button" onClick={onClickWishlist} className="wishlist btn btn-outline-danger">
-                  <i class="bx bx-check-double"></i> Wishlist
+                  <i className="bx bx-check-double"></i> Wishlist
                 </button>
               ) : (
                 <button type="button" onClick={onClickWishlist} className="wishlist btn btn-outline-danger">
-                  <i class="bx bx-add-to-queue"></i> Wishlist
+                  <i className="bx bx-add-to-queue"></i> Wishlist
                 </button>
               )}
             </div>
