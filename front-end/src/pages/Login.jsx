@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import Pic from "../assets/images/pic.png";
 import "../assets/css/Login.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    localStorage.removeItem("token");
     const data = { email, password };
     const result = await fetch("https://secondhand-backend-mac.herokuapp.com/login", {
       method: "POST",
@@ -62,9 +65,15 @@ export default function Login() {
                   <input type="password" required className="form-control" onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <div className="d-flex flex-column gap-3">
-                  <button type="submit" className="flex-fill btn-login">
-                    Sign In to My Account
-                  </button>
+                  {isLoading ? (
+                    <button type="submit" disabled className="flex-fill btn-disabled">
+                      Signing In
+                    </button>
+                  ) : (
+                    <button type="submit" className="flex-fill btn-login">
+                      Sign In to My Account
+                    </button>
+                  )}
                   <button type="submit" className="flex-fill btn-register">
                     Sign Up
                   </button>

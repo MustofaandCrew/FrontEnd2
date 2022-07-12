@@ -1,9 +1,8 @@
 import React from "react";
-import imageProfil from "../assets/images/user_pc.png";
 import Logo from "../assets/images/logo.png";
 import "../assets/css/SidebarBuyerMobile.css";
 
-export default function SideBuyerMobile() {
+export default function SideBuyerMobile(props) {
   return (
     <nav className="navbar bg-light fixed-top">
       <div className="container-fluid">
@@ -36,8 +35,8 @@ export default function SideBuyerMobile() {
           </div>
         </div>
         <a className="navbar-brand" href="#">
-          <img src={imageProfil} alt="profil" className="foto-profil" />
-          Hi, Angga
+          <img src={props.image} alt="profil" className="foto-profil" />
+          Hi, {props.nama}
         </a>
       </div>
     </nav>

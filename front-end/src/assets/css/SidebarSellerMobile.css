@@ -1,5 +1,7 @@
 .foto-profil {
-    width: 35px;
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
     border-radius: 20px;
     margin-right: 10px;
 }

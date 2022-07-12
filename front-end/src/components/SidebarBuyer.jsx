@@ -17,7 +17,7 @@ const SidebarBuyer = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/transaksibuyer" activeclassName="activeClicked">
+            <NavLink exact to="/dashboardbuyer" activeclassName="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 Dashboard
               </CDBSidebarMenuItem>

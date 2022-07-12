@@ -49,12 +49,18 @@
 .list-mobile {
     display: none;
 }
+.navbar-tab{
+    display: none;
+}
 @media screen and (max-width: 768px) {
     .sidebar-dekstop {
         display: none;
     }
     .navbar-dekstop {
         display: none;
+    }
+    .navbar-tab {
+        display: block;
     }
     .sidebar-mobile {
         display: block;

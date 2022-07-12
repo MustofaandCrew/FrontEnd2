@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { CDBSidebar, CDBSidebarContent, CDBSidebarFooter, CDBSidebarHeader, CDBSidebarMenu, CDBSidebarMenuItem } from "cdbreact";
 import { NavLink } from "react-router-dom";
 import "../assets/css/SidebarSeller.css";
@@ -17,17 +17,17 @@ const SidebarSeller = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
+            <NavLink exact to="/dashboardseller" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 Dashboard
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/transaksibuyer" activeClassName="activeClicked">
+            <NavLink exact to="/myproduct" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 My Product
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/accountbuyer" activeClassName="activeClicked">
+            <NavLink exact to="/accountseller" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table" className="text">
                 My Account
               </CDBSidebarMenuItem>
