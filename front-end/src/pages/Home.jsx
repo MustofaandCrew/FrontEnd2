@@ -12,7 +12,6 @@ import Card from "../components/Card";
 
 import "../assets/css/Home.css";
 import "../assets/css/Card.css";
-import "../assets/css/Navbar.css";
 
 // Dummy Product Images
 import NewProducts from "../assets/images/NewProducts.jpg";
