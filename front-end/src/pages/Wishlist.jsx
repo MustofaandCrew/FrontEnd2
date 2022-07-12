@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import "../assets/css/Wishlist.css"
+import "../assets/css/Wishlist.css";
 import Card from "../components/Card";
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 
@@ -10,9 +10,46 @@ import NewProducts2 from "../assets/images/NewProducts2.jpg";
 import NewProducts3 from "../assets/images/NewProducts3.jpg";
 
 export default function Wishlist() {
-    return (
-        <LayoutNavbarFooter>
-            <div class="container">
+  return (
+    <LayoutNavbarFooter>
+      <div className="container">
+        {/* for desktop or tablet layout */}
+        <div className="row catalog-horizontal">
+          <div className="col-9">
+            <h2 className="catalog-title">Wishlist</h2>
+          </div>
+          <div className="col-4 pt-2">
+            <br />
+            <div className="catalog-nav">
+              <h5 className="catalog-nav-title">Categories</h5>
+              <br />
+              <div className="catalog-nav-link d-flex justify-content-between">
+                <a href="/" className="catalog-link">
+                  All Categories
+                </a>
+                <i className="bx bx-chevron-right"></i>
+              </div>
+              <hr />
+              <div className="catalog-nav-link d-flex justify-content-between">
+                <a href="/" className="catalog-link">
+                  Wishlist
+                </a>
+                <i className="bx bx-chevron-right"></i>
+              </div>
+              <hr />
+            </div>
+          </div>
+          <div className="col-8">
+            <div className="row row-cols-2 row-cols-md-4 g-4 mt-2 mb-5">
+              <Card image={NewProducts} />
+              <Card image={NewProducts2} />
+              <Card image={NewProducts3} />
+              <Card image={NewProducts} />
+              <Card image={NewProducts2} />
+              <Card image={NewProducts3} />
+            </div>
+          </div>
+        </div>
 
                 {/* for desktop or tablet layout */}
                 <div class="row catalog-horizontal">

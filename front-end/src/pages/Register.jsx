@@ -1,38 +1,41 @@
 import React from "react";
-
+import "../assets/css/Login.css";
 import Pic from "../assets/images/pic.png";
 
 export default function Register() {
-    return (
-
-        <div className="container pt-5 my-5 px-5">
-            <div className="row">
-                <div className="col-6 ">
-                    <img src={Pic} alt="cewek" className="img-fluid" />
-                </div>
-                <div className="col-6">
-                    <h3>
-                        Belanja kebutuhan utama,<br />
-                        menjadi lebih mudah
-                    </h3>
-                    <form>
-                        <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">Email Address</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label">Name</label>
-                            <input type="name" className="form-control" />
-                        </div>
-                        <div className="mb-3">
-                            <label for="exampleInputPassword1" className="form-label">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" />
-                        </div>
-                        <button type="submit" className="btn btn-success">Sign Up</button>
-                    </form>
-                </div>
-            </div>
+  return (
+    <div className="container container-login">
+      <div className="row p-5 g-5">
+        <div className="col-md-6 d-flex justify-content-center">
+          <img src={Pic} alt="Woman" className="img-fluid" />
         </div>
-
-    )
+        <div className="col-md-6 container-login--right">
+          <h3>Belanja kebutuhan utama, menjadi lebih mudah</h3>
+          <div className="row">
+            <div className="col-lg-8 col-md-12 container-login--right_form">
+              <form className="mt-4">
+                <div className="mb-3">
+                  <label className="form-label">Email Address</label>
+                  <input type="email" className="form-control" />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Name</label>
+                  <input type="text" className="form-control" />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Password</label>
+                  <input type="password" className="form-control" />
+                </div>
+                <div className="d-flex flex-column gap-3">
+                  <button type="submit" className="flex-fill btn-login">
+                    Sign In to My Account
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
