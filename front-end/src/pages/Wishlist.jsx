@@ -53,24 +53,22 @@ export default function Wishlist() {
 
         {/* for Phone Layout */}
         <div className="catalog-vertical row row-cols-1 row-cols-md-4 g-1 mt-4">
-          <div className="col-9 mb-4">
+          <div className="col mb-4">
             <h2 className="catalog-title">Wishlist</h2>
           </div>
           <div className="catalog-nav">
             <h5 className="catalog-nav-title">Categories</h5>
             <br />
-            <div className="catalog-nav-link d-flex justify-content-between">
-              <a href="/" className="catalog-link">
-                All Categories
+            <div className="catalog-nav-link">
+              <a href="/" className="catalog-link d-flex justify-content-between">
+                All Categories<i className="bx bx-chevron-right"></i>
               </a>
-              <i className="bx bx-chevron-right"></i>
             </div>
             <hr />
-            <div className="catalog-nav-link d-flex justify-content-between">
-              <a href="/" className="catalog-link">
-                Wishlist
+            <div className="catalog-nav-link">
+              <a href="/" className="catalog-link d-flex justify-content-between">
+                Catalog<i className="bx bx-chevron-right"></i>
               </a>
-              <i className="bx bx-chevron-right"></i>
             </div>
             <hr />
           </div>

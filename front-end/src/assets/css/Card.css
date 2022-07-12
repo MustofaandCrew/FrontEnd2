@@ -1,17 +1,4 @@
-/* Card */
-.imgCarousel {
-    height: 35.25rem;
-    width: 110rem;
-  }
-  
-  .cardStyle {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  .cardStyle img {
-    width: 100%;
-  }
-  
+  /* Card */
   .cardImgStyle {
     width: 18rem;
     margin: 0rem;
@@ -31,15 +18,13 @@
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px){
     /* ini untuk tampilan handphone */
-    .imgCarousel {
-      height: 10rem;
-      width: 120rem;
-    }
-  
     .cardStyle {
-      width: 90%;
-      margin: 0rem;
+      width: 4rem;
       margin-bottom: 2rem;
+    }
+
+    .cardStyle img {
+      width: 100%;
     }
   
     .cardImgStyle {
@@ -59,15 +44,18 @@
     }
     
   }
+
+  @media only screen and (width: 540px){
+    .cardStyle {
+      width: 6rem;
+      margin: 0rem;
+      margin-bottom: 2rem;
+    }
+  }
   
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px){
     /* ini untuk tampilan tablet */
-    .imgCarousel {
-      height: 10rem;
-      width: 120rem;
-    }
-    
     .cardStyle {
       width: 8rem;
       margin: 0rem;
@@ -88,13 +76,8 @@
   
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px){
-    .imgCarousel {
-      height: 20rem;
-      width: 120rem;
-    }
-  
     .cardStyle {
-      width: 12rem;
+      width: 8rem;
       margin: 0rem;
       margin-bottom: 2rem;
     }
@@ -114,14 +97,11 @@
   /* Large devices (Laptops/desktop, 992px and up) */
   @media only screen and (min-width: 992px){
     /* ini untuk tampilan laptop */
-    .imgCarousel {
-      height: 32.25rem;
-      width: 100rem;
-    }
     .cardStyle {
-      width: 100%;
+      width: 6rem;
       margin-bottom: 2rem;
     }
+
     .cardStyle img {
       width: 100%;
     }
@@ -130,14 +110,11 @@
   
   /* Extra Large devices (Large laptops and destops, 120px and up) */
   @media only screen and (min-width: 1200px){
-    .imgCarousel {
-      height: 32.25rem;
-      width: 120rem;
-    }
     .cardStyle {
-      width: 100%;
+      width: 7rem;
       margin-bottom: 2rem;
     }
+
     .cardStyle img {
       width: 100%;
     }
