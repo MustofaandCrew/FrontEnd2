@@ -41,7 +41,12 @@ export default function Navbar() {
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li>
                   <a className="dropdown-item" href="/">
-                    Gadgets
+                    Electronic
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Gadget
                   </a>
                 </li>
                 <li>
@@ -51,12 +56,12 @@ export default function Navbar() {
                 </li>
                 <li>
                   <a className="dropdown-item" href="/">
-                    Make Up
+                    Fashion
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="/">
-                    Sneakers
+                    Sneaker
                   </a>
                 </li>
                 <li>
@@ -67,6 +72,26 @@ export default function Navbar() {
                 <li>
                   <a className="dropdown-item" href="/">
                     Baby
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Health & Beauty
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Gaming
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Toy & Hobby
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/">
+                    Music
                   </a>
                 </li>
               </ul>

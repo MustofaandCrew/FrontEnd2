@@ -5,8 +5,12 @@ import CatBaby from "../assets/images/CatBaby.png";
 import CatGadgets from "../assets/images/CatGadgets.png";
 import CatFurniture from "../assets/images/CatFurniture.png";
 import CatSneakers from "../assets/images/CatSneakers.png";
-import CatMakeUp from "../assets/images/CatMakeUp.png";
 import CatTools from "../assets/images/CatTools.png";
+import CatElectronic from "../assets/images/CatElectronic.png";
+import CatGaming from "../assets/images/CatGaming.png";
+import CatHealth from "../assets/images/CatHealth.png";
+import CatFashion from "../assets/images/CatFashion.png";
+import CatHobby from "../assets/images/CatHobby.png";
 
 import Card from "../components/Card";
 
@@ -58,17 +62,27 @@ export default function Home() {
           </button>
           <button className="buttonCategories">
             <div className="cardStyle">
+              <img src={CatFashion} className="card-img-top" alt="..." />
+            </div>
+          </button>
+          <button className="buttonCategories">
+            <div className="cardStyle">
+              <img src={CatGaming} className="card-img-top" alt="..." />
+            </div>
+          </button>
+          <button className="buttonCategories">
+            <div className="cardStyle">
               <img src={CatFurniture} className="card-img-top" alt="..." />
             </div>
           </button>
           <button className="buttonCategories">
             <div className="cardStyle">
-              <img src={CatMakeUp} className="card-img-top" alt="..." />
+              <img src={CatSneakers} className="card-img-top" alt="..." />
             </div>
           </button>
           <button className="buttonCategories">
             <div className="cardStyle">
-              <img src={CatSneakers} className="card-img-top" alt="..." />
+              <img src={CatHealth} className="card-img-top" alt="..." />
             </div>
           </button>
           <button className="buttonCategories">
@@ -79,16 +93,6 @@ export default function Home() {
           <button className="buttonCategories">
             <div className="cardStyle">
               <img src={CatBaby} className="card-img-top" alt="..." />
-            </div>
-          </button>
-          <button className="buttonCategories">
-            <div className="cardStyle">
-              <img src={CatSneakers} className="card-img-top" alt="..." />
-            </div>
-          </button>
-          <button className="buttonCategories">
-            <div className="cardStyle">
-              <img src={CatMakeUp} className="card-img-top" alt="..." />
             </div>
           </button>
         </div>
