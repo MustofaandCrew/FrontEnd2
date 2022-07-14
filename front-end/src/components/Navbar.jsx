@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.svg";
 import LogoSeller from "../assets/images/logo-seller.svg";
 import { NavLink } from "react-router-dom";
 // dummy images
@@ -162,6 +162,8 @@ export default function Navbar() {
             </a>
           </li> */}
         </ol>
+
+        {/* Phone Layout */}
         <ol className="vertical-screen">
           <li className="nav-span">
             <a href="/">Home</a>

@@ -6,11 +6,11 @@ import CatGadgets from "../assets/images/CatGadgets.png";
 import CatFurniture from "../assets/images/CatFurniture.png";
 import CatSneakers from "../assets/images/CatSneakers.png";
 import CatTools from "../assets/images/CatTools.png";
-import CatElectronic from "../assets/images/CatElectronic.png";
+// import CatElectronic from "../assets/images/CatElectronic.png";
 import CatGaming from "../assets/images/CatGaming.png";
 import CatHealth from "../assets/images/CatHealth.png";
 import CatFashion from "../assets/images/CatFashion.png";
-import CatHobby from "../assets/images/CatHobby.png";
+// import CatHobby from "../assets/images/CatHobby.png";
 
 import Card from "../components/Card";
 
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         {/* Card */}
-        <div className="d-flex flex-row flex-wrap justify-content-start mt-5 mb-2">
+        <div className="home-title mt-5 mb-4">
           <h4>Trend Categories</h4>
         </div>
         <div className="d-flex flex-row flex-wrap justify-content-around">
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
 
         {/* New Products */}
-        <div className="home-title mt-5 mb-4">
+        <div className="home-title mt-3 mb-4">
           <h4>New Products</h4>
         </div>
         <div className="row row-cols-2 row-cols-md-4 g-3 mt-2">

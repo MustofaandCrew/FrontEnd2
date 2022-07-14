@@ -15,7 +15,12 @@ export default function Modal() {
           <div className="modal-body">
             <li>
               <a className="a-modal" href="/">
-                Gadgets
+                Electronic
+              </a>
+            </li>
+            <li>
+              <a className="a-modal" href="/">
+                Gadget
               </a>
             </li>
             <li>
@@ -25,12 +30,12 @@ export default function Modal() {
             </li>
             <li>
               <a className="a-modal" href="/">
-                Make Up
+                Fashion
               </a>
             </li>
             <li>
               <a className="a-modal" href="/">
-                Sneakers
+                Sneaker
               </a>
             </li>
             <li>
@@ -41,6 +46,26 @@ export default function Modal() {
             <li>
               <a className="a-modal" href="/">
                 Baby
+              </a>
+            </li>
+            <li>
+              <a className="a-modal" href="/">
+                Health & Beauty
+              </a>
+            </li>
+            <li>
+              <a className="a-modal" href="/">
+                Gaming
+              </a>
+            </li>
+            <li>
+              <a className="a-modal" href="/">
+                Toy & Hobby
+              </a>
+            </li>
+            <li>
+              <a className="a-modal" href="/">
+                Music
               </a>
             </li>
           </div>
