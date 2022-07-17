@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Catalog, Details, ShoppingCart, Wishlist, Register, NotificationVertical, AccountBuyer, AccountSeller, DashboardBuyer, DashboardSeller, MyProduct } from "./pages";
+import { Home, Login, Catalog, Details, ShoppingCart, Wishlist, Register, NotificationVertical, Account, DashboardBuyer, DashboardSeller, MyProduct } from "./pages";
 import Protected from "./components/Protected";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/catalog" element={<Catalog />} />
-          <Route path="/productdetails" element={<Details />} />
+          <Route path="/productdetails/:id" element={<Details />} />
           <Route
             path="/shoppingcart"
             element={
@@ -31,18 +31,10 @@ function App() {
             }
           />
           <Route
-            path="/accountbuyer"
+            path="/account"
             element={
               <Protected>
-                <AccountBuyer />
-              </Protected>
-            }
-          />
-          <Route
-            path="/accountseller"
-            element={
-              <Protected>
-                <AccountSeller />
+                <Account />
               </Protected>
             }
           />

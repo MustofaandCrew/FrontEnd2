@@ -2,18 +2,54 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function AddProduct() {
+  const [loading, setLoading] = useState(true);
+  const [nama, setNama] = useState("");
+  const [harga, setHarga] = useState("");
+  const [deskripsi, setDeskripsi] = useState("");
   const [category, setCategory] = useState([]);
+  const [imagesPreview, setImagesPreview] = useState([]);
   const [images, setImages] = useState([]);
+  const [choice, setChoice] = useState(1);
 
   const onClose = () => {
+    setImagesPreview([]);
     setImages([]);
   };
+
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    const formData = new FormData();
+    e.preventDefault();
+    formData.append("nama", nama);
+    formData.append("harga", harga);
+    formData.append("deskripsi", deskripsi);
+    formData.append("idCategory", choice);
+    if (images.length > 0) {
+      for (let image of images) {
+        formData.append("product_images", image);
+      }
+    }
+
+    try {
+      const res = await axios.post("https://secondhand-backend-mac.herokuapp.com/products", formData, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    location.reload();
+    setLoading(false);
+  };
+
   const onUploadImages = (e) => {
     let images = [];
+    setImages(e.target.files);
     for (const file of e.target.files) {
       images.push(URL.createObjectURL(file));
     }
-    setImages(images);
+    setImagesPreview(images);
   };
 
   useEffect(() => {
@@ -39,36 +75,45 @@ export default function AddProduct() {
           </div>
           <div className="modal-body m-3">
             <div className="d-flex justify-content-center">
-              <form action="">
+              <form onSubmit={handleSubmit}>
                 <div>
                   <h5>Product Name</h5>
-                  <input className="form-control" type="text" placeholder="Papel la casa" />
+                  <input className="form-control" onChange={(e) => setNama(e.target.value)} name="nama" type="text" placeholder="Papel la casa" />
                 </div>
                 <div>
                   <h5>Price</h5>
-                  <input className="form-control" type="text" placeholder="$100" />
+                  <input className="form-control" onChange={(e) => setHarga(e.target.value)} name="harga" type="text" placeholder="$100" />
                 </div>
                 <div className="mt-3">
                   <h5>Category</h5>
-                  <select className="form-select" type="text" placeholder="Shipping">
+                  <select className="form-select" value={choice} onChange={(e) => setChoice(e.target.value)} type="text" placeholder="Shipping">
                     {category.map((item) => (
-                      <option key={item.id}>{item.nama}</option>
+                      <option value={item.id} key={item.id}>
+                        {item.nama}
+                      </option>
                     ))}
                   </select>
                 </div>
                 <div className="mt-3">
                   <h5>Description</h5>
-                  <textarea className="form-control" type="text" placeholder="lorem ipsum" />
+                  <textarea className="form-control" onChange={(e) => setDeskripsi(e.target.value)} name="deskripsi" type="text" placeholder="lorem ipsum" />
                 </div>
                 <div className="custom-file mt-3">
                   <h5>Thumbnail</h5>
-                  {images && images.map((item, index) => <img key={index} src={item} className="img-thumbnail" alt="thumbnail" />)}
-                  <input type="file" onChange={onUploadImages} multiple className="form-control" id="customFile" />
+                  {imagesPreview && imagesPreview.map((item, index) => <img key={index} src={item} className="img-thumbnail" alt="thumbnail" />)}
+                  <input type="file" onChange={onUploadImages} name="product_images" multiple className="form-control" id="customFile" />
                 </div>
                 <div className="text-center mt-3">
-                  <button type="button" className="bid btn btn-success">
-                    Create Product
-                  </button>
+                  {loading ? (
+                    <button type="submit" className="bid btn btn-success">
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Creating...
+                    </button>
+                  ) : (
+                    <button disabled type="submit" className="bid btn btn-success">
+                      Create Product
+                    </button>
+                  )}
                 </div>
               </form>
             </div>

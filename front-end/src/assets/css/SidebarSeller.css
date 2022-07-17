@@ -28,3 +28,6 @@
 .footer-text{
     padding: '20px 5px',;
 }
+.sidebar-link:hover{
+    background-color: #000 !important;
+}

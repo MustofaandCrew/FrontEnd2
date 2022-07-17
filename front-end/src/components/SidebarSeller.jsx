@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { CDBSidebar, CDBSidebarContent, CDBSidebarFooter, CDBSidebarHeader, CDBSidebarMenu, CDBSidebarMenuItem } from "cdbreact";
 import { NavLink } from "react-router-dom";
 import "../assets/css/SidebarSeller.css";
+import { useNavigate } from "react-router-dom";
 
 import Logo from "../assets/images/logo.png";
 
 const SidebarSeller = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   return (
     <div className="main">
       <CDBSidebar className="sidebar">
@@ -17,30 +24,26 @@ const SidebarSeller = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/dashboardseller" activeClassName="activeClicked">
+            <NavLink to="/dashboardseller" activeclassname="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 Dashboard
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/myproduct" activeClassName="activeClicked">
+            <NavLink to="/myproduct" activeclassname="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 My Product
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/accountseller" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table" className="text">
-                My Account
+            <a onClick={handleLogout}>
+              <CDBSidebarMenuItem icon="sign-out-alt" className="text">
+                Signout
               </CDBSidebarMenuItem>
-            </NavLink>
-            <a exact to="/accountbuyer" activeClassName="activeClicked">
+            </a>
+            <a activeclassname="activeClicked">
               <CDBSidebarMenuItem className="mx-5">qwertyuiopasdfghjklzxcvbnm</CDBSidebarMenuItem>
             </a>
           </CDBSidebarMenu>
         </CDBSidebarContent>
-
-        <CDBSidebarFooter className="footer">
-          <div className="footer-text">Sidebar Footer</div>
-        </CDBSidebarFooter>
       </CDBSidebar>
     </div>
   );

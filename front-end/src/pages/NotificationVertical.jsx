@@ -24,7 +24,7 @@ export default function Notification() {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      setNotif(notifikasi.data);
+      setNotif(notifikasi.data.data);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -43,7 +43,7 @@ export default function Notification() {
           <div className="container container-fluid">
             {notif ? (
               notif.map((data) => (
-                <a href="/shoppingcart">
+                <a key={data.id} href="/dashboardbuyer">
                   <div className="d-flex product">
                     <div className="product-img">
                       <img src="https://i.ebayimg.com/thumbs/images/g/rn8AAOSwIGBc1UqJ/s-l300.jpg" alt="" />

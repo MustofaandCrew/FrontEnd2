@@ -1,6 +1,6 @@
   /* Wishlist */
   /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px){
+  @media only screen and (max-width: 768px){
     /* ini untuk tampilan handphone */
     .catalog-vertical  h2.catalog-title {
       font-size: 30px;
@@ -33,15 +33,10 @@
       padding-left: 5px;
       padding-right: 0;
     }
-  
-    .catalog-horizontal {
-      display: none !important;
-    }
-    
   }
   
   /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px){
+  @media (min-width: 0px){
     /* ini untuk tampilan tablet */
     .container {
       padding: 0 0.7rem;
@@ -69,14 +64,14 @@
       box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.1);
       padding: 20px 20px;
     }
-  
-    .catalog-vertical{
-      display: none !important;
+    .catalog-horizontal{
+      display: none !important
     }
+
   }
   
   /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px){
+  @media (max-width: 768px){
     .container {
       padding: 0 0.7rem;
     }
@@ -103,14 +98,10 @@
       box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.1);
       padding: 20px 20px;
     }
-  
-    .catalog-vertical{
-      display: none !important;
-    }
   }
   
   /* Large devices (Laptops/desktop, 992px and up) */
-  @media only screen and (min-width: 992px){
+  @media only screen and (min-width: 768px){
     /* ini untuk tampilan laptop */
     .container {
       padding: 0 0.7rem;
@@ -141,6 +132,9 @@
   
     .catalog-vertical{
       display: none !important;
+    }
+    .catalog-horizontal{
+      display: flex !important;
     }
   }
   

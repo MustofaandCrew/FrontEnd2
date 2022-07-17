@@ -23,18 +23,28 @@
     text-decoration: none;
     color: #000;
 }
-.image-product {
-    width: 60px;
-    height: 60px;
+.image-product{
+    object-fit: cover;
+    width: 50%;
+    height: 10rem;
     border-radius: 10px;
     margin: auto;
 }
+
+@media screen and (min-width: 992px) {
+    .image-product {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        margin: auto;
+    }
+}
+
 .text-product {
-    font-family: 'Poppins';
-    font-size: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
     line-height: 27px; 
     font-weight: 600;
-    font-size: 17px;
     line-height: 21px;
     color: #0C0D36;
     margin: auto;

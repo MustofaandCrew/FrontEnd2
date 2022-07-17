@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import SidebarSeller from "../components/SidebarSeller";
 import SidebarSellerMobile from "../components/SidebarSellerMobile";
 import "../assets/css/DashboardSeller.css";
-import Image from "../assets/images/NewProducts3.jpg";
-import Expand from "../assets/images/btn-expand.png";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import axios from "axios";
+import DefaultPic from "../assets/images/user_pc.png";
 
 const override = {
   display: "flex",
@@ -36,10 +35,55 @@ export default function DashboardSeller() {
       });
       setUser(user.data.data);
       setProduct(product.data.data);
+      console.log(product.data.data);
       setLoading(false);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleAccept = async (e) => {
+    const id = e.target.value;
+    const status = "Diterima";
+    try {
+      const response = await axios.put(
+        `https://secondhand-backend-mac.herokuapp.com/updateOrder/${id}`,
+        {
+          status,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+    location.reload();
+  };
+
+  const handleReject = async (e) => {
+    const id = e.target.value;
+    const status = "Ditolak";
+    try {
+      const response = await axios.put(
+        `https://secondhand-backend-mac.herokuapp.com/updateOrder/${id}`,
+        {
+          status,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+    location.reload();
   };
 
   useEffect(() => {
@@ -62,14 +106,14 @@ export default function DashboardSeller() {
             <div className="page-transaksi-buyer">
               <div className="row mb-5 navbar-dekstop">
                 <div className="col-md-6">
-                  <h3>Transactions</h3>
+                  <h3>History Transactions</h3>
                   <p>Big result start from the small one</p>
                 </div>
                 <div className="col-md-6">
                   <div className="d-flex align-items-center justify-content-end">
-                    <a class="navbar-brand" href="#">
-                      <img src={user.image} alt="profil" className="foto-profil" />
-                      Hi, {user.nama}
+                    <a className="navbar-brand" href="/account">
+                      <img src={user.image || DefaultPic} alt="profil" className="foto-profil" />
+                      Hi, {user.nama.split(" ").sort((a, b) => a.length - b.length)[0]}
                     </a>
                   </div>
                 </div>
@@ -80,34 +124,103 @@ export default function DashboardSeller() {
               </div>
               <div className="list-dekstop">
                 {product ? (
-                  product.map((item) => (
-                    <div className="row table-transaksi d-flex align-items-center mb-3">
-                      <div className="col-sm-2">
-                        <img src={Image} className="image-product" alt="img" />
-                      </div>
-                      <div className="col-sm-3 text-product">Shirup Marzzan</div>
-                      <div className="col-sm-3 text-product">Angga Risky</div>
-                      <div className="col-sm-3 text-product">12 Januari, 2020</div>
-                      <div className="col-sm-1 arrow">
-                        <img src={Expand} className="image-expand" alt="img" />
-                      </div>
-                    </div>
-                  ))
+                  <div className="table-responsive-md">
+                    <table className="table align-middle table-hover">
+                      <thead>
+                        <tr>
+                          <th>Image</th>
+                          <th>Buyer</th>
+                          <th>Bid</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {product.map((item) => (
+                          <tr key={item.id}>
+                            <td>
+                              <img src={item.Product.ProductImages[0].image} className="rounded-5 p-3" alt="img" />
+                            </td>
+                            <td>
+                              <h6>{item.User.nama}</h6>
+                            </td>
+                            <td>
+                              <h6>{item.harga}</h6>
+                            </td>
+                            <td>
+                              <h6>{item.status}</h6>
+                            </td>
+                            {item.status !== "Menunggu Konfirmasi" ? (
+                              <td>
+                                {item.status === "Diterima" ? (
+                                  <a target="_blank" href={`https://wa.me/${item.User.noHp}`}>
+                                    <button className="btn btn-success">
+                                      <span className="fa fa-whatsapp"></span>
+                                    </button>
+                                  </a>
+                                ) : (
+                                  <a>
+                                    <button disabled className="btn btn-success">
+                                      <span className="fa fa-whatsapp"></span>
+                                    </button>
+                                  </a>
+                                )}
+                              </td>
+                            ) : (
+                              <td>
+                                <div className="row g-3">
+                                  <div className="col-md-12 d-flex justify-content-center">
+                                    <button type="button" value={item.id} onClick={handleAccept} className="btn flex-fill btn-primary">
+                                      Accept
+                                    </button>
+                                  </div>
+                                  <div className="col-md-12 d-flex justify-content-center">
+                                    <button type="button" value={item.id} onClick={handleReject} className="btn flex-fill btn-danger">
+                                      Reject
+                                    </button>
+                                  </div>
+                                </div>
+                              </td>
+                            )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 ) : (
-                  <h3 className="text-center">Anda belum pernah melakukan transaksi</h3>
+                  <div className="text-center">
+                    <h5>You have no transaction</h5>
+                  </div>
                 )}
               </div>
               <div className="list-mobile">
                 {product ? (
                   product.map((item) => (
-                    <div className="card mb-3 rounded-4 mb-3">
-                      <img src={Image} className="card-img-top rounded-5 p-3" alt="img" />
+                    <div key={item.id} className="card mb-3 rounded-4 mb-3">
+                      <img src={item.Product.ProductImages[0].image} className="card-img rounded-5 p-3" alt="img" />
                       <div className="card-body">
-                        <h5 className="card-title">Shirup Marzzan</h5>
-                        <p className="card-text">Angga Risky</p>
-                        <p className="card-text">
-                          <small className="text-muted">12 Januari, 2020</small>
+                        <h3 className="card-title">{item.Product.nama}</h3>
+                        <p className="text-product my-4">
+                          Buyer: <span className="fw-light">{item.User.nama}</span>
                         </p>
+                        <p className="text-product my-4">{item.status}</p>
+                        <div className="row">
+                          <div className="col-sm-12">
+                            {item.status === "Diterima" ? (
+                              <a className="d-flex inline-block" target="_blank" href={`https://wa.me/${item.User.noHp}`}>
+                                <button className="flex-fill btn btn-success">
+                                  <span className="fa fa-whatsapp">&nbsp;Contact Buyer</span>
+                                </button>
+                              </a>
+                            ) : (
+                              <a className="d-flex inline-block" target="_blank" href={`https://wa.me/${item.User.noHp}`}>
+                                <button disabled className="flex-fill btn btn-success">
+                                  <span className="fa fa-whatsapp">&nbsp;Contact Buyer</span>
+                                </button>
+                              </a>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   ))

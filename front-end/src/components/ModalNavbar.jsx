@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/ModalNavbar.css";
 
-export default function Modal() {
+export default function Modal(props) {
   return (
     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog">
@@ -13,41 +13,13 @@ export default function Modal() {
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
-            <li>
-              <a className="a-modal" href="/">
-                Gadgets
-              </a>
-            </li>
-            <li>
-              <a className="a-modal" href="/">
-                Furniture
-              </a>
-            </li>
-            <li>
-              <a className="a-modal" href="/">
-                Make Up
-              </a>
-            </li>
-            <li>
-              <a className="a-modal" href="/">
-                Sneakers
-              </a>
-            </li>
-            <li>
-              <a className="a-modal" href="/">
-                Tools
-              </a>
-            </li>
-            <li>
-              <a className="a-modal" href="/">
-                Baby
-              </a>
-            </li>
-          </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
-              Close
-            </button>
+            {props.data.map((item) => (
+              <li key={item.id}>
+                <a className="a-modal" href={`/catalog?category=${item.nama}`}>
+                  {item.nama}
+                </a>
+              </li>
+            ))}
           </div>
         </div>
       </div>

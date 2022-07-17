@@ -1,15 +1,33 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../assets/css/Wishlist.css";
 import Card from "../components/Card";
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 
-// Dummy Images
-import NewProducts from "../assets/images/NewProducts.jpg";
-import NewProducts2 from "../assets/images/NewProducts2.jpg";
-import NewProducts3 from "../assets/images/NewProducts3.jpg";
-
 export default function Wishlist() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const wishlist = JSON.parse(localStorage.getItem("wishlist"));
+
+  const fetchData = async () => {
+    try {
+      const productArray = [];
+      for (let i = 0; i < wishlist.length; i++) {
+        const product = await axios.get(`https://secondhand-backend-mac.herokuapp.com/product/${wishlist[i].id}`);
+        productArray.push(product.data.data);
+      }
+      setProducts(productArray);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (wishlist) {
+      fetchData();
+    }
+  }, []);
+
   return (
     <LayoutNavbarFooter>
       <div className="container">
@@ -24,63 +42,53 @@ export default function Wishlist() {
               <h5 className="catalog-nav-title">Categories</h5>
               <br />
               <div className="catalog-nav-link d-flex justify-content-between">
-                <a href="/" className="catalog-link">
-                  All Categories
-                </a>
-                <i className="bx bx-chevron-right"></i>
-              </div>
-              <hr />
-              <div className="catalog-nav-link d-flex justify-content-between">
-                <a href="/" className="catalog-link">
+                <a href="/wishlist" className="catalog-link">
                   Wishlist
                 </a>
-                <i className="bx bx-chevron-right"></i>
+                <i className="bx bx-chevron-right p-1"></i>
               </div>
               <hr />
             </div>
           </div>
           <div className="col-8">
-            <div className="row row-cols-2 row-cols-md-4 g-4 mt-2 mb-5">
-              <Card image={NewProducts} />
-              <Card image={NewProducts2} />
-              <Card image={NewProducts3} />
-              <Card image={NewProducts} />
-              <Card image={NewProducts2} />
-              <Card image={NewProducts3} />
-            </div>
+            {products.length > 0 ? (
+              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-2 mb-5">
+                {products.map((product) => (
+                  <a key={product.id} href={`/productdetails/${product.id}`}>
+                    <Card data={product} />
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <div className="row">
+                <div className="col-12">
+                  <h3 className="catalog-title text-center">No product in wishlist</h3>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
         {/* for Phone Layout */}
         <div className="catalog-vertical row row-cols-1 row-cols-md-4 g-1 mt-4">
           <div className="col mb-4">
-            <h2 className="catalog-title">Wishlist</h2>
+            <h2 className="catalog-title text-center">Wishlist</h2>
           </div>
-          <div className="catalog-nav">
-            <h5 className="catalog-nav-title">Categories</h5>
-            <br />
-            <div className="catalog-nav-link">
-              <a href="/" className="catalog-link d-flex justify-content-between">
-                All Categories<i className="bx bx-chevron-right"></i>
-              </a>
+          {products.length > 0 ? (
+            <div className="row-vertical row row-cols-2 row-cols-md-4 g-3 mt-2">
+              {products.map((product) => (
+                <a key={product.id} href={`/productdetails/${product.id}`}>
+                  <Card data={product} />
+                </a>
+              ))}
             </div>
-            <hr />
-            <div className="catalog-nav-link">
-              <a href="/" className="catalog-link d-flex justify-content-between">
-                Catalog<i className="bx bx-chevron-right"></i>
-              </a>
+          ) : (
+            <div className="row">
+              <div className="col-12">
+                <h3 className="catalog-title text-center">No product in wishlist</h3>
+              </div>
             </div>
-            <hr />
-          </div>
-
-          <div className="row-vertical row row-cols-2 row-cols-md-4 g-2 mt-2">
-            <Card image={NewProducts} />
-            <Card image={NewProducts2} />
-            <Card image={NewProducts3} />
-            <Card image={NewProducts} />
-            <Card image={NewProducts2} />
-            <Card image={NewProducts3} />
-          </div>
+          )}
         </div>
       </div>
     </LayoutNavbarFooter>

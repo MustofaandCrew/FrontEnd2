@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import imageProfil from "../assets/images/user_pc.png";
+import DefaultPic from "../assets/images/user_pc.png";
+import { useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import "../assets/css/SidebarSellerMobile.css";
 
@@ -8,6 +9,12 @@ export default function SideSellerMobile() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token") ? true : false);
   const [nama, setNama] = useState("");
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -46,26 +53,26 @@ export default function SideSellerMobile() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item item-mobile text">
-                <a className="nav-link active" aria-current="page" href="/transaksibuyer">
+                <a className="nav-link active" aria-current="page" href="/dashboardseller">
                   Dashboard
                 </a>
               </li>
               <li className="nav-item item-mobile text">
-                <a className="nav-link active" href="/accountbuyer">
+                <a className="nav-link active" href="/myproduct">
                   My Product
                 </a>
               </li>
               <li className="nav-item item-mobile text">
-                <a className="nav-link active" href="/accountbuyer">
-                  My Account
+                <a className="nav-link active" onClick={handleLogout} href="/">
+                  Sign Out
                 </a>
               </li>
             </ul>
           </div>
         </div>
         <a className="navbar-brand" href="#">
-          <img src={image} alt="profil" className="foto-profil" />
-          Hi, {nama}
+          <img src={image || DefaultPic} alt="profil" className="foto-profil" />
+          Hi, {nama.split(" ").sort((a, b) => a.length - b.length)[0]}
         </a>
       </div>
     </nav>

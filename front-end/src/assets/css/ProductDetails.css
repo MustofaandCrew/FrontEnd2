@@ -29,8 +29,38 @@ input.input-bid {
     box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.1);
 }
 
+img.thumbnail-active {
+    object-fit: cover;
+    width: 40rem;
+    height: 100%;
+    cursor: pointer;
+}
+
 img.thumbnail {
+    object-fit: cover;
     width: 100%;
+    height: 10rem;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.38);
+}
+
+img.thumbnail-card {
+    object-fit: cover;
+    width: 100%;
+    height: 10rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    img.thumbnail {
+        width: 100%;
+        height: 100%;
+    }
+    img.thumbnail-active {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 img.profile {

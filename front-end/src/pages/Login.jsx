@@ -33,6 +33,7 @@ export default function Login() {
       })
       .catch((error) => {
         setError(error.message);
+        setIsLoading(false);
         return "Gagal";
       });
     if (result === "Berhasil") {
@@ -67,16 +68,17 @@ export default function Login() {
                 <div className="d-flex flex-column gap-3">
                   {isLoading ? (
                     <button type="submit" disabled className="flex-fill btn-disabled">
-                      Signing In
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Signing In...
                     </button>
                   ) : (
                     <button type="submit" className="flex-fill btn-login">
                       Sign In to My Account
                     </button>
                   )}
-                  <button type="submit" className="flex-fill btn-register">
+                  <a href="/register" className="flex-fill text-center btn-register">
                     Sign Up
-                  </button>
+                  </a>
                 </div>
               </form>
             </div>

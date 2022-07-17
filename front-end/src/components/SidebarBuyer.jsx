@@ -1,11 +1,17 @@
 import React from "react";
 import { CDBSidebar, CDBSidebarContent, CDBSidebarFooter, CDBSidebarHeader, CDBSidebarMenu, CDBSidebarMenuItem } from "cdbreact";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../assets/css/SidebarBuyer.css";
 
 import Logo from "../assets/images/logo.png";
 
 const SidebarBuyer = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
     <div className="main">
       <CDBSidebar className="sidebar">
@@ -17,25 +23,26 @@ const SidebarBuyer = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/dashboardbuyer" activeclassName="activeClicked">
+            <NavLink to="/dashboardbuyer" activeclassname="activeClicked">
               <CDBSidebarMenuItem icon="columns" className="text">
                 Dashboard
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/accountbuyer" activeclassName="activeClicked">
+            <NavLink to="/account" activeclassname="activeClicked">
               <CDBSidebarMenuItem icon="table" className="text">
                 My Account
               </CDBSidebarMenuItem>
             </NavLink>
-            <a exact to="/accountbuyer" activeclassName="activeClicked">
+            <a onClick={handleLogout}>
+              <CDBSidebarMenuItem icon="sign-out-alt" className="text">
+                Signout
+              </CDBSidebarMenuItem>
+            </a>
+            <a activeclassname="activeClicked">
               <CDBSidebarMenuItem className="mx-5">qwertyuiopasdfghjklzxcvbnm</CDBSidebarMenuItem>
             </a>
           </CDBSidebarMenu>
         </CDBSidebarContent>
-
-        <CDBSidebarFooter className="footer">
-          <div className="footer-text">Sidebar Footer</div>
-        </CDBSidebarFooter>
       </CDBSidebar>
     </div>
   );

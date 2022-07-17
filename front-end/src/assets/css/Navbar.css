@@ -2,9 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: sticky;
+  /* position: sticky; */
   z-index: 1;
   top: 0;
+}
+
+.dropdown-profile{
+  transform: translate3d(0px, 45.5px, 0px) !important;
 }
 
 nav {
@@ -128,6 +132,7 @@ nav ol.vertical-screen {
   display: none;
   list-style: none;
   margin: auto 0;
+  overflow-y: auto;
 }
 
 nav .search-box {
@@ -289,12 +294,13 @@ input[type="checkbox"] {
     height: 0;
     visibility: hidden;
     transition: 0.3s;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
   }
 
   nav ol.vertical-screen li {
     text-align: left;
     transition: 0.3s 0.1s all;
-    opacity: 0;
     margin: 0 0;
   }
 
@@ -305,6 +311,11 @@ input[type="checkbox"] {
   nav ol.vertical-screen li.nav-span a {
     background: none;
     color: black;
+    display: inline-block;
+  }
+
+  nav ol.vertical-screen li.nav-span a:hover {
+    color: #FF7158;
   }
 
   nav ol.vertical-screen li.nav-span div.dropup a:hover {
@@ -324,16 +335,16 @@ input[type="checkbox"] {
   nav ol.vertical-screen li.nav-signin {
     margin-top: 15px;
     text-align: center;
+    margin-bottom: 20px;
   }
 
-  nav ol.vertical-screen li.nav-signin a span {
-    padding: 10px 20px;
+  nav ol.vertical-screen li.nav-signin a{
+    padding: 10px;
     border-radius: 10px;
     background: #FF7158;
   }
 
   nav ol.vertical-screen li.nav-signin a span.profile {
-    padding: 10px 20px;
     border-radius: 10px;
     background: rgb(222, 222, 222);
   }
@@ -345,15 +356,21 @@ input[type="checkbox"] {
     padding-bottom: 4px;
   }
 
-  nav ol.vertical-screen li.nav-sigin a:hover {
+  nav ol.vertical-screen li.nav-signin a{
+    display: inline;
+  }
+
+  nav ol.vertical-screen li.nav-signin a:hover {
     color: #fff;
-    transition: 0.5s;
   }
 
   nav ol.vertical-screen li a:hover {
     color: #FF7158;
     transition: 0.5s;
   }
+ .vertical-profile{
+  background-color: #DEDEDE !important;
+ }
 
   nav ol.vertical-screen li a {
     font-size: 15px;
@@ -397,6 +414,9 @@ input[type="checkbox"] {
   nav ol.vertical-screen li:nth-child(5) {
     transform: translateX(-350px);
   }
+  nav ol.vertical-screen li:nth-child(6) {
+    transform: translateX(-400px);
+  }
 
   nav .bar {
     display: block;
@@ -434,7 +454,8 @@ input[type="checkbox"] {
   #check:checked~nav ol li:nth-child(2),
   #check:checked~nav ol li:nth-child(3),
   #check:checked~nav ol li:nth-child(4),
-  #check:checked~nav ol li:nth-child(5) {
+  #check:checked~nav ol li:nth-child(5),
+  #check:checked~nav ol li:nth-child(6) {
     transform: translateX(0);
     opacity: 1;
   }

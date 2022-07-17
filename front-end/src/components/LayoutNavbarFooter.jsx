@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import DefaultPic from "../assets/images/user_pc.png";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import PropagateLoader from "react-spinners/PropagateLoader";
@@ -19,35 +19,52 @@ export default function LayoutNavbarFooter({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token") ? true : false);
   const [nama, setNama] = useState("");
   const [image, setImage] = useState("");
-  const [notif, setNotif] = useState([]);
+  const [notifBuyer, setNotifBuyer] = useState([]);
+  const [notifSeller, setNotifSeller] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  const fetchData = async () => {
+  const fetchDataUser = async () => {
     try {
       const user = await axios.get(`https://secondhand-backend-mac.herokuapp.com/profile`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      const notifikasi = await axios.get("https://secondhand-backend-mac.herokuapp.com/notifikasiBuyer", {
+      const notifikasiBuyer = await axios.get("https://secondhand-backend-mac.herokuapp.com/notifikasiBuyer", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      const categories = await axios.get("https://secondhand-backend-mac.herokuapp.com/categories");
-      setNama(user.data.data.nama);
-      setImage(user.data.data.image);
-      setNotif(notifikasi.data);
-      setCategories(categories.data.data);
+      const notifikasiSeller = await axios.get("https://secondhand-backend-mac.herokuapp.com/notifikasiSeller", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const shortName = user.data.data.nama.split(" ");
+      const shortest = shortName.sort((a, b) => a.length - b.length);
+      setNama(shortest[0]);
+      setImage(user.data.data.image || DefaultPic);
+      setNotifSeller(notifikasiSeller.data.data);
+      setNotifBuyer(notifikasiBuyer.data.data);
       setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const fetchData = async () => {
+    try {
+      const data = await axios.get("https://secondhand-backend-mac.herokuapp.com/categories");
+      setCategories(data.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
+    fetchData();
     if (isLoggedIn) {
-      fetchData();
+      fetchDataUser();
     } else {
       setLoading(false);
     }
@@ -56,6 +73,7 @@ export default function LayoutNavbarFooter({ children }) {
   const handlelogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
+    location.reload();
   };
 
   return (
@@ -64,7 +82,7 @@ export default function LayoutNavbarFooter({ children }) {
         <PropagateLoader cssOverride={override} size={50} color={"#FF7158"} loading={loading} />
       ) : (
         <div className="content">
-          <Navbar nama={nama} image={image} categories={categories} notif={notif} isLoggedIn={isLoggedIn} onLogout={handlelogout} />
+          <Navbar nama={nama} image={image} categories={categories} notifSeller={notifSeller} notifBuyer={notifBuyer} isLoggedIn={isLoggedIn} onLogout={handlelogout} />
           <div className="my-2">{children}</div>
           <Footer />
         </div>
