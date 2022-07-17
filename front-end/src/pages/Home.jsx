@@ -80,46 +80,62 @@ export default function Home() {
               <h4>Trend Categories</h4>
             </div>
             <div className="d-flex flex-row flex-wrap justify-content-around">
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatGadgets} className="card-img-top" alt="..." />
-                </div>
-              </button>
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatFurniture} className="card-img-top" alt="..." />
-                </div>
-              </button>
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatGaming} className="card-img-top" alt="..." />
-                </div>
-              </button>
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatSneakers} className="card-img-top" alt="..." />
-                </div>
-              </button>
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatTools} className="card-img-top" alt="..." />
-                </div>
-              </button>
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatFashion} className="card-img-top" alt="..." />
-                </div>
-              </button>
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatHobby} className="card-img-top" alt="..." />
-                </div>
-              </button>
-              <button className="buttonCategories">
-                <div className="cardStyle">
-                  <img src={CatHealth} className="card-img-top" alt="..." />
-                </div>
-              </button>
+              <a href="/catalog?category=Gadgets">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatGadgets} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
+              <a href="/catalog?category=Furniture">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatFurniture} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
+              <a href="/catalog?category=Gaming">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatGaming} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
+              <a href="/catalog?category=Sneakers">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatSneakers} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
+              <a href="/catalog?category=Tools">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatTools} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
+              <a href="/catalog?category=Fashion">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatFashion} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
+              <a href="/catalog?category=Hobby">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatHobby} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
+              <a href="/catalog?category=Health and Beauty">
+                <button className="buttonCategories">
+                  <div className="cardStyle">
+                    <img src={CatHealth} className="card-img-top" alt="..." />
+                  </div>
+                </button>
+              </a>
             </div>
 
             {/* New Products */}
