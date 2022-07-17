@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.svg";
 import LogoSeller from "../assets/images/logo-seller.svg";
 import { MdNotificationsActive } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -124,6 +124,8 @@ export default function Navbar(props) {
             </li>
           )}
         </ol>
+
+        {/* Phone Layout */}
         <ol className="vertical-screen">
           <li className="nav-span">
             <a href="/">Home</a>
