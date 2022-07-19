@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SidebarBuyer from "../components/SidebarBuyer";
 import SidebarBuyerMobile from "../components/SidebarBuyerMobile";
 import "../assets/css/DashboardBuyer.css";
-import Image from "../assets/images/NewProducts3.jpg";
+import DefaultPic from "../assets/images/user_pc.png";
 import axios from "axios";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
@@ -55,7 +55,7 @@ export default function DashboardBuyer() {
             <SidebarBuyer />
           </div>
           <div className="sidebar-mobile">
-            <SidebarBuyerMobile image={user.image} nama={user.nama} />
+            <SidebarBuyerMobile image={user.image || DefaultPic} nama={user.nama} />
           </div>
           {user && (
             <div className="page-transaksi-buyer">
@@ -67,7 +67,7 @@ export default function DashboardBuyer() {
                 <div className="col-md-6">
                   <div className="d-flex align-items-center justify-content-end">
                     <a className="navbar-brand" href="/">
-                      <img src={user.image} alt="profil" className="foto-profil" />
+                      <img src={user.image || DefaultPic} alt="profil" className="foto-profil" />
                       Hi, {user.nama.split(" ").sort((a, b) => a.length - b.length)[0]}
                     </a>
                   </div>
@@ -146,7 +146,11 @@ export default function DashboardBuyer() {
                         <div className="row">
                           <div className="col-sm-12">
                             {/* <a className="d-flex inline-block" target="_blank" href={`https://wa.me/${item.Product.User.noHp}`}> */}
-                            <a className="d-flex inline-block" target="_blank" href={`https://api.whatsapp.com/send?phone=${item.Product.User.noHp}&text=Hai%20Penjual%0ASaya%20ingin%20membeli%20barangmu%0ANama%3A%0AAlamat%3A`}>
+                            <a
+                              className="d-flex inline-block"
+                              target="_blank"
+                              href={`https://api.whatsapp.com/send?phone=${item.Product.User.noHp}&text=Hai%20Penjual%0ASaya%20ingin%20membeli%20barangmu%0ANama%3A%0AAlamat%3A`}
+                            >
                               <button className="flex-fill btn btn-success">
                                 <span className="fa fa-whatsapp">&nbsp;Contact Seller</span>
                               </button>
