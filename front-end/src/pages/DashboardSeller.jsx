@@ -35,7 +35,6 @@ export default function DashboardSeller() {
       });
       setUser(user.data.data);
       setProduct(product.data.data);
-      console.log(product.data.data);
       setLoading(false);
     } catch (error) {
       console.log(error);

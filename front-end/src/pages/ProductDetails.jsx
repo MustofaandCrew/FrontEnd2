@@ -48,10 +48,12 @@ export default function ProductDetails() {
   useEffect(() => {
     fetchData();
     const localStorageWishlist = localStorage.getItem("wishlist");
-    const wishlistData = JSON.parse(localStorageWishlist);
-    const alreadyWishlist = wishlistData.find((item) => item.id == id);
-    if (alreadyWishlist) {
-      setWishlist(true);
+    if (localStorageWishlist) {
+      const wishlistData = JSON.parse(localStorageWishlist);
+      const alreadyWishlist = wishlistData.find((item) => item.id == id);
+      if (alreadyWishlist) {
+        setWishlist(true);
+      }
     }
   }, []);
 

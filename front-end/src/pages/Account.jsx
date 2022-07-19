@@ -55,14 +55,15 @@ export default function Account() {
       }
       setSuccess(res.data.message);
       console.log(res);
+      setPassword("");
+      setUploading(false);
+      setTimeout(() => {
+        location.reload();
+      }, 1000);
     } catch (error) {
       setError(error.response.data.errors[0].message);
+      setUploading(false);
     }
-    setPassword("");
-    setUploading(false);
-    setTimeout(() => {
-      location.reload();
-    }, 1000);
   };
 
   const onUploadImages = (e) => {

@@ -10,16 +10,19 @@ export default function Wishlist() {
   const wishlist = JSON.parse(localStorage.getItem("wishlist"));
 
   const fetchData = async () => {
-    try {
-      const productArray = [];
-      for (let i = 0; i < wishlist.length; i++) {
+    // try {
+    const productArray = [];
+    for (let i = 0; i < wishlist.length; i++) {
+      try {
         const product = await axios.get(`https://secondhand-backend-mac.herokuapp.com/product/${wishlist[i].id}`);
         productArray.push(product.data.data);
+      } catch (error) {
+        const newWishlist = wishlist.filter((item) => item.id !== wishlist[i].id);
+        localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+        continue;
       }
-      setProducts(productArray);
-    } catch (error) {
-      console.log(error);
     }
+    setProducts(productArray);
   };
 
   useEffect(() => {
@@ -62,7 +65,7 @@ export default function Wishlist() {
             ) : (
               <div className="row">
                 <div className="col-12">
-                  <h3 className="catalog-title text-center">No product in wishlist</h3>
+                  <h2 className="catalog-title text-center">No product in wishlist</h2>
                 </div>
               </div>
             )}
@@ -85,7 +88,7 @@ export default function Wishlist() {
           ) : (
             <div className="row">
               <div className="col-12">
-                <h3 className="catalog-title text-center">No product in wishlist</h3>
+                <h2 className="catalog-title text-center">No product in wishlist</h2>
               </div>
             </div>
           )}
