@@ -135,6 +135,20 @@ export default function MyProduct() {
                       </div>
                     </>
                   )}
+                  {excededLimit ? (
+                    <>
+                      <button disabled className="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Add New Product
+                      </button>
+                      <div className="alert alert-danger mt-2" role="alert">
+                        You have exceeded the limit of product
+                      </div>
+                    </>
+                  ) : (
+                    <button className="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Add New Product
+                    </button>
+                  )}
                 </div>
               </div>
 

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import "../assets/css/SidebarSeller.css";
 import { useNavigate } from "react-router-dom";
 
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/logo.svg";
 
 const SidebarSeller = () => {
   const navigate = useNavigate();

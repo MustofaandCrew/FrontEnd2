@@ -110,10 +110,9 @@ export default function DashboardBuyer() {
                                 {/* <a target="_blank" href={`https://wa.me/${item.Product.User.noHp}`}> */}
                                 <a
                                   target="_blank"
-                                  href={`https://api.whatsapp.com/send?phone=+62${item.Product.User.noHp.substring(
-                                    1,
-                                    item.Product.User.noHp.length
-                                  )}&text=Hai%20Penjual%0ASaya%20ingin%20membeli%20barangmu%0ANama%3A%0AAlamat%3A`}
+                                  href={`https://api.whatsapp.com/send?phone=+62${item.Product.User.noHp.substring(1, item.Product.User.noHp.length)}&text=Hai%20${item.Product.User.nama}.%0ASaya%20${
+                                    user.nama
+                                  }%20ingin%20membeli%20barangmu%0A${item.Product.nama}`}
                                 >
                                   <button className="btn btn-success">
                                     <span className="fa fa-whatsapp"></span>

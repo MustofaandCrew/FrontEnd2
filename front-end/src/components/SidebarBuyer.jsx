@@ -3,7 +3,7 @@ import { CDBSidebar, CDBSidebarContent, CDBSidebarFooter, CDBSidebarHeader, CDBS
 import { NavLink, useNavigate } from "react-router-dom";
 import "../assets/css/SidebarBuyer.css";
 
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/logo.svg";
 
 const SidebarBuyer = () => {
   const navigate = useNavigate();

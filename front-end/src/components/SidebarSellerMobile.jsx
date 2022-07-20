@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DefaultPic from "../assets/images/user_pc.png";
 import { useNavigate } from "react-router-dom";
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/logo.svg";
 import "../assets/css/SidebarSellerMobile.css";
 
 export default function SideSellerMobile() {
