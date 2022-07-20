@@ -23,6 +23,7 @@ export default function MyProduct() {
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
   const [completeAccount, setCompleteAccount] = useState(false);
+  const [excededLimit, setExcededLimit] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -38,6 +39,9 @@ export default function MyProduct() {
       });
       if (user.data.data.alamat && user.data.data.noHp && user.data.data.kota && user.data.data.image) {
         setCompleteAccount(true);
+      }
+      if (product.data.data.length >= 4) {
+        setExcededLimit(true);
       }
       setUser(user.data.data);
       setProduct(product.data.data);
@@ -70,11 +74,9 @@ export default function MyProduct() {
                   <h3 className="catalog-title">My Product</h3>
                   <p>Manage it well and get money</p>
                   {completeAccount ? (
-                    <>
-                      <button className="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Add New Product
-                      </button>
-                    </>
+                    <button className="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Add New Product
+                    </button>
                   ) : (
                     <>
                       <button disabled className="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -84,6 +86,20 @@ export default function MyProduct() {
                         Complete your account information before add a product
                       </div>
                     </>
+                  )}
+                  {excededLimit ? (
+                    <>
+                      <button disabled className="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Add New Product
+                      </button>
+                      <div className="alert alert-danger mt-2" role="alert">
+                        You have exceeded the limit of product
+                      </div>
+                    </>
+                  ) : (
+                    <button className="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Add New Product
+                    </button>
                   )}
                 </div>
                 <div className="col-md-6">
