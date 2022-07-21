@@ -3,6 +3,7 @@ import axios from "axios";
 import "../assets/css/Catalog.css";
 import Card from "../components/Card";
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
+import { NavLink } from "react-router-dom";
 
 import PropagateLoader from "react-spinners/PropagateLoader";
 const override = {
@@ -68,9 +69,9 @@ export default function Catalog() {
                   <h5 className="catalog-nav-title">Categories</h5>
                   <br />
                   <div className="catalog-nav-link">
-                    <a href="/catalog" className="catalog-link d-flex justify-content-between">
+                    <NavLink to="/catalog" className="catalog-link d-flex justify-content-between">
                       All Categories<i className="bx bx-chevron-right"></i>
-                    </a>
+                    </NavLink>
                     <ul>
                       {categories.map((category) => (
                         <a href={`/catalog?category=${category.nama}`} key={category.id} className="my-2 catalog-link d-flex justify-content-between">
@@ -87,9 +88,9 @@ export default function Catalog() {
                 {products.length > 0 ? (
                   <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-2 mb-5">
                     {products.map((product) => (
-                      <a key={product.id} href={`/productDetails/${product.id}`}>
+                      <NavLink key={product.id} to={`/productDetails/${product.id}`}>
                         <Card data={product} />
-                      </a>
+                      </NavLink>
                     ))}
                   </div>
                 ) : (
@@ -111,9 +112,9 @@ export default function Catalog() {
                 <h5 className="catalog-nav-title">Categories</h5>
                 <br />
                 <div className="catalog-nav-link">
-                  <a href="/catalog" className="catalog-link d-flex justify-content-between">
+                  <NavLink to="/catalog" className="catalog-link d-flex justify-content-between">
                     All Categories<i className="bx bx-chevron-right"></i>
-                  </a>
+                  </NavLink>
                   <ul>
                     {categories.map((category) => (
                       <a href={`/catalog?category=${category.nama}`} key={category.id} className="my-2 catalog-link d-flex justify-content-between">
@@ -128,9 +129,9 @@ export default function Catalog() {
               {products.length > 0 ? (
                 <div className="row-vertical row row-cols-sm-2 row-cols-1 g-2 mt-2">
                   {products.map((product) => (
-                    <a key={product.id} href={`/productDetails/${product.id}`}>
+                    <NavLink key={product.id} to={`/productDetails/${product.id}`}>
                       <Card data={product} />
-                    </a>
+                    </NavLink>
                   ))}
                 </div>
               ) : (

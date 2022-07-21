@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function AddProduct() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [nama, setNama] = useState("");
   const [harga, setHarga] = useState("");
   const [deskripsi, setDeskripsi] = useState("");
@@ -40,7 +40,6 @@ export default function AddProduct() {
       console.log(error);
     }
     location.reload();
-    setLoading(false);
   };
 
   const onUploadImages = (e) => {
@@ -78,11 +77,11 @@ export default function AddProduct() {
               <form onSubmit={handleSubmit}>
                 <div>
                   <h5>Product Name</h5>
-                  <input className="form-control" onChange={(e) => setNama(e.target.value)} name="nama" type="text" placeholder="Papel la casa" />
+                  <input required className="form-control" onChange={(e) => setNama(e.target.value)} name="nama" type="text" placeholder="Papel la casa" />
                 </div>
                 <div>
                   <h5>Price</h5>
-                  <input className="form-control" onChange={(e) => setHarga(e.target.value)} name="harga" type="text" placeholder="$100" />
+                  <input required className="form-control" onChange={(e) => setHarga(e.target.value)} name="harga" type="text" placeholder="Rp. 100" />
                 </div>
                 <div className="mt-3">
                   <h5>Category</h5>
@@ -96,21 +95,23 @@ export default function AddProduct() {
                 </div>
                 <div className="mt-3">
                   <h5>Description</h5>
-                  <textarea className="form-control" onChange={(e) => setDeskripsi(e.target.value)} name="deskripsi" type="text" placeholder="lorem ipsum" />
+                  <textarea required className="form-control" onChange={(e) => setDeskripsi(e.target.value)} name="deskripsi" type="text" placeholder="lorem ipsum" />
                 </div>
                 <div className="custom-file mt-3">
-                  <h5>Thumbnail</h5>
+                  <h5>
+                    Thumbnail <span className="fs-6 fw-bold">(max. 4 photos)</span>
+                  </h5>
                   {imagesPreview && imagesPreview.map((item, index) => <img key={index} src={item} className="img-thumbnail" alt="thumbnail" />)}
-                  <input type="file" onChange={onUploadImages} name="product_images" multiple className="form-control" id="customFile" />
+                  <input required type="file" onChange={onUploadImages} name="product_images" multiple className="form-control" id="customFile" />
                 </div>
                 <div className="text-center mt-3">
                   {loading ? (
-                    <button type="submit" className="bid btn btn-success">
+                    <button disabled type="submit" className="bid btn btn-success">
                       <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                       Creating...
                     </button>
                   ) : (
-                    <button disabled type="submit" className="bid btn btn-success">
+                    <button type="submit" className="bid btn btn-success">
                       Create Product
                     </button>
                   )}

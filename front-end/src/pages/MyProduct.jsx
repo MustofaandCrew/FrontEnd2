@@ -81,7 +81,7 @@ export default function MyProduct() {
                             Add New Product
                           </button>
                           <div className="alert alert-danger mt-2" role="alert">
-                            You have exceeded the limit of product
+                            You have reached the limit of product
                           </div>
                         </>
                       ) : (
