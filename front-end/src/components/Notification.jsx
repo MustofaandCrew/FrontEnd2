@@ -1,12 +1,13 @@
 import React from "react";
 import "../assets/css/Notification.css";
+import { NavLink } from "react-router-dom";
 
 export default function Notification(props) {
   return (
     <li>
       {props.data &&
         props.data.map((data) => (
-          <a key={data.id} className="dropdown-item" href="/dashboardbuyer">
+          <NavLink key={data.id} className="dropdown-item" to="/dashboardbuyer">
             <div className="d-flex product">
               <div className="product-img">
                 <img src={data.Product.ProductImages[0].image} alt="Gambar" />
@@ -20,7 +21,7 @@ export default function Notification(props) {
               </div>
             </div>
             <hr />
-          </a>
+          </NavLink>
         ))}
     </li>
   );

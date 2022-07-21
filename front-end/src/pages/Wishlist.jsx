@@ -6,7 +6,6 @@ import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 
 export default function Wishlist() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
   const wishlist = JSON.parse(localStorage.getItem("wishlist"));
 
   const fetchData = async () => {

@@ -17,9 +17,9 @@ const SidebarSeller = () => {
     <div className="main">
       <CDBSidebar className="sidebar">
         <CDBSidebarHeader>
-          <a href="/" className="text-decoration-none">
+          <NavLink to="/" className="text-decoration-none">
             <img src={Logo} alt="logo" />
-          </a>
+          </NavLink>
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">

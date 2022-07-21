@@ -49,7 +49,7 @@ export default function Bid(props) {
             <div className="product-focus-bid">
               <h5>Harga Tawar</h5>
               <form onSubmit={handleSubmit}>
-                <input className="input-bid" onChange={(e) => setHarga(e.target.value)} type="text" placeholder="Rp 0,00" />
+                <input required className="input-bid" onChange={(e) => setHarga(e.target.value)} type="text" placeholder="Rp 0,00" />
                 <div className="text-center mt-4">
                   {loading ? (
                     <button disabled type="submit" className="bid btn btn-success">

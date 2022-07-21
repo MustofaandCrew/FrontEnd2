@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
 import logo from "../assets/images/logo.svg";
+import { NavLink } from "react-router-dom";
 import LogoSeller from "../assets/images/logo-seller.svg";
 import { MdNotificationsActive } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -34,27 +35,27 @@ export default function Navbar(props) {
       <input type="checkbox" id="check" />
       <nav>
         <div className="icon">
-          <a href="/">
+          <NavLink to="/">
             <img src={logo} alt="logo" /> SecondHand
-          </a>
+          </NavLink>
         </div>
         <ol>
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <div className="dropdown">
             <li>
               <button className="btn-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <a href="/">
+                <NavLink to="/">
                   Categories <i className="bx bx-chevron-down"></i>
-                </a>
+                </NavLink>
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 {props.categories.map((item) => (
                   <li key={item.id}>
-                    <a className="dropdown-item" href={`/catalog?category=${item.nama}`}>
+                    <NavLink className="dropdown-item" to={`/catalog?category=${item.nama}`}>
                       {item.nama}
-                    </a>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -64,21 +65,21 @@ export default function Navbar(props) {
         <form onSubmit={handleSubmit}>
           <div className="search-box">
             <input type="search" name="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search..." />
-            <a href={`/catalog?search=${search}`}>
+            <NavLink to={`/catalog?search=${search}`}>
               <span className="fa fa-search"></span>
-            </a>
+            </NavLink>
           </div>
         </form>
         <ol>
           <li>
-            <a href="/shoppingcart">
+            <NavLink to="/shoppingcart">
               <span className="fa fa-shopping-basket"></span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <NavLink to="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               {props.isLoggedIn ? <>{props.notifBuyer ? <MdNotificationsActive size={`1.2em`} /> : <span className="fa fa-bell"></span>}</> : <span className="fa fa-bell"></span>}
-            </a>
+            </NavLink>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {props.isLoggedIn && <Notif data={props.notifBuyer} />}
             </ul>
@@ -89,10 +90,10 @@ export default function Navbar(props) {
           {props.isLoggedIn ? (
             <>
               <li>
-                <a className="btn-seller" href="/dashboardseller">
+                <NavLink className="btn-seller" to="/dashboardseller">
                   <img src={LogoSeller} alt="seller" /> Seller
                   <span className="seller-notif"></span>
-                </a>
+                </NavLink>
               </li>
               <li>
                 <a className="profile-info dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -120,7 +121,7 @@ export default function Navbar(props) {
             </>
           ) : (
             <li>
-              <a href="/login">Sign In</a>
+              <NavLink to="/login">Sign In</NavLink>
             </li>
           )}
         </ol>
@@ -128,7 +129,7 @@ export default function Navbar(props) {
         {/* Phone Layout */}
         <ol className="vertical-screen">
           <li className="nav-span">
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
 
           <li className="nav-span">
@@ -138,13 +139,13 @@ export default function Navbar(props) {
           </li>
 
           <li className="nav-span">
-            <a href="/shoppingcart">Shopping Cart</a>
+            <NavLink to="/shoppingcart">Shopping Cart</NavLink>
           </li>
           <li className="nav-span">
-            <a href="/notification">Notification</a>
+            <NavLink to="/notification">Notification</NavLink>
           </li>
           <li className="nav-span">
-            <a href="/wishlist">Wishlist</a>
+            <NavLink to="/wishlist">Wishlist</NavLink>
           </li>
           {props.isLoggedIn ? (
             <>
@@ -155,25 +156,25 @@ export default function Navbar(props) {
                 </a>
               </li>
               <li className="d-flex justify-content-center gap-2 nav-signin">
-                <a href="/dashboardseller" className="vertical-logo">
+                <NavLink to="/dashboardseller" className="vertical-logo">
                   <span>
                     <img className="img-fluid" src={LogoSeller} alt="seller" />
                   </span>
-                </a>
-                <a href="/dashboardbuyer" className="vertical-profile">
+                </NavLink>
+                <NavLink to="/dashboardbuyer" className="vertical-profile">
                   <span className="profile">
                     <img className="img-fluid rounded-circle" src={props.image} alt="profile" />
                   </span>
-                </a>
+                </NavLink>
               </li>
             </>
           ) : (
             <li className="nav-signin">
-              <a href="/login">
+              <NavLink to="/login">
                 <span>
                   <i className="bx bx-log-in"></i> Sign In
                 </span>
-              </a>
+              </NavLink>
             </li>
           )}
         </ol>

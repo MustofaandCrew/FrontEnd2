@@ -9,12 +9,11 @@ import CatGaming from "../assets/images/CatGaming.png";
 import CatHealth from "../assets/images/CatHealth.png";
 import CatFashion from "../assets/images/CatFashion.png";
 import CatHobby from "../assets/images/CatHobby.png";
-
+import { NavLink } from "react-router-dom";
 import Card from "../components/Card";
 import "../assets/css/Home.css";
 import "../assets/css/Card.css";
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
-
 import PropagateLoader from "react-spinners/PropagateLoader";
 import axios from "axios";
 
@@ -80,62 +79,62 @@ export default function Home() {
               <h4>Trend Categories</h4>
             </div>
             <div className="d-flex flex-row flex-wrap justify-content-around">
-              <a href="/catalog?category=Gadgets">
+              <NavLink to="/catalog?category=Gadgets">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatGadgets} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
-              <a href="/catalog?category=Furniture">
+              </NavLink>
+              <NavLink to="/catalog?category=Furniture">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatFurniture} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
-              <a href="/catalog?category=Gaming">
+              </NavLink>
+              <NavLink to="/catalog?category=Gaming">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatGaming} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
-              <a href="/catalog?category=Sneakers">
+              </NavLink>
+              <NavLink to="/catalog?category=Sneakers">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatSneakers} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
-              <a href="/catalog?category=Tools">
+              </NavLink>
+              <NavLink to="/catalog?category=Tools">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatTools} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
-              <a href="/catalog?category=Fashion">
+              </NavLink>
+              <NavLink to="/catalog?category=Fashion">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatFashion} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
-              <a href="/catalog?category=Hobby">
+              </NavLink>
+              <NavLink to="/catalog?category=Hobby">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatHobby} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
-              <a href="/catalog?category=Health and Beauty">
+              </NavLink>
+              <NavLink to="/catalog?category=Health and Beauty">
                 <button className="buttonCategories">
                   <div className="cardStyle">
                     <img src={CatHealth} className="card-img-top" alt="..." />
                   </div>
                 </button>
-              </a>
+              </NavLink>
             </div>
 
             {/* New Products */}
@@ -144,9 +143,9 @@ export default function Home() {
             </div>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 mt-2">
               {products.map((product) => (
-                <a key={product.id} href={`/productDetails/${product.id}`}>
+                <NavLink key={product.id} to={`/productDetails/${product.id}`}>
                   <Card data={product} />
-                </a>
+                </NavLink>
               ))}
             </div>
           </div>
