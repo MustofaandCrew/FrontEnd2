@@ -1,7 +1,7 @@
-* {
+.footer-container {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-a:hover {
+.footer-link:hover {
     color: #ff7158;
 }
