@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home snapshot 1`] = `
+<span
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+      "margin": "0 auto",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "animation": "react-spinners-PropagateLoader-propogate-0 1.5s infinite",
+        "animationFillMode": "forwards",
+        "background": "#FF7158",
+        "borderRadius": "50%",
+        "fontSize": "16.666666666666668px",
+        "height": "50px",
+        "position": "absolute",
+        "width": "50px",
+      }
+    }
+  />
+  <span
+    style={
+      Object {
+        "animation": "react-spinners-PropagateLoader-propogate-1 1.5s infinite",
+        "animationFillMode": "forwards",
+        "background": "#FF7158",
+        "borderRadius": "50%",
+        "fontSize": "16.666666666666668px",
+        "height": "50px",
+        "position": "absolute",
+        "width": "50px",
+      }
+    }
+  />
+  <span
+    style={
+      Object {
+        "animation": "react-spinners-PropagateLoader-propogate-2 1.5s infinite",
+        "animationFillMode": "forwards",
+        "background": "#FF7158",
+        "borderRadius": "50%",
+        "fontSize": "16.666666666666668px",
+        "height": "50px",
+        "position": "absolute",
+        "width": "50px",
+      }
+    }
+  />
+  <span
+    style={
+      Object {
+        "animation": "react-spinners-PropagateLoader-propogate-3 1.5s infinite",
+        "animationFillMode": "forwards",
+        "background": "#FF7158",
+        "borderRadius": "50%",
+        "fontSize": "16.666666666666668px",
+        "height": "50px",
+        "position": "absolute",
+        "width": "50px",
+      }
+    }
+  />
+  <span
+    style={
+      Object {
+        "animation": "react-spinners-PropagateLoader-propogate-4 1.5s infinite",
+        "animationFillMode": "forwards",
+        "background": "#FF7158",
+        "borderRadius": "50%",
+        "fontSize": "16.666666666666668px",
+        "height": "50px",
+        "position": "absolute",
+        "width": "50px",
+      }
+    }
+  />
+  <span
+    style={
+      Object {
+        "animation": "react-spinners-PropagateLoader-propogate-5 1.5s infinite",
+        "animationFillMode": "forwards",
+        "background": "#FF7158",
+        "borderRadius": "50%",
+        "fontSize": "16.666666666666668px",
+        "height": "50px",
+        "position": "absolute",
+        "width": "50px",
+      }
+    }
+  />
+</span>
+`;

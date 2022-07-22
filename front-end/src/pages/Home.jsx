@@ -52,7 +52,7 @@ export default function Home() {
         <LayoutNavbarFooter>
           <div className="container">
             {/* Carousel */}
-            <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel" data-testid="testing">
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="2000">
                   <img src={Jordan} className="d-block w-100 imgCarousel" alt="img" />
