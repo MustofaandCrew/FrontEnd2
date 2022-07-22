@@ -2,139 +2,113 @@ import React, { useState } from "react";
 import Modal from "./ModalNavbar";
 import Notif from "../components/Notification";
 import logo from "../assets/images/logo.svg";
-import LogoSeller from "../assets/images/logo-seller.svg";
 import { NavLink } from "react-router-dom";
-// dummy images
-import pp from "../assets/images/comments-pp.png";
+import LogoSeller from "../assets/images/logo-seller.svg";
+import { MdNotificationsActive } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 import "../assets/css/Navbar.css";
 
-export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token") ? true : false);
+export default function Navbar(props) {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsLoggedIn(false);
+    props.onLogout();
+  };
+
+  const handleDashboard = () => {
+    navigate("/dashboardbuyer");
+  };
+
+  const handleWishlist = () => {
+    navigate("/wishlist");
+  };
+
+  const handleSubmit = (e) => {
+    navigate(`/catalog?search=${search}`);
   };
 
   return (
     <div className="container-nav">
-      <Modal />
+      <Modal data={props.categories} />
       <input type="checkbox" id="check" />
       <nav>
         <div className="icon">
-          <a href="/">
+          <NavLink to="/">
             <img src={logo} alt="logo" /> SecondHand
-          </a>
+          </NavLink>
         </div>
         <ol>
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <div className="dropdown">
             <li>
               <button className="btn-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <a href="/">
+                <NavLink to="/">
                   Categories <i className="bx bx-chevron-down"></i>
-                </a>
+                </NavLink>
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Electronic
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Gadget
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Furniture
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Fashion
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Sneaker
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Tools
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Baby
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Health & Beauty
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Gaming
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Toy & Hobby
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Music
-                  </a>
-                </li>
+                {props.categories.map((item) => (
+                  <li key={item.id}>
+                    <NavLink className="dropdown-item" to={`/catalog?category=${item.nama}`}>
+                      {item.nama}
+                    </NavLink>
+                  </li>
+                ))}
               </ul>
             </li>
           </div>
         </ol>
-        <div className="search-box">
-          <input type="search" placeholder="Search..." />
-          <span className="fa fa-search"></span>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="search-box">
+            <input type="search" name="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search..." />
+            <NavLink to={`/catalog?search=${search}`}>
+              <span className="fa fa-search"></span>
+            </NavLink>
+          </div>
+        </form>
         <ol>
           <li>
-            <a href="/shoppingcart">
+            <NavLink to="/shoppingcart">
               <span className="fa fa-shopping-basket"></span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              <span className="fa fa-bell"></span>
-            </a>
+            <NavLink to="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              {props.isLoggedIn ? <>{props.notifBuyer ? <MdNotificationsActive size={`1.2em`} /> : <span className="fa fa-bell"></span>}</> : <span className="fa fa-bell"></span>}
+            </NavLink>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              {isLoggedIn && <Notif />}
+              {props.isLoggedIn && <Notif data={props.notifBuyer} />}
             </ul>
           </li>
           <li>
             <h4>|</h4>
           </li>
-          {isLoggedIn ? (
+          {props.isLoggedIn ? (
             <>
               <li>
-                <a className="btn-seller" href="/dashboardseller">
+                <NavLink className="btn-seller" to="/dashboardseller">
                   <img src={LogoSeller} alt="seller" /> Seller
-                </a>
+                  <span className="seller-notif"></span>
+                </NavLink>
               </li>
               <li>
                 <a className="profile-info dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img className="img-fluid rounded-circle" src={pp} alt="profile" />
-                  Hi, Angga
-                  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <img className="img-fluid rounded-circle" src={props.image} alt="profile" />
+                  Hi, {props.nama}
+                  <ul className="dropdown-menu dropdown-profile" aria-labelledby="dropdownMenuLink">
                     <li>
-                      <NavLink className="dropdown-item" to="/dashboardbuyer">
+                      <p className="dropdown-item" onClick={handleDashboard}>
                         Dashboard
-                      </NavLink>
+                      </p>
+                    </li>
+                    <li>
+                      <p className="dropdown-item" onClick={handleWishlist}>
+                        Wishlist
+                      </p>
                     </li>
                     <li>
                       <p className="dropdown-item" onClick={handleLogout}>
@@ -147,26 +121,15 @@ export default function Navbar() {
             </>
           ) : (
             <li>
-              <a href="/login">Sign In</a>
+              <NavLink to="/login">Sign In</NavLink>
             </li>
           )}
-          {/* <li>
-            <a className="btn-seller" href="/">
-              <img src={LogoSeller} alt="seller" /> Seller
-            </a>
-          </li>
-          <li>
-            <a className="profile-info" href="/">
-              <img className="img-fluid rounded-circle" src={pp} alt="profile" />
-              Hi, Angga
-            </a>
-          </li> */}
         </ol>
 
         {/* Phone Layout */}
         <ol className="vertical-screen">
           <li className="nav-span">
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
 
           <li className="nav-span">
@@ -176,26 +139,46 @@ export default function Navbar() {
           </li>
 
           <li className="nav-span">
-            <a href="/shoppingcart">Shopping Cart</a>
+            <NavLink to="/shoppingcart">Shopping Cart</NavLink>
           </li>
           <li className="nav-span">
-            <a href="/notification">Notification</a>
+            <NavLink to="/notification">Notification</NavLink>
           </li>
-          {/* <li className="nav-signin"><a href="/login"><span><i className="bx bx-log-in"></i> Sign In</span></a></li> */}
-          <li className="d-flex justify-content-center gap-2 nav-signin">
-            <a href="/">
-              <span>
-                <img className="img-fluid" src={LogoSeller} alt="seller" />
-              </span>
-            </a>
-            <a href="/">
-              <span className="profile">
-                <img className="img-fluid rounded-circle" src={pp} alt="profile" />
-              </span>
-            </a>
+          <li className="nav-span">
+            <NavLink to="/wishlist">Wishlist</NavLink>
           </li>
+          {props.isLoggedIn ? (
+            <>
+              <li className="nav-span">
+                <a onClick={handleLogout}>
+                  <span className="fa fa-sign-out-alt"></span>
+                  &nbsp; Sign Out
+                </a>
+              </li>
+              <li className="d-flex justify-content-center gap-2 nav-signin">
+                <NavLink to="/dashboardseller" className="vertical-logo">
+                  <span>
+                    <img className="img-fluid" src={LogoSeller} alt="seller" />
+                  </span>
+                </NavLink>
+                <NavLink to="/dashboardbuyer" className="vertical-profile">
+                  <span className="profile">
+                    <img className="img-fluid rounded-circle" src={props.image} alt="profile" />
+                  </span>
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <li className="nav-signin">
+              <NavLink to="/login">
+                <span>
+                  <i className="bx bx-log-in"></i> Sign In
+                </span>
+              </NavLink>
+            </li>
+          )}
         </ol>
-        <label for="check" className="bar">
+        <label htmlFor="check" className="bar">
           <span className="fa fa-bars" id="bars"></span>
           <span className="fa fa-times" id="times"></span>
         </label>

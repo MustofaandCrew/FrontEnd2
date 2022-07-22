@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-export default function Bid() {
+export default function Bid(props) {
+  const [harga, setHarga] = useState(0);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    const data = {
+      productId: props.data.id,
+      harga,
+    };
+    try {
+      await axios.post("https://secondhand-backend-mac.herokuapp.com/bid", data, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
+    location.reload();
+  };
+
   return (
-    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
@@ -15,24 +39,31 @@ export default function Bid() {
             <p>Harga tawaranmu akan diketahui penual, jika penjual cocok kamu akan segera dihubungi penjual.</p>
             <div className="d-flex product-focus">
               <div className="product-img">
-                <img src="https://i.ebayimg.com/thumbs/images/g/rn8AAOSwIGBc1UqJ/s-l300.jpg" alt="" />
+                <img src={props.data.ProductImages[0].image} alt="Gambar" />
               </div>
               <div className="product-details">
-                <h5>Jam Tangan Casio</h5>
-                <p>Rp. 1.500.000</p>
+                <h5>{props.data.nama}</h5>
+                <p>Rp. {props.data.harga}</p>
               </div>
             </div>
             <div className="product-focus-bid">
               <h5>Harga Tawar</h5>
-              <form action="">
-                <input className="input-bid" type="text" placeholder="Rp 0,00" />
+              <form onSubmit={handleSubmit}>
+                <input required className="input-bid" onChange={(e) => setHarga(e.target.value)} type="text" placeholder="Rp 0,00" />
+                <div className="text-center mt-4">
+                  {loading ? (
+                    <button disabled type="submit" className="bid btn btn-success">
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Bidding...
+                    </button>
+                  ) : (
+                    <button type="submit" className="bid btn btn-success">
+                      Bid
+                    </button>
+                  )}
+                </div>
               </form>
             </div>
-          </div>
-          <div className="text-center pb-3">
-            <button type="button" className="bid btn btn-success">
-              Bid
-            </button>
           </div>
         </div>
       </div>

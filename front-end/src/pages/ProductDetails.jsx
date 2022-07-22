@@ -1,166 +1,149 @@
 import React, { useState, useEffect } from "react";
-
+import { useParams } from "react-router-dom";
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 import "../assets/css/ProductDetails.css";
 import ModalBid from "../components/ModalBid";
+import PropagateLoader from "react-spinners/PropagateLoader";
+import axios from "axios";
 
-// dummy images
-import comments from "../assets/images/comments-pp.png";
-import dummy from "../assets/images/productdetails.jpg";
-import dummy2 from "../assets/images/productdetails2.jpg";
-import dummy3 from "../assets/images/productdetails3.png";
+const override = {
+  display: "flex",
+  margin: "0 auto",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  height: "100vh",
+};
 
 export default function ProductDetails() {
+  const [loading, setLoading] = useState(true);
   const [wishlist, setWishlist] = useState(false);
+  const [product, setProduct] = useState({});
+  const [ownedProduct, setOwnedProduct] = useState(false);
+  const [index, setIndex] = useState(0);
+  const { id } = useParams();
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(`https://secondhand-backend-mac.herokuapp.com/product/${id}`);
+      if (localStorage.getItem("token")) {
+        const user = await axios.get(`https://secondhand-backend-mac.herokuapp.com/profile`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        if (res.data.data.userId == user.data.data.id) {
+          setOwnedProduct(true);
+        }
+      } else {
+        setOwnedProduct(true);
+      }
+      setProduct(res.data.data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
+    fetchData();
     const localStorageWishlist = localStorage.getItem("wishlist");
-    const wishlistData = JSON.parse(localStorageWishlist);
-    const alreadyWishlist = wishlistData.find((item) => item.id == 1);
-    if (alreadyWishlist) {
-      setWishlist(true);
+    if (localStorageWishlist) {
+      const wishlistData = JSON.parse(localStorageWishlist);
+      const alreadyWishlist = wishlistData.find((item) => item.id == id);
+      if (alreadyWishlist) {
+        setWishlist(true);
+      }
     }
   }, []);
 
   const onClickWishlist = () => {
     const localStorageWishlist = localStorage.getItem("wishlist");
     const wishlistData = JSON.parse(localStorageWishlist);
-    const coba = {
-      id: 1,
-      name: "Sirup Marjan",
+    const data = {
+      id: product.id,
+      name: product.nama,
     };
     if (wishlistData) {
       if (wishlist == true) {
-        const newWishlist = wishlistData.filter((item) => item.id !== coba.id);
+        const newWishlist = wishlistData.filter((item) => item.id !== data.id);
         localStorage.setItem("wishlist", JSON.stringify(newWishlist));
       } else {
-        wishlistData.push(coba);
+        wishlistData.push(data);
         localStorage.setItem("wishlist", JSON.stringify(wishlistData));
       }
     } else {
-      localStorage.setItem("wishlist", JSON.stringify([coba]));
+      localStorage.setItem("wishlist", JSON.stringify([data]));
     }
     setWishlist(!wishlist);
   };
   return (
-    <LayoutNavbarFooter>
-      <ModalBid />
-
-      <div className="container container-fluid">
-        {/* Product Thumbnails */}
-        <div className="row my-2">
-          <div className="col">
-            <img className="thumbnail" src={dummy} alt="" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-3">
-            <img className="thumbnail" src={dummy2} alt="" />
-          </div>
-          <div className="col-3">
-            <img className="thumbnail" src={dummy3} alt="" />
-          </div>
-          <div className="col-3">
-            <img className="thumbnail" src={dummy2} alt="" />
-          </div>
-          <div className="col-3">
-            <img className="thumbnail" src={dummy3} alt="" />
-          </div>
-        </div>
-
-        {/* Product Title */}
-        <div className="row mt-5">
-          <div className="col">
-            <h1 className="product-title">Sofa Ternyaman</h1>
-            <h5 className="product-price">$1,409</h5>
-          </div>
-          <div className="col my-3">
-            <div className="text-end">
-              <button type="button" className="bid btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Bid
-              </button>
+    <>
+      {loading ? (
+        <PropagateLoader cssOverride={override} size={50} color={"#FF7158"} loading={loading} />
+      ) : (
+        <LayoutNavbarFooter>
+          <ModalBid data={product} />
+          <div className="container container-fluid">
+            {/* Product Thumbnails */}
+            <div className="row mb-5">
+              <div className="col d-flex justify-content-center">
+                <img className="thumbnail-active" src={product.ProductImages[index].image} alt="gambar" />
+              </div>
             </div>
-            <div className="mt-4 text-end">
-              {wishlist ? (
-                <button type="button" onClick={onClickWishlist} className="wishlist btn btn-outline-danger">
-                  <i className="bx bx-check-double"></i> Wishlist
-                </button>
-              ) : (
-                <button type="button" onClick={onClickWishlist} className="wishlist btn btn-outline-danger">
-                  <i className="bx bx-add-to-queue"></i> Wishlist
-                </button>
-              )}
+            <hr />
+            <div className="row mt-5">
+              {product.ProductImages.map((item, index) => (
+                <div key={item.id} className="col-3">
+                  <img className="thumbnail" onClick={(e) => setIndex(index)} src={product.ProductImages[index].image} alt="Gambar" />
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
 
-        {/* Product Description */}
-        <div className="row mb-4">
-          <div className="col-md-8">
-            <p>
-              The Nike Air Max 720 SE goes bigger than ever before with Nike's tallest Air unit yet for unimaginable, all-day comfort. There's super breathable fabrics on the upper, while colours add
-              a modern edge.
-            </p>
-          </div>
-          <div className="col-md-8">
-            <p>
-              Bring the past into the future with the Nike Air Max 2090, a bold look inspired by the DNA of the iconic Air Max 90. Brand-new Nike Air cushioning underfoot adds unparalleled comfort
-              while transparent mesh and vibrantly coloured details on the upper are blended with timeless OG features for an edgy, modernised look.
-            </p>
-          </div>
-        </div>
+            {/* Product Title */}
+            <div className="row mt-5">
+              <div className="col">
+                <a className="text-muted" href={`/catalog?category=${product.Categories[0].nama}`}>
+                  #{product.Categories[0].nama}
+                </a>
+                <h1 className="product-title">{product.nama}</h1>
+                <h5 className="product-price">Rp. {product.harga}</h5>
+              </div>
+              <div className="col my-3">
+                <div className="text-end">
+                  {ownedProduct ? (
+                    <button type="button" disabled className="bid btn btn-success">
+                      Bid
+                    </button>
+                  ) : (
+                    <button type="button" className="bid btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Bid
+                    </button>
+                  )}
+                </div>
+                <div className="mt-4 text-end">
+                  {wishlist ? (
+                    <button type="button" onClick={onClickWishlist} className="wishlist btn btn-outline-danger">
+                      <i className="bx bx-check-double"></i> Wishlist
+                    </button>
+                  ) : (
+                    <button type="button" onClick={onClickWishlist} className="wishlist btn btn-outline-danger">
+                      <i className="bx bx-add-to-queue"></i> Wishlist
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
 
-        {/* Comments */}
-        <div className="row">
-          <div className="col-md-8">
-            <h2>Comments Review</h2>
-          </div>
-        </div>
-        <div className="row pt-2">
-          <div className="col-md-8">
-            <div className="d-flex">
-              <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
-              <div className="d-block ms-3 pt-2">
-                <h5 className="pt-3">Hazza Risky</h5>
-                <p className="col-sm-7">I thought it was not good for living room. I really happy to decided buy this product last week now feels like homey.</p>
+            {/* Product Description */}
+            <div className="row mb-4">
+              <div className="col-md-8">
+                <p>{product.deskripsi}</p>
               </div>
             </div>
           </div>
-        </div>
-        <div className="row pt-2">
-          <div className="col-md-8">
-            <div className="d-flex">
-              <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
-              <div className="d-block ms-3 pt-2">
-                <h5 className="pt-3">Hazza Risky</h5>
-                <p className="col-sm-7">I thought it was not good for living room. I really happy to decided buy this product last week now feels like homey.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row pt-2">
-          <div className="col-md-8">
-            <div className="d-flex">
-              <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
-              <div className="d-block ms-3 pt-2">
-                <h5 className="pt-3">Hazza Risky</h5>
-                <p className="col-sm-7">I thought it was not good for living room. I really happy to decided buy this product last week now feels like homey.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row pt-2">
-          <div className="col-md-8">
-            <div className="d-flex">
-              <img className="profile img-fluid rounded-circle my-2" src={comments} alt="" />
-              <div className="d-block ms-3 pt-2">
-                <h5 className="pt-3">Hazza Risky</h5>
-                <p className="col-sm-7">I thought it was not good for living room. I really happy to decided buy this product last week now feels like homey.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </LayoutNavbarFooter>
+        </LayoutNavbarFooter>
+      )}
+    </>
   );
 }
