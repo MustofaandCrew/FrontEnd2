@@ -153,7 +153,10 @@ export default function DashboardSeller() {
                               <td>
                                 {item.status === "Diterima" ? (
                                   // <a target="_blank" href={`https://wa.me/${item.User.noHp}`}>
-                                  <a target="_blank" href={`https://api.whatsapp.com/send?phone=${item.User.noHp}&text=Hai%20Pembeli%0ASaya%20Penjual`}>
+                                  <a
+                                    target="_blank"
+                                    href={`https://api.whatsapp.com/send?phone=${item.User.noHp}&text=Hai%20${item.User.nama},%0ASaya%20Penjual%20dari%20barang%20${item.Product.nama}`}
+                                  >
                                     <button className="btn btn-success">
                                       <span className="fa fa-whatsapp"></span>
                                     </button>
