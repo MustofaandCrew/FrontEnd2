@@ -5,34 +5,15 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.svg";
 import "../assets/css/SidebarSellerMobile.css";
 
-export default function SideSellerMobile() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token") ? true : false);
-  const [nama, setNama] = useState("");
-  const [image, setImage] = useState("");
+export default function SideSellerMobile(props) {
+  const [nama, setNama] = useState(props.nama);
+  const [image, setImage] = useState(props.image);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/");
   };
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      axios
-        .get("https://secondhand-backend-mac.herokuapp.com/profile", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((res) => {
-          setNama(res.data.data.nama);
-          setImage(res.data.data.image);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, []);
 
   return (
     <nav className="navbar bg-light fixed-top">

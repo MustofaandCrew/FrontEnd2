@@ -108,7 +108,7 @@ export default function Account() {
             <SidebarBuyer />
           </div>
           <div className="sidebar-mobile">
-            <SidebarBuyerMobile image={image} nama={nama} />
+            <SidebarBuyerMobile image={user.image || DefaultPic} nama={user.nama.split(" ").sort((a, b) => a.length - b.length)[0]} />
           </div>
           <div className="page-account-buyer">
             <div className="row mb-5 navbar-dekstop">
@@ -119,7 +119,7 @@ export default function Account() {
               <div className="col-md-6">
                 <div className="d-flex align-items-center justify-content-end">
                   <a className="navbar-brand" href="#">
-                    <img src={image || DefaultPic} alt="profil" className="foto-profil" />
+                    <img src={user.image || DefaultPic} alt="profil" className="foto-profil" />
                     Hi, {user.nama.split(" ").sort((a, b) => a.length - b.length)[0]}
                   </a>
                 </div>
@@ -148,7 +148,7 @@ export default function Account() {
                 </div>
                 <div className="col-md-6 mt-4">
                   <label htmlFor="inputName" className="form-label">
-                    Nama
+                    Name
                   </label>
                   <input type="text" required onChange={(e) => setNama(e.target.value)} className="form-control" value={nama} id="inputName" />
                 </div>
@@ -160,19 +160,19 @@ export default function Account() {
                 </div>
                 <div className="col-md-6 mt-4">
                   <label htmlFor="inputAddress1" className="form-label">
-                    Kota
+                    City
                   </label>
                   <input type="text" required onChange={(e) => setKota(e.target.value)} value={kota} className="form-control" id="inputAddress1" placeholder="1234 Main St" />
                 </div>
                 <div className="col-md-6 mt-4">
                   <label htmlFor="inputAddress2" className="form-label">
-                    Alamat
+                    Address
                   </label>
                   <input type="text" required onChange={(e) => setAlamat(e.target.value)} value={alamat} className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
                 </div>
                 <div className="col-6 mt-4">
                   <label htmlFor="inputMobile" className="form-label">
-                    No Hp
+                    Mobile Phone
                   </label>
                   <input type="text" required onChange={(e) => setNoHp(e.target.value)} value={noHp} className="form-control" id="inputMobile" />
                 </div>

@@ -125,7 +125,7 @@ export default function MyProduct() {
                             Add New Product
                           </button>
                           <div className="alert alert-danger mt-2" role="alert">
-                            You have exceeded the limit of product
+                            You have reached the limit of product
                           </div>
                         </>
                       ) : (
@@ -151,7 +151,7 @@ export default function MyProduct() {
               {product ? (
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4 mt-2 mb-5">{product && product.map((item) => <Card key={item.id} data={item} />)}</div>
               ) : (
-                <h2 className="text-center">Anda tidak memiliki produk</h2>
+                <h2 className="text-center">You don't have any product</h2>
               )}
             </div>
           )}

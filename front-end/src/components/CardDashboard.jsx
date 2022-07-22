@@ -18,7 +18,6 @@ export default function Card(props) {
     } catch (error) {
       console.log(error);
     }
-    setLoading(false);
     location.reload();
   };
 

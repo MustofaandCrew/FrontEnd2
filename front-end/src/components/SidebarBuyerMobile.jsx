@@ -4,11 +4,20 @@ import DefaultPic from "../assets/images/user_pc.png";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/images/logo.svg";
 import "../assets/css/SidebarSellerMobile.css";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
-export default function SideBuyerMobile() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token") ? true : false);
-  const [nama, setNama] = useState("");
-  const [image, setImage] = useState("");
+const override = {
+  display: "flex",
+  margin: "0 auto",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  height: "100vh",
+};
+
+export default function SideBuyerMobile(props) {
+  const [nama, setNama] = useState(props.nama);
+  const [image, setImage] = useState(props.image);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -16,23 +25,9 @@ export default function SideBuyerMobile() {
     navigate("/");
   };
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      axios
-        .get("https://secondhand-backend-mac.herokuapp.com/profile", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((res) => {
-          setNama(res.data.data.nama);
-          setImage(res.data.data.image);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <nav className="navbar bg-light fixed-top">

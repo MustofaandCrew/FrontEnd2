@@ -42,7 +42,7 @@ export default function Register() {
           <img src={Pic} alt="Woman" className="img-fluid" />
         </div>
         <div className="col-md-6 container-login--right">
-          <h3>Belanja kebutuhan utama, menjadi lebih mudah</h3>
+          <h3>Get your secondhand now</h3>
           {error && (
             <div className="alert alert-danger" role="alert">
               {error}

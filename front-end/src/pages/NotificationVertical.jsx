@@ -3,6 +3,7 @@ import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
 import "../assets/css/Notification.css";
 import axios from "axios";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import { NavLink } from "react-router-dom";
 
 const override = {
   display: "flex",
@@ -41,28 +42,31 @@ export default function Notification() {
       ) : (
         <LayoutNavbarFooter>
           <div className="container container-fluid">
-            {notif ? (
-              notif.map((data) => (
-                <a key={data.id} href="/dashboardbuyer">
-                  <div className="d-flex product">
-                    <div className="product-img">
-                      <img src="https://i.ebayimg.com/thumbs/images/g/rn8AAOSwIGBc1UqJ/s-l300.jpg" alt="" />
-                    </div>
-                    <div className="product-details">
-                      <h5>Jam Tangan Casio</h5>
-                      <p>Your Offer:</p>
-                      <p>Rp. 1.500.000</p>
-
-                      <h5 className="seller-agree">seller agrees to your offer</h5>
-                      {/* <h5 className="seller-reject">seller rejects to your offer</h5> */}
-                    </div>
+            <div className="row">
+              {notif ? (
+                notif.map((data) => (
+                  <div key={data.id} className="col-12">
+                    <NavLink to="/dashboardbuyer">
+                      <div className="d-flex product">
+                        <div className="product-img">
+                          <img src={data.Product.ProductImages[0].image} alt="image" />
+                        </div>
+                        <div className="product-details">
+                          <h5>{data.Product.nama}</h5>
+                          <p>Buyer Offer:</p>
+                          <p>Rp. {data.harga}</p>
+                          {data.status === "Diterima" && <h5 className="seller-agree">seller agrees to your offer</h5>}
+                          {data.status === "Ditolak" && <h5 className="seller-reject">seller rejects to your offer</h5>}
+                        </div>
+                      </div>
+                      <hr />
+                    </NavLink>
                   </div>
-                  <hr />
-                </a>
-              ))
-            ) : (
-              <h3 className="text-center">Tidak ada notifikasi</h3>
-            )}
+                ))
+              ) : (
+                <h3 className="text-center">There's no notification yet</h3>
+              )}
+            </div>
           </div>
         </LayoutNavbarFooter>
       )}

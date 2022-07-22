@@ -31,12 +31,12 @@ export default function Bid(props) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="staticBackdropLabel">
-              Masukkan Harga Tawaranmu
+              Input your bid price
             </h5>
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
-            <p>Harga tawaranmu akan diketahui penual, jika penjual cocok kamu akan segera dihubungi penjual.</p>
+            <p>Your bid will be informed to seller, if seller agreed you will be informed and can contact the seller from dashboard menu</p>
             <div className="d-flex product-focus">
               <div className="product-img">
                 <img src={props.data.ProductImages[0].image} alt="Gambar" />
@@ -47,7 +47,7 @@ export default function Bid(props) {
               </div>
             </div>
             <div className="product-focus-bid">
-              <h5>Harga Tawar</h5>
+              <h5>Bid Price</h5>
               <form onSubmit={handleSubmit}>
                 <input required className="input-bid" onChange={(e) => setHarga(e.target.value)} type="text" placeholder="Rp 0,00" />
                 <div className="text-center mt-4">

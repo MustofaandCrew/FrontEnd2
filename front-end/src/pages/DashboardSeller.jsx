@@ -213,7 +213,7 @@ export default function DashboardSeller() {
                                 </button>
                               </a>
                             ) : (
-                              <a className="d-flex inline-block" target="_blank" href={`https://api.whatsapp.com/send?phone=${item.User.noHp}&text=Hai%20Pembeli%0ASaya%20Penjual`}>
+                              <a className="d-flex inline-block">
                                 <button disabled className="flex-fill btn btn-success">
                                   <span className="fa fa-whatsapp">&nbsp;Contact Buyer</span>
                                 </button>
@@ -225,7 +225,7 @@ export default function DashboardSeller() {
                     </div>
                   ))
                 ) : (
-                  <h3 className="text-center">Anda belum pernah melakukan transaksi</h3>
+                  <h3 className="text-center">You have no transaction</h3>
                 )}
               </div>
             </div>

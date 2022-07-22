@@ -14,8 +14,8 @@ import Card from "../components/Card";
 import "../assets/css/Home.css";
 import "../assets/css/Card.css";
 import LayoutNavbarFooter from "../components/LayoutNavbarFooter";
-import PropagateLoader from "react-spinners/PropagateLoader";
 import axios from "axios";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 const override = {
   display: "flex",

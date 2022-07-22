@@ -55,7 +55,7 @@ export default function DashboardBuyer() {
             <SidebarBuyer />
           </div>
           <div className="sidebar-mobile">
-            <SidebarBuyerMobile image={user.image || DefaultPic} nama={user.nama} />
+            <SidebarBuyerMobile image={user.image || DefaultPic} nama={user.nama.split(" ").sort((a, b) => a.length - b.length)[0]} />
           </div>
           {user && (
             <div className="page-transaksi-buyer">
@@ -169,7 +169,7 @@ export default function DashboardBuyer() {
                     </div>
                   ))
                 ) : (
-                  <h3 className="text-center">Anda belum pernah melakukan transaksi</h3>
+                  <h3 className="text-center">You have no transaction</h3>
                 )}
               </div>
             </div>
