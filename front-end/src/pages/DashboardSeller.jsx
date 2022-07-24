@@ -209,18 +209,35 @@ export default function DashboardSeller() {
                         <p className="text-product my-4">{item.status}</p>
                         <div className="row">
                           <div className="col-sm-12">
-                            {item.status === "Diterima" ? (
-                              <a className="d-flex inline-block" target="_blank" href={`https://api.whatsapp.com/send?phone=${item.User.noHp}&text=Hai%20Pembeli%0ASaya%20Penjual`}>
-                                <button className="flex-fill btn btn-success">
-                                  <span className="fa fa-whatsapp">&nbsp;Contact Buyer</span>
-                                </button>
-                              </a>
+                            {item.status !== "Menunggu Konfirmasi" ? (
+                              <div>
+                                {item.status === "Diterima" ? (
+                                  <a className="d-flex inline-block" target="_blank" href={`https://api.whatsapp.com/send?phone=${item.User.noHp}&text=Hai%20Pembeli%0ASaya%20Penjual`}>
+                                    <button className="flex-fill btn btn-success">
+                                      <span className="fa fa-whatsapp">&nbsp;Contact Buyer</span>
+                                    </button>
+                                  </a>
+                                ) : (
+                                  <a className="d-flex inline-block">
+                                    <button disabled className="flex-fill btn btn-success">
+                                      <span className="fa fa-whatsapp">&nbsp;Contact Buyer</span>
+                                    </button>
+                                  </a>
+                                )}
+                              </div>
                             ) : (
-                              <a className="d-flex inline-block">
-                                <button disabled className="flex-fill btn btn-success">
-                                  <span className="fa fa-whatsapp">&nbsp;Contact Buyer</span>
-                                </button>
-                              </a>
+                              <div className="row g-3">
+                                <div className="col-md-12 d-flex justify-content-center">
+                                  <button type="button" value={item.id} onClick={handleAccept} className="btn flex-fill btn-primary">
+                                    Accept
+                                  </button>
+                                </div>
+                                <div className="col-md-12 d-flex justify-content-center">
+                                  <button type="button" value={item.id} onClick={handleReject} className="btn flex-fill btn-danger">
+                                    Reject
+                                  </button>
+                                </div>
+                              </div>
                             )}
                           </div>
                         </div>

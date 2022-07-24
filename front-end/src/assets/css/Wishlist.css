@@ -46,6 +46,11 @@
       font-size: 50px;
       font-weight: 900;
     }
+
+    h3.catalog-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
     
     .catalog-nav-link a.catalog-link{
       text-decoration: none;

@@ -54,15 +54,25 @@ export default function Home() {
             {/* Carousel */}
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="2000">
-                  <img src={Jordan} className="d-block w-100 imgCarousel" alt="img" />
-                </div>
-                <div className="carousel-item" data-bs-interval="2000">
+                {products.map((product) => (
+                  <div key={product.id}>
+                    {product.id == 1 ? (
+                      <div className="carousel-item active" data-bs-interval="2000">
+                        <img src={Jordan} className="w-100 imgCarousel" alt="img" />
+                      </div>
+                    ) : (
+                      <div className="carousel-item" key={product.id}>
+                        <img src={product.ProductImages[0].image} className="w-100 imgCarousel" alt="img" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+                {/* <div className="carousel-item" data-bs-interval="2000">
                   <img src={Banner} className="d-block w-100 imgCarousel" alt="img" />
                 </div>
                 <div className="carousel-item">
                   <img src={Banner} className="d-block w-100 imgCarousel" alt="img" />
-                </div>
+                </div> */}
               </div>
               <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>

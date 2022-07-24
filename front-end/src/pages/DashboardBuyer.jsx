@@ -150,19 +150,26 @@ export default function DashboardBuyer() {
                         <p className="text-product my-4">{item.status}</p>
                         <div className="row">
                           <div className="col-sm-12">
-                            {/* <a className="d-flex inline-block" target="_blank" href={`https://wa.me/${item.Product.User.noHp}`}> */}
-                            <a
-                              className="d-flex inline-block"
-                              target="_blank"
-                              href={`https://api.whatsapp.com/send?phone=+62${item.Product.User.noHp.substring(
-                                1,
-                                item.Product.User.noHp.length
-                              )}&text=Hai%20Penjual%0ASaya%20ingin%20membeli%20barangmu%0ANama%3A%0AAlamat%3A`}
-                            >
-                              <button className="flex-fill btn btn-success">
-                                <span className="fa fa-whatsapp">&nbsp;Contact Seller</span>
-                              </button>
-                            </a>
+                            {item.status === "Diterima" ? (
+                              <a
+                                className="d-flex inline-block"
+                                target="_blank"
+                                href={`https://api.whatsapp.com/send?phone=+62${item.Product.User.noHp.substring(
+                                  1,
+                                  item.Product.User.noHp.length
+                                )}&text=Hai%20Penjual%0ASaya%20ingin%20membeli%20barangmu%0ANama%3A%0AAlamat%3A`}
+                              >
+                                <button className="flex-fill btn btn-success">
+                                  <span className="fa fa-whatsapp">&nbsp;Contact Seller</span>
+                                </button>
+                              </a>
+                            ) : (
+                              <a className="d-flex inline-block">
+                                <button disabled className="flex-fill btn btn-success">
+                                  <span className="fa fa-whatsapp">&nbsp;Contact Seller</span>
+                                </button>
+                              </a>
+                            )}
                           </div>
                         </div>
                       </div>

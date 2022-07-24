@@ -15,17 +15,24 @@ const override = {
 };
 
 export default function Notification() {
-  const [notif, setNotif] = useState([]);
+  const [notifBuyer, setNotifBuyer] = useState([]);
+  const [notifSeller, setNotifSeller] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
-      const notifikasi = await axios.get("https://secondhand-backend-mac.herokuapp.com/notifikasiBuyer", {
+      const notifikasiBuyer = await axios.get("https://secondhand-backend-mac.herokuapp.com/notifikasiBuyer", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      setNotif(notifikasi.data.data);
+      const notifikasiSeller = await axios.get("https://secondhand-backend-mac.herokuapp.com/notifikasiSeller", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      setNotifBuyer(notifikasiBuyer.data.data);
+      setNotifSeller(notifikasiSeller.data.data);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -43,9 +50,10 @@ export default function Notification() {
         <LayoutNavbarFooter>
           <div className="container container-fluid">
             <div className="row">
-              {notif ? (
-                notif.map((data) => (
+              {notifBuyer ? (
+                notifBuyer.map((data) => (
                   <div key={data.id} className="col-12">
+                    <p className="fw-bold">Notifikasi Buyer</p>
                     <NavLink to="/dashboardbuyer">
                       <div className="d-flex product">
                         <div className="product-img">
@@ -53,7 +61,7 @@ export default function Notification() {
                         </div>
                         <div className="product-details">
                           <h5>{data.Product.nama}</h5>
-                          <p>Buyer Offer:</p>
+                          <p>Your Offer:</p>
                           <p>Rp. {data.harga}</p>
                           {data.status === "Diterima" && <h5 className="seller-agree">seller agrees to your offer</h5>}
                           {data.status === "Ditolak" && <h5 className="seller-reject">seller rejects to your offer</h5>}
@@ -64,7 +72,30 @@ export default function Notification() {
                   </div>
                 ))
               ) : (
-                <h3 className="text-center">There's no notification yet</h3>
+                <h3 className="text-center">There's no notification on your bid yet</h3>
+              )}
+              {notifSeller ? (
+                notifSeller.map((data) => (
+                  <div key={data.id} className="col-12">
+                    <p className="fw-bold">Notifikasi Seller</p>
+                    <NavLink to="/dashboardseller">
+                      <div className="d-flex product">
+                        <div className="product-img">
+                          <img src={data.Product.ProductImages[0].image} alt="image" />
+                        </div>
+                        <div className="product-details">
+                          <h5>{data.Product.nama}</h5>
+                          <p>Buyer Offer:</p>
+                          <p>Rp. {data.harga}</p>
+                          <h5 className="seller-agree">{data.User.nama} bid your product</h5>
+                        </div>
+                      </div>
+                      <hr />
+                    </NavLink>
+                  </div>
+                ))
+              ) : (
+                <h3 className="text-center">There's no notification for your product yet</h3>
               )}
             </div>
           </div>

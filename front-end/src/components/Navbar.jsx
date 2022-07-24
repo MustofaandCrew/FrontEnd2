@@ -53,9 +53,9 @@ export default function Navbar(props) {
               <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 {props.categories.map((item) => (
                   <li key={item.id}>
-                    <NavLink className="dropdown-item" to={`/catalog?category=${item.nama}`}>
+                    <a className="dropdown-item" href={`/catalog?category=${item.nama}`}>
                       {item.nama}
-                    </NavLink>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -81,7 +81,7 @@ export default function Navbar(props) {
               {props.isLoggedIn ? <>{props.notifBuyer ? <MdNotificationsActive size={`1.2em`} /> : <span className="fa fa-bell"></span>}</> : <span className="fa fa-bell"></span>}
             </NavLink>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              {props.isLoggedIn && <Notif data={props.notifBuyer} />}
+              {props.isLoggedIn && <Notif seller={props.notifSeller} buyer={props.notifBuyer} />}
             </ul>
           </li>
           <li>

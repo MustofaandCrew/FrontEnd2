@@ -36,7 +36,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-8">
             <h5 className="text-uppercase">Categories</h5>
             <div className="row">
               <div className="col-md-6">

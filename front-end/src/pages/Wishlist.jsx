@@ -62,17 +62,13 @@ export default function Wishlist() {
                 ))}
               </div>
             ) : (
-              <div className="row">
-                <div className="col-12">
-                  <h2 className="catalog-title text-center">No product in wishlist</h2>
-                </div>
-              </div>
+              <h3 className="catalog-title text-center">No product in wishlist</h3>
             )}
           </div>
         </div>
 
         {/* for Phone Layout */}
-        <div className="catalog-vertical row row-cols-1 row-cols-md-4 g-1 mt-4">
+        <div className="catalog-vertical row">
           <div className="col mb-4">
             <h2 className="catalog-title text-center">Wishlist</h2>
           </div>
@@ -85,11 +81,7 @@ export default function Wishlist() {
               ))}
             </div>
           ) : (
-            <div className="row">
-              <div className="col-12">
-                <h2 className="catalog-title text-center">No product in wishlist</h2>
-              </div>
-            </div>
+            <h3 className="catalog-title text-center">No product in wishlist</h3>
           )}
         </div>
       </div>

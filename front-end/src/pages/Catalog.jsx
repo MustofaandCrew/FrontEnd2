@@ -94,11 +94,7 @@ export default function Catalog() {
                     ))}
                   </div>
                 ) : (
-                  <div className="row">
-                    <div className="col-12">
-                      <h2 className="catalog-title text-center">No Product Found</h2>
-                    </div>
-                  </div>
+                  <h3 className="catalog-title text-center">No Product Found</h3>
                 )}
               </div>
             </div>
@@ -135,11 +131,7 @@ export default function Catalog() {
                   ))}
                 </div>
               ) : (
-                <div className="row mt-5">
-                  <div className="col-12">
-                    <h2 className="catalog-title text-center">No Product Found</h2>
-                  </div>
-                </div>
+                <h3 className="catalog-title text-center">No Product Found</h3>
               )}
             </div>
           </div>

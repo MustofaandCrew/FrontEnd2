@@ -36,6 +36,9 @@ export default function EditProduct(props) {
 
   const onClose = (e) => {
     setImagesPreview(props.data.ProductImages);
+    setNama(props.data.nama);
+    setHarga(props.data.harga);
+    setDeskripsi(props.data.deskripsi);
     setImages([]);
   };
 
@@ -48,8 +51,6 @@ export default function EditProduct(props) {
       });
     }
     setImagesPreview(images);
-    // console.log(images);
-    // console.log(imagesPreview);
   };
 
   return (

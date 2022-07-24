@@ -9,11 +9,17 @@ export default function AddProduct() {
   const [category, setCategory] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
   const [images, setImages] = useState([]);
+  const [error, setError] = useState("");
   const [choice, setChoice] = useState(1);
 
   const onClose = () => {
+    setNama("");
+    setHarga("");
+    setDeskripsi("");
+    setError("");
     setImagesPreview([]);
     setImages([]);
+    document.getElementById("customFile").value = "";
   };
 
   const handleSubmit = async (e) => {
@@ -29,17 +35,22 @@ export default function AddProduct() {
         formData.append("product_images", image);
       }
     }
-
+    if (images.length > 4) {
+      setError("You can only upload 4 images");
+      setLoading(false);
+      return;
+    }
     try {
       const res = await axios.post("https://secondhand-backend-mac.herokuapp.com/products", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
+      location.reload();
     } catch (error) {
       console.log(error);
+      setError(error.response.data);
     }
-    location.reload();
   };
 
   const onUploadImages = (e) => {
@@ -73,19 +84,32 @@ export default function AddProduct() {
             <button onClick={onClose} type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body m-3">
+            {error && (
+              <div className="alert alert-danger" role="alert">
+                {error}
+              </div>
+            )}
             <div className="d-flex justify-content-center">
               <form onSubmit={handleSubmit}>
                 <div>
                   <h5>Product Name</h5>
-                  <input required className="form-control" onChange={(e) => setNama(e.target.value)} name="nama" type="text" placeholder="Papel la casa" />
+                  <input required className="form-control" value={nama} onChange={(e) => setNama(e.target.value)} name="nama" type="text" placeholder="Papel la casa" />
                 </div>
                 <div>
                   <h5>Price</h5>
-                  <input required className="form-control" onChange={(e) => setHarga(e.target.value)} name="harga" type="text" placeholder="Rp. 100" />
+                  <input required className="form-control" value={harga} onChange={(e) => setHarga(e.target.value)} name="harga" type="text" placeholder="Rp. 100" />
                 </div>
                 <div className="mt-3">
                   <h5>Category</h5>
-                  <select className="form-select" value={choice} onChange={(e) => setChoice(e.target.value)} type="text" placeholder="Shipping">
+                  <select
+                    className="form-select"
+                    onBlur={(e) => (e.target.size = 1)}
+                    onFocus={(e) => (e.target.size = 8)}
+                    value={choice}
+                    onChange={(e) => (setChoice(e.target.value), (e.target.size = 1), e.target.blur())}
+                    type="text"
+                    placeholder="Shipping"
+                  >
                     {category.map((item) => (
                       <option value={item.id} key={item.id}>
                         {item.nama}
@@ -95,7 +119,7 @@ export default function AddProduct() {
                 </div>
                 <div className="mt-3">
                   <h5>Description</h5>
-                  <textarea required className="form-control" onChange={(e) => setDeskripsi(e.target.value)} name="deskripsi" type="text" placeholder="lorem ipsum" />
+                  <textarea required className="form-control" value={deskripsi} onChange={(e) => setDeskripsi(e.target.value)} name="deskripsi" type="text" placeholder="lorem ipsum" />
                 </div>
                 <div className="custom-file mt-3">
                   <h5>

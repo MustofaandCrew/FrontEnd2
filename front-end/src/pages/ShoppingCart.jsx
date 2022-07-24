@@ -56,7 +56,7 @@ export default function ShoppingCart() {
                   </thead>
                   <tbody>
                     {products.map((product, index) => (
-                      <tr>
+                      <tr key={product.id}>
                         <th scope="row">{index + 1}</th>
                         <td>
                           <img src={product.Product.ProductImages[0].image} className="img-fluid" alt="shoes" />

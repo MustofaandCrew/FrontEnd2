@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Bid(props) {
   const [harga, setHarga] = useState(0);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -21,8 +23,8 @@ export default function Bid(props) {
     } catch (error) {
       console.log(error);
     }
-    setLoading(false);
-    location.reload();
+    document.getElementsByClassName("modal-backdrop")[0].remove();
+    navigate("/shoppingcart");
   };
 
   return (
