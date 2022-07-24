@@ -11,3 +11,4 @@ export { default as Account } from "./Account";
 export { default as DashboardBuyer } from "./DashboardBuyer";
 export { default as DashboardSeller } from "./DashboardSeller";
 export { default as MyProduct } from "./MyProduct";
+export { default as Error } from "./404NotFound"; 

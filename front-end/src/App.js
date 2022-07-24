@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Catalog, Details, ShoppingCart, Wishlist, Register, NotificationVertical, Account, DashboardBuyer, DashboardSeller, MyProduct } from "./pages";
+import { Home, Login, Catalog, Details, ShoppingCart, 
+        Wishlist, Register, NotificationVertical, Account, 
+        DashboardBuyer, DashboardSeller, MyProduct, Error } from "./pages";
 import Protected from "./components/Protected";
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/404notfound" element={<Error />} />
           <Route path="/login" element={<Login />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/productdetails/:id" element={<Details />} />
