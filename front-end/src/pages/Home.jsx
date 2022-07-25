@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <>
       {loading ? (
-        <PropagateLoader cssOverride={override} size={50} color={"#FF7158"} loading={loading} />
+        <PropagateLoader cssOverride={override} size={50} color={"#FF7158"} loading={loading} data-testid="loading" />
       ) : (
         <LayoutNavbarFooter>
           <div className="container">

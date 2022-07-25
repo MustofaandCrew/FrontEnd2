@@ -2,6 +2,7 @@
 
 exports[`home snapshot 1`] = `
 <span
+  data-testid="loading"
   style={
     Object {
       "alignItems": "center",

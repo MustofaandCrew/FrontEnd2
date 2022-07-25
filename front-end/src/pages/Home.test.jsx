@@ -1,21 +1,24 @@
-import {render ,screen, waitFor} from "@testing-library/react";
+import {render ,screen} from "@testing-library/react";
 import renderer from "react-test-renderer";
 
 import Home from "./Home";
 
-beforeAll
 describe("home", () => {
     test("carousel have class carousel", async () => {
         render(<Home />);
-        const test = await waitFor (() => {
-            screen.getByTestId("testing")
-        })
-        // const test = screen.getByTestId("testing");
-        expect(test).toHaveClass("carousel");
+        if (!screen.getByTestId("loading")) {
+            const test = screen.getByTestId("testing");
+            // eslint-disable-next-line jest/no-conditional-expect
+            return (expect(test).toHaveClass("carousel"));
+        }
     });
 
-    test("snapshot", ()=>{
-        const elem = renderer.create(<Home />).toJSON();
-        expect(elem).toMatchSnapshot();
+    test("snapshot", async ()=>{
+        render(<Home />);
+        if (screen.getByTestId("loading")) {
+            const elem = renderer.create(<Home />).toJSON();
+            // eslint-disable-next-line jest/no-conditional-expect
+            expect(elem).toMatchSnapshot();  
+        }
     });
 })
