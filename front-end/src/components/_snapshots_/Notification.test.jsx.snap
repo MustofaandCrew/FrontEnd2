@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+import Notification from "../components/Notification";
+
+exports["Notification"] = {
+    test: function test() {
+        var tree = renderer.create(<Notification />).toJSON();
+        expect(tree).toMatchSnapshot();
+    }
+};

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+import SidebarSellerMobile from "../components/SidebarSellerMobile";
+
+exports["SidebarSellerMobile"] = {
+    test: function test() {
+        var tree = renderer.create(<SidebarSellerMobile />).toJSON();
+        expect(tree).toMatchSnapshot();
+    }
+};

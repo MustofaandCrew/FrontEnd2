@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+import Navbar from "../components/Navbar";
+
+exports["Navbar"] = {
+    test: function test() {
+        var tree = renderer.create(<Navbar />).toJSON();
+        expect(tree).toMatchSnapshot();
+    }
+};
