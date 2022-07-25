@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for ModalNavbar should match with snapshot 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalLabel"
+  className="modal fade"
+  id="exampleModal"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h2
+          className="modal-title"
+          id="exampleModalLabel"
+        >
+          Categories
+        </h2>
+        <button
+          aria-label="Close"
+          className="btn-close"
+          data-bs-dismiss="modal"
+          type="button"
+        />
+      </div>
+      <div
+        className="modal-body"
+      >
+        <li>
+          <a
+            className="a-modal"
+            href="/"
+          >
+            uhuy
+          </a>
+        </li>
+      </div>
+    </div>
+  </div>
+</div>
+`;

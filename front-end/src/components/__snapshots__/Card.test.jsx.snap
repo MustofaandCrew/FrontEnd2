@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for Card should match with snapshot 1`] = `
+<div
+  className="col h-100"
+>
+  <div
+    className="card h-100"
+  >
+    <img
+      alt="img"
+      className="thumbnail-card"
+      data-testid="image"
+      src="https://ncrsport.com/img/storage/large/553558-125-1.jpg"
+    />
+    <div
+      className="card-body"
+    >
+      <h5
+        className="card-title thumbnail-text"
+        data-testid="thumbnail-test"
+      >
+        Air Jordan
+      </h5>
+      <p
+        className="card-text price-text"
+        data-testid="price-test"
+      >
+        Rp. 5.000.000
+      </p>
+    </div>
+  </div>
+</div>
+`;

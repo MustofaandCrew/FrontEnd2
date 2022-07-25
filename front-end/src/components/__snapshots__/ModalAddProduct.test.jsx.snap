@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for ModalAddProduct should match with snapshot 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="staticBackdropLabel"
+  className="modal fade"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  id="staticBackdrop"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog modal-dialog-centered"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="staticBackdropLabel"
+        >
+          Create New Product
+        </h5>
+        <button
+          aria-label="Close"
+          className="btn-close"
+          data-bs-dismiss="modal"
+          type="button"
+        />
+      </div>
+      <div
+        className="modal-body m-3"
+      >
+        <div
+          className="d-flex justify-content-center"
+        >
+          <form>
+            <div>
+              <h5>
+                Product Name
+              </h5>
+              <input
+                className="form-control"
+                name="nama"
+                placeholder="Papel la casa"
+                required={true}
+                type="text"
+              />
+            </div>
+            <div>
+              <h5>
+                Price
+              </h5>
+              <input
+                className="form-control"
+                name="harga"
+                placeholder="Rp. 100"
+                required={true}
+                type="text"
+              />
+            </div>
+            <div
+              className="mt-3"
+            >
+              <h5>
+                Category
+              </h5>
+            </div>
+            <div
+              className="mt-3"
+            >
+              <h5>
+                Description
+              </h5>
+              <textarea
+                className="form-control"
+                name="deskripsi"
+                placeholder="lorem ipsum"
+                required={true}
+                type="text"
+              />
+            </div>
+            <div
+              className="custom-file mt-3"
+            >
+              <h5>
+                Thumbnail 
+                <span
+                  className="fs-6 fw-bold"
+                >
+                  (max. 4 photos)
+                </span>
+              </h5>
+              <input
+                className="form-control"
+                id="customFile"
+                multiple={true}
+                name="product_images"
+                required={true}
+                type="file"
+              />
+            </div>
+            <div
+              className="text-center mt-3"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

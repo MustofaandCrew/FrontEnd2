@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for CardDashboard should match with snapshot 1`] = `
+<div
+  className="col"
+>
+  <div
+    className="card h-100"
+  >
+    <img
+      alt="img"
+      className="card-img-top card-img"
+      data-testid="image"
+      src="https://ncrsport.com/img/storage/large/553558-125-1.jpg"
+    />
+    <div
+      className="card-body d-flex flex-column"
+      data-testid="body"
+    >
+      <h5
+        className="card-title thumbnail-text"
+      >
+        Air Jordan
+      </h5>
+      <p
+        className="card-text price-text"
+      >
+        Rp. 5.000.000
+      </p>
+      <div
+        className="row mt-auto g-3"
+      >
+        <div
+          className="col-lg-6 d-flex"
+        >
+          <button
+            className="btn flex-fill btn-primary"
+            data-bs-toggle="modal"
+          >
+            Edit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -24,8 +24,8 @@ export default function Card(props) {
   return (
     <div className="col">
       <div className="card h-100">
-        <img src={props.data.ProductImages[0].image} className="card-img-top card-img" alt="img" />
-        <div className="card-body d-flex flex-column">
+        <img src={props.data.ProductImages[0].image} className="card-img-top card-img" alt="img" data-testid="image"/>
+        <div className="card-body d-flex flex-column" data-testid="body">
           <h5 className="card-title thumbnail-text">{props.data.nama}</h5>
           <p className="card-text price-text">Rp. {props.data.harga}</p>
           <div className="row mt-auto g-3">

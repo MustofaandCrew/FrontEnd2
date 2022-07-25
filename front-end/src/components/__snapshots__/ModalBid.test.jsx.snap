@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for ModalBid should match with snapshot 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="staticBackdropLabel"
+  className="modal fade"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  id="staticBackdrop"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog modal-dialog-centered"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="staticBackdropLabel"
+        >
+          Input your bid price
+        </h5>
+        <button
+          aria-label="Close"
+          className="btn-close"
+          data-bs-dismiss="modal"
+          type="button"
+        />
+      </div>
+      <div
+        className="modal-body"
+      >
+        <p>
+          Your bid will be informed to seller, if seller agreed you will be informed and can contact the seller from dashboard menu
+        </p>
+        <div
+          className="d-flex product-focus"
+        >
+          <div
+            className="product-img"
+          >
+            <img
+              alt="Gambar"
+              src="https://ncrsport.com/img/storage/large/553558-125-1.jpg"
+            />
+          </div>
+          <div
+            className="product-details"
+          >
+            <h5>
+              Air Jordan
+            </h5>
+            <p>
+              Rp. 5.000.000
+            </p>
+          </div>
+        </div>
+        <div
+          className="product-focus-bid"
+        >
+          <h5>
+            Bid Price
+          </h5>
+          <form>
+            <input
+              className="input-bid"
+              onChange={[Function]}
+              placeholder="Rp 0,00"
+              required={true}
+              type="text"
+            />
+            <div
+              className="text-center mt-4"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
